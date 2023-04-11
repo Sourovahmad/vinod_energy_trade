@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\authController;
+use App\Http\Controllers\indexController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +18,24 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+
+
+// login and register Routes
+
+Route::post('registration', [authController::class, 'register_post'])->name('register_post');
+Route::get('additional-details', [indexController::class, 'additional_deatils'])->name('additional_deatils');
+Route::post('user_update_additional_info', [authController::class, 'user_update_additional_info'])->name('user_update_additional_info');
+
+// End of login and register Routes
+
+
+
+
+
+
+
 
 
 

@@ -6,7 +6,7 @@
 
         <x-validation-errors class="mb-4" />
 
-        <form method="POST" action="{{ route('register') }}">
+        <form method="POST" action="{{ route('register_post') }}">
             @csrf
 
             <div>
@@ -19,6 +19,36 @@
                 <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
             </div>
 
+
+
+            <div class="mt-4">
+                <x-label for="phone" value="{{ __('Phone Number') }}" />
+                <x-input id="phone" class="block mt-1 w-full" type="number" name="phone" :value="old('phone')" required autocomplete="phone" />
+            </div>
+
+
+
+
+
+
+              <div class="mt-4">
+                <label for="user_type" class="block text-gray-700 text-sm font-bold mb-2">User Type</label>
+                <select id="user_type" class="form-select @error('user_type') border-red-500 @enderror" name="user_type" required>
+                    <option value="">Select User Type </option>
+                    <option value="buyer">Buyer </option>
+                    <option value="seller">Seller </option>
+                </select>
+
+                @error('user_type')
+                    <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                @enderror
+            </div>
+
+
+
+
+
+            {{-- password --}}
             <div class="mt-4">
                 <x-label for="password" value="{{ __('Password') }}" />
                 <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
@@ -28,6 +58,16 @@
                 <x-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
                 <x-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
             </div>
+
+
+
+
+
+
+
+
+
+
 
             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
                 <div class="mt-4">
@@ -56,5 +96,10 @@
                 </x-button>
             </div>
         </form>
+
+
+
+
+
     </x-authentication-card>
 </x-guest-layout>
