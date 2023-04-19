@@ -8,6 +8,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('css/bootstrap/main.css') }}">
 
         <!-- Styles -->
         <style>
@@ -23,7 +24,35 @@
     <body class="antialiased">
 
         <div class="text-center">
-            This is Home page
+            This is Home page <br>
+
+
+            navigate to buyer <a href="{{ route('buyer_index') }}">Click Me</a>
+        </div>
+
+        <div class="mt-4">
+            
+
+   @if(session('success'))
+   <div class="alert alert-success alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+       {{ session('success') }}
+   </div>
+@endif
+
+
+
+
+               @if($errors->any())
+   <div class="alert alert-danger alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+       <ul>
+           @foreach($errors->all() as $error)
+               <li>{{ $error }}</li>
+           @endforeach
+       </ul>
+   </div>
+@endif
         </div>
 
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 sm:items-center py-4 sm:pt-0">
@@ -43,5 +72,7 @@
 
             
         </div>
+
+         <script src="{{ asset('js/bootstrapBundle.js') }}"></script>
     </body>
 </html>

@@ -13,10 +13,11 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('first_name');
+            $table->string('last_name');
             $table->string('email')->unique();
             $table->string('phone');
-            $table->string('user_type');
+            $table->string('user_type')->comment('buyer, seller');
 
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
@@ -30,11 +31,11 @@ return new class extends Migration
             // additional fields
             $table->string('person_id')->nullable();
             $table->string('social_name')->nullable();
-            $table->string('company_cuit')->nullable();
-            $table->string('proof_of_cuit', 2048)->nullable();
-            $table->string('company_last_balance')->nullable();
-            $table->string('company_role')->nullable();
-            $table->string('company_products')->nullable();
+            $table->string('company_suit')->nullable();
+            $table->string('cuit_proof', 2048)->nullable();
+            $table->string('last_balance')->nullable();
+            $table->string('role')->nullable();
+            $table->string('company_product')->nullable();
 
 
             $table->string('last_year_average_trade_volume_of_natural_gas')->nullable();

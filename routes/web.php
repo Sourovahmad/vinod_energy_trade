@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\authController;
+use App\Http\Controllers\BuyerController;
 use App\Http\Controllers\indexController;
+use App\Http\Middleware\ensureUserIsBuyer;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('index');
 
 
 
@@ -25,13 +27,8 @@ Route::get('/', function () {
 // login and register Routes
 
 Route::post('registration', [authController::class, 'register_post'])->name('register_post');
-Route::get('additional-details', [indexController::class, 'additional_deatils'])->name('additional_deatils');
-Route::post('user_update_additional_info', [authController::class, 'user_update_additional_info'])->name('user_update_additional_info');
 
 // End of login and register Routes
-
-
-
 
 
 
@@ -47,4 +44,30 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+
+
+
+    // Update Additional info
+    Route::get('additional-details', [indexController::class, 'additional_deatils'])->name('additional_deatils');
+    Route::post('user_update_additional_info', [authController::class, 'user_update_additional_info'])->name('user_update_additional_info');
+
+
+
+
+
+    // buyer Routes
+    Route::middleware(ensureUserIsBuyer::class)->group(function(){
+
+    Route::get('buyer', [BuyerController::class, 'index'])->name('buyer_index');
+
+    });
+
+
+
+
+
+
+
+
 });
