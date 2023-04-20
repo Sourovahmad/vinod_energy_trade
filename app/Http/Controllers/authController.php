@@ -45,7 +45,7 @@ class authController extends Controller
             'person_id' => 'required',
             'social_name' => 'required',
             'company_suit' => 'required',
-            'cuit_proof' => 'required|file|mimes:jpeg,png,pdf|max:2048',
+            'cuit_proof' => 'required|file|mimes:jpeg,png,pdf|max:5120',
             'logo' => 'required',
             'last_balance' => 'required',
             'role' => 'required',
@@ -105,7 +105,7 @@ class authController extends Controller
         }
 
         $user->save();
-        return redirect()->route('buyer_index');
+        return redirect()->route('buyer_create');
 
         
     }

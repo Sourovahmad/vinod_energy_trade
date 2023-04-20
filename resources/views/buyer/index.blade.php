@@ -65,9 +65,15 @@
             </div>
           </div>
         </nav>
+
+
         <div class="justify-content-md-center row">
           <div class="text-center col-12"></div>
         </div>
+
+
+
+
         <div class="justify-content-md-center row">
           <div class="col-xl-5 col-md-12 pl-4">
             <br />
@@ -75,47 +81,16 @@
               <div class="row justify-content-between">
                 <div class="row ml-3 d-flex justify-content-between">
                   <div aria-label="Basic example" role="group" class="btn-group">
-                    <button type="button" class="btn btn-primary">
-                      <svg
-                        class="MuiSvgIcon-root"
-                        focusable="false"
-                        viewBox="0 0 24 24"
-                        aria-hidden="true"
-                      >
-                        <path
-                          d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67zM11.71 19c-1.78 0-3.22-1.4-3.22-3.14 0-1.62 1.05-2.76 2.81-3.12 1.77-.36 3.6-1.21 4.62-2.58.39 1.29.59 2.65.59 4.04 0 2.65-2.15 4.8-4.8 4.8z"
-                        ></path>
-                      </svg>
-                       Natural Gas
-                    </button>
-                    <button type="button" class="btn btn-secondary">
-                      <svg
-                        class="MuiSvgIcon-root"
-                        focusable="false"
-                        viewBox="0 0 24 24"
-                        aria-hidden="true"
-                      >
-                        <path
-                          d="M12 2.02c-5.51 0-9.98 4.47-9.98 9.98s4.47 9.98 9.98 9.98 9.98-4.47 9.98-9.98S17.51 2.02 12 2.02zm0 17.96c-4.4 0-7.98-3.58-7.98-7.98S7.6 4.02 12 4.02 19.98 7.6 19.98 12 16.4 19.98 12 19.98zM12.75 5l-4.5 8.5h3.14V19l4.36-8.5h-3z"
-                        ></path>
-                      </svg>
-                    </button>
-                    <button type="button" class="btn btn-secondary" disabled="">
-                      <svg
-                        class="MuiSvgIcon-root"
-                        focusable="false"
-                        viewBox="0 0 24 24"
-                        aria-hidden="true"
-                      >
-                        <path
-                          d="M19.77 7.23l.01-.01-3.72-3.72L15 4.56l2.11 2.11c-.94.36-1.61 1.26-1.61 2.33 0 1.38 1.12 2.5 2.5 2.5.36 0 .69-.08 1-.21v7.21c0 .55-.45 1-1 1s-1-.45-1-1V14c0-1.1-.9-2-2-2h-1V5c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v16h10v-7.5h1.5v5c0 1.38 1.12 2.5 2.5 2.5s2.5-1.12 2.5-2.5V9c0-.69-.28-1.32-.73-1.77zM12 10H6V5h6v5zm6 0c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"
-                        ></path>
-                      </svg>
-                    </button>
+                    
+                    
+                    
                   </div>
                 </div>
+
+                <a  href="{{ route('buyer_create') }}">
                 <button
                   id="add_btn"
+                  
                   type="button"
                   class="btn btn-primary d-flex align-items-center w-auto"
                 >
@@ -143,11 +118,12 @@
                   </svg>
                   Add
                 </button>
+              </a>
               </div>
               <br />
               <div class="row">
                 <div class="col-6">
-                  <h5 class="text text-secondary">Natural Gas Orders</h5>
+                  <h5 class="text text-secondary">Your Orders</h5>
                 </div>
                 <div class="text-right col">
                   <div class="justify-content-end row">
@@ -187,6 +163,7 @@
                 </div>
               </div>
             </div>
+
             <div class="container-fluid">
               <div class="justify-content-center row">
                 <h5 class="text-success">
@@ -198,46 +175,66 @@
                     <b>ID</b>
                   </div>
                   <div class="text-center col" style="font-size: 10px">
-                    <b>Point</b>
+                    <b>Name</b>
                   </div>
                   <div class="text-center col-1" style="font-size: 10px">
-                    <b>dam3/d</b>
+                    <b>Deadline</b>
                   </div>
                   <div class="text-center col" style="font-size: 10px">
-                    <b>Close</b>
+                    <b>Quantity</b>
                   </div>
-                  <div class="text-center col" style="font-size: 10px">
-                    <b>Round</b>
-                  </div>
+                
                 </div>
+
+                @forelse ($ordersOpen as $openOrder)
+                    
+                
+                    
+                
                 <div
                   class="shadow card border-primary"
                   style="padding: 5px; width: 100%; cursor: pointer"
                 >
                   <div class="align-items-center row" style="font-size: 11px">
-                    <div class="text-center col-2">FIA-GN-04</div>
-                    <div class="text-center col">FIA-Villa Mercedes</div>
-                    <div class="text-center col-1">3</div>
-                    <div class="text-center col">12 Abr 21:00hs</div>
-                    <div class="text-center col">
-                      <svg
-                        class="MuiSvgIcon-root text-success"
-                        focusable="false"
-                        viewBox="0 0 24 24"
-                        aria-hidden="true"
-                        style="font-size: 14px"
-                      >
-                        <path
-                          d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10zm-8-7L4 6h16l-8 5z"
-                        ></path>
-                      </svg>
-                      <span class="badge badge-success badge">Round 1 </span>
-                    </div>
+                    <div class="text-center col-2"> {{ $openOrder->code }}</div>
+                    <div class="text-center col">{{ $openOrder->supply_point_name }}</div>
+
+                    @php
+                    $requestTime = $openOrder->deadline_offer_recive;
+                      $formattedTime = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $requestTime)->format('F j, Y, g:i a');
+                    @endphp
+                    <div class="text-center col-1">{{  $formattedTime }} </div>
+                    <div class="text-center col">{{ $openOrder->total_quantity }}</div>
+                    
                   </div>
                 </div>
+
+
+                @empty
+
+
+
+                <div
+                class="shadow card border-primary"
+                style="padding: 5px; width: 100%; cursor: pointer"
+              >
+                <div class="align-items-center row text-center" style="font-size: 11px">
+                    <div class="col">
+                      No Data Available
+                    </div>
+                </div>
               </div>
+
+
+                @endforelse
+
+
+
+              </div>
+
+
               <div class="justify-content-center row">
-                <h5 class="tex text-primary">
+                <h5 class="text-success">
                   <br />
                   In Analysis
                 </h5>
@@ -246,62 +243,66 @@
                     <b>ID</b>
                   </div>
                   <div class="text-center col" style="font-size: 10px">
-                    <b>Point</b>
+                    <b>Name</b>
                   </div>
                   <div class="text-center col-1" style="font-size: 10px">
-                    <b>dam3/d</b>
+                    <b>Deadline</b>
                   </div>
                   <div class="text-center col" style="font-size: 10px">
-                    <b>Defines</b>
+                    <b>Quantity</b>
                   </div>
-                  <div class="text-center col" style="font-size: 10px">
-                    <b>Round</b>
-                  </div>
-                  <div class="text-center col-1" style="font-size: 10px">
-                    <b>State</b>
-                  </div>
+                
                 </div>
+
+                @forelse ($ordersUnderAnalysis as $analysisOrder)
+                    
+                
+                    
+                
                 <div
-                  class="shadow card border-secondary"
+                  class="shadow card border-primary"
                   style="padding: 5px; width: 100%; cursor: pointer"
                 >
                   <div class="align-items-center row" style="font-size: 11px">
-                    <div class="text-center col-2">CON-GN-01</div>
-                    <div class="text-center col">multiple</div>
-                    <div class="text-center col-1">11</div>
-                    <div class="text-center col">22 apr 20:30hs</div>
-                    <div class="text-center col">
-                      <svg
-                        class="MuiSvgIcon-root text-primary"
-                        focusable="false"
-                        viewBox="0 0 24 24"
-                        aria-hidden="true"
-                        style="font-size: 14px"
-                      >
-                        <path
-                          d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10zm-8-7L4 6h16l-8 5z"
-                        ></path>
-                      </svg>
-                      <span class="badge badge-primary badge">Ronda 1 </span>
-                    </div>
-                    <div class="text-center col-1">
-                      <svg
-                        class="MuiSvgIcon-root text text-success"
-                        focusable="false"
-                        viewBox="0 0 24 24"
-                        aria-hidden="true"
-                        style="font-size: 14px"
-                      >
-                        <path
-                          d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"
-                        ></path>
-                      </svg>
-                    </div>
+                    <div class="text-center col-2"> {{ $analysisOrder->code }}</div>
+                    <div class="text-center col">{{ $analysisOrder->supply_point_name }}</div>
+
+                    @php
+                    $requestTime = $analysisOrder->deadline_offer_recive;
+                      $formattedTime = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $requestTime)->format('F j, Y, g:i a');
+                    @endphp
+                    <div class="text-center col-1">{{  $formattedTime }} </div>
+                    <div class="text-center col">{{ $analysisOrder->total_quantity }}</div>
+                    
                   </div>
                 </div>
+
+
+                @empty
+
+
+
+                <div
+                class="shadow card border-primary"
+                style="padding: 5px; width: 100%; cursor: pointer"
+              >
+                <div class="align-items-center row text-center" style="font-size: 11px">
+                    <div class="col">
+                      No Data Available
+                    </div>
+                </div>
               </div>
+
+
+                @endforelse
+
+
+
+              </div>
+
+
               <div class="justify-content-center row">
-                <h5 class="tex text-info">
+                <h5 class="text-success">
                   <br />
                   Awarded
                 </h5>
@@ -310,81 +311,69 @@
                     <b>ID</b>
                   </div>
                   <div class="text-center col" style="font-size: 10px">
-                    <b>point</b>
+                    <b>Name</b>
                   </div>
                   <div class="text-center col-1" style="font-size: 10px">
-                    <b>dam3/d</b>
+                    <b>Deadline</b>
                   </div>
                   <div class="text-center col" style="font-size: 10px">
-                    <b>Closing</b>
+                    <b>Quantity</b>
                   </div>
-                  <div class="text-center col-2" style="font-size: 10px">
-                    <b>USD/MMBTU</b>
-                  </div>
-                  <div class="text-center col" style="font-size: 10px">
-                    <b>Buyer</b>
-                  </div>
-                </div>
                 
+                </div>
+
+                @forelse ($ordersAwarded as $awardedOrder)
+                    
+                
+                    
                 
                 <div
-                  class="shadow card border-secondary"
+                  class="shadow card border-primary"
                   style="padding: 5px; width: 100%; cursor: pointer"
                 >
                   <div class="align-items-center row" style="font-size: 11px">
-                    <div class="text-center col-2">GEO-GN-02</div>
-                    <div class="text-center col">Planta Rio Segundo</div>
-                    <div class="text-center col-1">6</div>
-                    <div class="text-center col">29 Mar 01:00hs</div>
-                    <div class="text-center col">6.15</div>
-                    <div class="text-center col">Georgalos</div>
+                    <div class="text-center col-2"> {{ $awardedOrder->code }}</div>
+                    <div class="text-center col">{{ $awardedOrder->supply_point_name }}</div>
+
+                    @php
+                    $requestTime = $awardedOrder->deadline_offer_recive;
+                      $formattedTime = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $requestTime)->format('F j, Y, g:i a');
+                    @endphp
+                    <div class="text-center col-1">{{  $formattedTime }} </div>
+                    <div class="text-center col">{{ $awardedOrder->total_quantity }}</div>
+                    
                   </div>
                 </div>
 
-              </div>
-              <div class="justify-content-center row">
-                <h5 class="text text-secondary">
-                  <br />
-                  Awarded to third parties
-                </h5>
-                <div class="row" style="width: 100%">
-                  <div class="text-center col-2" style="font-size: 10px">
-                    <b>ID</b>
-                  </div>
-                  <div class="text-center col" style="font-size: 10px">
-                    <b>point</b>
-                  </div>
-                  <div class="text-center col-1" style="font-size: 10px">
-                    <b>dam3/d</b>
-                  </div>
-                  <div class="text-center col" style="font-size: 10px">
-                    <b>Closing</b>
-                  </div>
-                  <div class="text-center col" style="font-size: 10px">
-                    <b>Ranking</b>
-                  </div>
-                </div>
-                
-                
-                
-                
+
+                @empty
+
+
+
                 <div
-                  class="shadow card border-secondary"
-                  style="padding: 5px; width: 100%; cursor: pointer"
-                >
-                  <div class="align-items-center row" style="font-size: 11px">
-                    <div class="text-center col-2">SAM-01</div>
-                    <div class="text-center col">SAM-Famaillá</div>
-                    <div class="text-center col-1">150</div>
-                    <div class="text-center col">24 Abr 03:00hs</div>
-                    <div class="text-center col">
-                      <small>En elaboración</small>
+                class="shadow card border-primary"
+                style="padding: 5px; width: 100%; cursor: pointer"
+              >
+                <div class="align-items-center row text-center" style="font-size: 11px">
+                    <div class="col">
+                      No Data Available
                     </div>
-                  </div>
                 </div>
               </div>
+
+
+                @endforelse
+
+
+
+              </div>
+
+
+
+
+
               <div class="justify-content-center row">
-                <h5 class="text text-danger">
+                <h5 class="text-danger">
                   <br />
                   Deserts
                 </h5>
@@ -393,50 +382,65 @@
                     <b>ID</b>
                   </div>
                   <div class="text-center col" style="font-size: 10px">
-                    <b>point</b>
+                    <b>Name</b>
                   </div>
                   <div class="text-center col-1" style="font-size: 10px">
-                    <b>dam3/d</b>
+                    <b>Deadline</b>
                   </div>
                   <div class="text-center col" style="font-size: 10px">
-                    <b>Closing</b>
+                    <b>Quantity</b>
                   </div>
-                  <div class="text-center col" style="font-size: 10px">
-                    <b>Round</b>
-                  </div>
+                
                 </div>
+
+                @forelse ($ordersDesert as $desertOrder)
+                    
                 
-                
-                
-                
-                
+                    
                 
                 <div
-                  class="shadow card border-secondary"
+                  class="shadow card border-primary"
                   style="padding: 5px; width: 100%; cursor: pointer"
                 >
                   <div class="align-items-center row" style="font-size: 11px">
-                    <div class="text-center col-2">RIG-GN-03</div>
-                    <div class="text-center col">Berazategui</div>
-                    <div class="text-center col-1">50</div>
-                    <div class="text-center col">1 Abr 00:00hs</div>
-                    <div class="text-center col">
-                      <svg
-                        class="MuiSvgIcon-root text-danger"
-                        focusable="false"
-                        viewBox="0 0 24 24"
-                        aria-hidden="true"
-                        style="font-size: 14px"
-                      >
-                        <path
-                          d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10zm-8-7L4 6h16l-8 5z"
-                        ></path>
-                      </svg>
-                      <span class="badge badge-danger badge">Round 2 </span>
-                    </div>
+                    <div class="text-center col-2"> {{ $desertOrder->code }}</div>
+                    <div class="text-center col">{{ $desertOrder->supply_point_name }}</div>
+
+                    @php
+                    $requestTime = $desertOrder->deadline_offer_recive;
+                      $formattedTime = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $requestTime)->format('F j, Y, g:i a');
+                    @endphp
+                    <div class="text-center col-1">{{  $formattedTime }} </div>
+                    <div class="text-center col">{{ $desertOrder->total_quantity }}</div>
+                    
                   </div>
                 </div>
+
+
+                @empty
+
+
+
+                <div
+                class="shadow card border-primary"
+                style="padding: 5px; width: 100%; cursor: pointer"
+              >
+                <div class="align-items-center row text-center" style="font-size: 11px">
+                    <div class="col">
+                      No Data Available
+                    </div>
+                </div>
               </div>
+
+
+                @endforelse
+
+
+
+              </div>
+              
+              
+              
             </div>
             <div class="row"><br /></div>
           </div>
@@ -1549,557 +1553,6 @@
           </div>
         </div>
       </div>
-      <div class="modal-add">
-        <div class="body">
-          <div class="modal-close-btn">
-            <img
-              src="https://static.thenounproject.com/png/1014483-200.png"
-              alt="close"
-            />
-          </div>
-          <div class="header border-bottom">
-            <p>Supply Point Name: <span>text</span></p>
-            <p>
-              Geographic Location of the Supply Point:
-              <span>Province Location</span>
-            </p>
-          </div>
-          <div class="d-flex flex-column">
-            <div>
-              <div class="form-group mt-4">
-                <div class="row">
-                  <div class="col-4">
-                    <p>Purchase Request for:</p>
-                  </div>
-                  <div class="col-3">
-                    <select class="select">
-                      <option value="ELECTRICITY">ELECTRICITY</option>
-                      <option value="NATURAL GAS">NATURAL GAS</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group mt-2">
-                <div class="row">
-                  <div class="col-4">
-                    <p>Deadline for receipt of Offers:</p>
-                  </div>
-                  <div class="col-3">
-                    <input type="datetime-local" class="select" />
-                  </div>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="row">
-                  <div class="col-4">
-                    <p>Date of publication of the Purchase Order:</p>
-                  </div>
-                  <div class="col-3">
-                    <input type="datetime-local" class="select" />
-                  </div>
-                </div>
-              </div>
-              <span class="border-bottom"
-                >If you have selected a NATURAL GAS Purchase order:</span
-              >
-              <div class="form-group mt-4">
-                <div class="row">
-                  <div class="col-4">
-                    <p>Natural Gas Distributor POINT OF CONSUMPTION 1:</p>
-                  </div>
-                  <div class="col-3">
-                    <select class="select">
-                      <option value="Metrogas Metropolitan Subzone">
-                        Metrogas Metropolitan Subzone
-                      </option>
-                      <option value="Naturgy BAN SA Subzone Buenos Aires North">
-                        Naturgy BAN SA Subzone Buenos Aires North
-                      </option>
-                      <option value="Camuzzi Gas Pampeana Subzone Buenos Aires">
-                        Camuzzi Gas Pampeana Subzone Buenos Aires
-                      </option>
-                      <option value="Camuzzi Gas Bahía Blanca Subzone">
-                        Camuzzi Gas Bahía Blanca Subzone
-                      </option>
-                      <option value="Camuzzi Gas La Pampa North Subzone">
-                        Camuzzi Gas La Pampa North Subzone
-                      </option>
-                      <option value="Camuzzi Gas La Pampa South Subzone">
-                        Camuzzi Gas La Pampa South Subzone
-                      </option>
-                      <option value="Camuzzi Gas del Sur Subzone Neuquén">
-                        Camuzzi Gas del Sur Subzone Neuquén
-                      </option>
-                      <option value="Camuzzi Gas del Sur Cordillerano Subzone">
-                        Camuzzi Gas del Sur Cordillerano Subzone
-                      </option>
-                      <option
-                        value="Camuzzi Gas del Sur Subzone Buenos Aires South"
-                      >
-                        Camuzzi Gas del Sur Subzone Buenos Aires South
-                      </option>
-                      <option value="Camuzzi Gas del Sur Subzone Chubut Sur">
-                        Camuzzi Gas del Sur Subzone Chubut Sur
-                      </option>
-                      <option value="Camuzzi Gas del Sur Subzone Santa Cruz Sur">
-                        Camuzzi Gas del Sur Subzone Santa Cruz Sur
-                      </option>
-                      <option
-                        value="Camuzzi Gas del Sur Subzone Tierra del Fuego"
-                      >
-                        Camuzzi Gas del Sur Subzone Tierra del Fuego
-                      </option>
-                      <option value="Cuyana Gas Distributor Cuyo Subzone">
-                        Cuyana Gas Distributor Cuyo Subzone
-                      </option>
-                      <option value="Cuyana Gas Distributor Malargüe Subzone">
-                        Cuyana Gas Distributor Malargüe Subzone
-                      </option>
-                      <option
-                        value="Gas Distributor of the Center Subzone Center"
-                      >
-                        Gas Distributor of the Center Subzone Center
-                      </option>
-                      <option value="Litoral Gas Subzone Litoral">
-                        Litoral Gas Subzone Litoral
-                      </option>
-                      <option value="Gasnor Subzone Salta">
-                        Gasnor Subzone Salta
-                      </option>
-                      <option value="Gasnor Subzone Tucumán">
-                        Gasnor Subzone Tucumán
-                      </option>
-                      <option value="Gasnea Entre Ríos Subzone">
-                        Gasnea Entre Ríos Subzone
-                      </option>
-                      <option value="Gasnea Subzone Paraná">
-                        Gasnea Subzone Paraná
-                      </option>
-                      <option value="Gasnea Subzone Corrientes">
-                        Gasnea Subzone Corrientes
-                      </option>
-                      <option value="Gasnea Chaco Subzone">
-                        Gasnea Chaco Subzone
-                      </option>
-                      <option value="Gasnea Subzone Formosa">
-                        Gasnea Subzone Formosa
-                      </option>
-                      <option value="Gasnea Subzone Misiones">
-                        Gasnea Subzone Misiones
-                      </option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group mt-3">
-                <div class="row">
-                  <div class="col-4">
-                    <p>Natural Gas Tariff POINT OF CONSUMPTION 1</p>
-                  </div>
-                  <div class="col-3">
-                    <select class="select">
-                      <option value="SGP3">SGP3</option>
-                      <option value="SGG">SGG</option>
-                      <option value="CNG">CNG</option>
-                      <option value="GU">GU</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-              <span class="border-bottom">If you have selected SGG or GU: </span>
-              <div class="form-group mt-3">
-                <div class="row">
-                  <div class="col-4">
-                    <p>
-                      RESERVE (dam3/day) Consumption Curve POINT OF CONSUMPTION 1
-                    </p>
-                  </div>
-                  <div class="col-3">
-                    <select class="select">
-                      <option value="January">January</option>
-                      <option value="February">February</option>
-                      <option value="March">March</option>
-                      <option value="April">April</option>
-                      <option value="May">May</option>
-                      <option value="June">June</option>
-                      <option value="July">July</option>
-                      <option value="August">August</option>
-                      <option value="September">September</option>
-                      <option value="October">October</option>
-                      <option value="November">November</option>
-                      <option value="December">December</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-              <span class="border-bottom">Contract Conditions:</span>
-              <div class="form-group mt-4">
-                <div class="row">
-                  <div class="col-4">
-                    <p>Contract Term:</p>
-                  </div>
-                  <div class="col-3">
-                    <input type="datetime-local" class="select" />
-                  </div>
-                </div>
-              </div>
-              <div class="form-group mt-2">
-                <div class="row">
-                  <div class="col-4">
-                    <p>Start of Supply:</p>
-                  </div>
-                  <div class="col-3">
-                    <input type="date" class="select" />
-                  </div>
-                </div>
-              </div>
-              <div class="form-group mt-2">
-                <div class="row">
-                  <div class="col-4">
-                    <p>Total Quantity:</p>
-                  </div>
-                  <div class="col-3">
-                    <input type="number" class="select py-2" />
-                  </div>
-                </div>
-              </div>
-              <span class="border-bottom">Cuenca Winter Mix:</span>
-              <div class="form-group mt-3">
-                <div class="row">
-                  <div class="col-4">
-                    <p>NQN:</p>
-                  </div>
-                  <div class="col-3">
-                    <input type="number" class="select py-2" />
-                  </div>
-                </div>
-              </div>
-              <div class="form-group mt-2">
-                <div class="row">
-                  <div class="col-4">
-                    <p>PTO:</p>
-                  </div>
-                  <div class="col-3">
-                    <input type="number" class="select py-2" />
-                  </div>
-                </div>
-              </div>
-              <div class="form-group mt-2">
-                <div class="row">
-                  <div class="col-4">
-                    <p>SCR:</p>
-                  </div>
-                  <div class="col-3">
-                    <input type="number" class="select py-2" />
-                  </div>
-                </div>
-              </div>
-              <div class="form-group mt-2">
-                <div class="row">
-                  <div class="col-4">
-                    <p>CHU:</p>
-                  </div>
-                  <div class="col-3">
-                    <input type="number" class="select py-2" />
-                  </div>
-                </div>
-              </div>
-              <div class="form-group mt-2">
-                <div class="row">
-                  <div class="col-4">
-                    <p>NOA:</p>
-                  </div>
-                  <div class="col-3">
-                    <input type="number" class="select py-2" />
-                  </div>
-                </div>
-              </div>
-              <span class="border-bottom">Cuencas Summer Mix: </span>
-              <div class="form-group mt-3">
-                <div class="row">
-                  <div class="col-4">
-                    <p>NQN:</p>
-                  </div>
-                  <div class="col-3">
-                    <input type="number" class="select py-2" />
-                  </div>
-                </div>
-              </div>
-              <div class="form-group mt-2">
-                <div class="row">
-                  <div class="col-4">
-                    <p>PTO:</p>
-                  </div>
-                  <div class="col-3">
-                    <input type="number" class="select py-2" />
-                  </div>
-                </div>
-              </div>
-              <div class="form-group mt-2">
-                <div class="row">
-                  <div class="col-4">
-                    <p>SCR:</p>
-                  </div>
-                  <div class="col-3">
-                    <input type="number" class="select py-2" />
-                  </div>
-                </div>
-              </div>
-              <div class="form-group mt-2">
-                <div class="row">
-                  <div class="col-4">
-                    <p>CHU:</p>
-                  </div>
-                  <div class="col-3">
-                    <input type="number" class="select py-2" />
-                  </div>
-                </div>
-              </div>
-              <div class="form-group mt-2">
-                <div class="row">
-                  <div class="col-4">
-                    <p>NOA:</p>
-                  </div>
-                  <div class="col-3">
-                    <input type="number" class="select py-2" />
-                  </div>
-                </div>
-              </div>
-              <div class="form-group mt-2">
-                <div class="row">
-                  <div class="col-4">
-                    <p>Type of Supply:</p>
-                  </div>
-                  <div class="col-3 d-flex">
-                    <div class="pr-4">
-                      <input
-                        type="radio"
-                        value="Firm"
-                        id="Firm"
-                        name="type_of_supply"
-                      />
-                      <label for="Firm">Firm</label>
-                    </div>
-                    <div>
-                      <input
-                        type="radio"
-                        value="Spot"
-                        id="Spot"
-                        name="type_of_supply"
-                      />
-                      <label for="Spot">Spot</label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group mt-2">
-                <div class="row">
-                  <div class="col-4">
-                    <p>Exclusivity:</p>
-                  </div>
-                  <div class="col-3">
-                    <select class="select">
-                      <option value="YES">YES</option>
-                      <option value="NO">NO</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group mt-2">
-                <div class="row">
-                  <div class="col-4">
-                    <p>Partial Award:</p>
-                  </div>
-                  <div class="col-3">
-                    <select class="select">
-                      <option value="YES">YES</option>
-                      <option value="NO">NO</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group mt-2">
-                <div class="row">
-                  <div class="col-4">
-                    <p>Price:</p>
-                  </div>
-                  <div class="col-3">
-                    <select class="select">
-                      <option value="Flat">Flat</option>
-                      <option value="Seasonal">Seasonal</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group mt-2">
-                <div class="row">
-                  <div class="col-4">
-                    <p>Price Renegotiation Clause:</p>
-                  </div>
-                  <div class="col-3">
-                    <select class="select">
-                      <option value="YES">YES</option>
-                      <option value="NO">NO</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group mt-2">
-                <div class="row">
-                  <div class="col-4">
-                    <p>Take or Pay optional to the Seller:</p>
-                  </div>
-                  <div class="col-3">
-                    <select class="select">
-                      <option value="YES">YES</option>
-                      <option value="NO">NO</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-              <span class="border-bottom"
-                >In case the previous answer is NO:
-              </span>
-              <div class="form-group mt-4">
-                <div class="row">
-                  <div class="col-4">
-                    <p>Take or Pay (0 to 100%):</p>
-                  </div>
-                  <div class="col-3">
-                    <input type="number" min="0" max="100" class="select" />
-                  </div>
-                </div>
-              </div>
-              <div class="form-group mt-2 border-bottom">
-                <div class="row">
-                  <div class="col-4">
-                    <p>Take or Pay Price:</p>
-                  </div>
-                  <div class="col-3">
-                    <input type="text" class="select" />
-                  </div>
-                </div>
-              </div>
-              <div class="form-group mt-2">
-                <div class="row">
-                  <div class="col-4">
-                    <p>Optional Delivery or Pay to the Seller:</p>
-                  </div>
-                  <div class="col-3">
-                    <select class="select">
-                      <option value="YES">YES</option>
-                      <option value="NO">NO</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-              <span class="border-bottom"
-                >In case the previous answer is NO:
-              </span>
-              <div class="form-group mt-4">
-                <div class="row">
-                  <div class="col-4">
-                    <p>Delivery or Pay (0 to 100%):</p>
-                  </div>
-                  <div class="col-3">
-                    <input type="number" min="0" max="100" class="select" />
-                  </div>
-                </div>
-              </div>
-              <div class="form-group mt-2 border-bottom">
-                <div class="row">
-                  <div class="col-4">
-                    <p>Delivery or Pay price:</p>
-                  </div>
-                  <div class="col-3">
-                    <input type="text" class="select" />
-                  </div>
-                </div>
-              </div>
-              <div class="form-group mt-4">
-                <div class="row">
-                  <div class="col-4">
-                    <p>Payment term (5 to 180 days):</p>
-                  </div>
-                  <div class="col-3">
-                    <input type="number" class="select" />
-                  </div>
-                </div>
-              </div>
-              <div class="form-group mt-2">
-                <div class="row">
-                  <div class="col-4">
-                    <p>Exchange Rate:</p>
-                  </div>
-                  <div class="col-3">
-                    <select class="select">
-                      <option value="BNA Ticket Seller">BNA Ticket Seller</option>
-                      <option value="BNA Currency Seller">
-                        BNA Currency Seller
-                      </option>
-                      <option value="ARS">ARS</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group mt-4">
-                <div class="row">
-                  <div class="col-4">
-                    <p>Default Rate Debts in USD:</p>
-                  </div>
-                  <div class="col-3">
-                    <input type="number" class="select" />
-                  </div>
-                </div>
-              </div>
-              <div class="form-group mt-4">
-                <div class="row">
-                  <div class="col-4">
-                    <p>Mortgage Rate Debts in Pesos:</p>
-                  </div>
-                  <div class="col-3">
-                    <input type="number" class="select" />
-                  </div>
-                </div>
-              </div>
-  
-              <div class="form-group mt-2">
-                <div class="row">
-                  <div class="col-4">
-                    <p>Auction Commission:</p>
-                  </div>
-                  <div class="col-3">
-                    <select class="select">
-                      <option value="Paid by the Buyer">Paid by the Buyer</option>
-                      <option value="Paid by the Seller">
-                        Paid by the Seller
-                      </option>
-                      <option value="Paid by Both Parties">
-                        Paid by Both Parties
-                      </option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-  
-              <div class="form-group mt-4">
-                <div class="row">
-                  <div class="col-4">
-                    <p>Bid Maintenance Guarantee (Amount in ARS or USD):</p>
-                  </div>
-                  <div class="col-3">
-                    <input type="number" class="select" />
-                  </div>
-                </div>
-              </div>
-  
-              <!-- Group -->
-            </div>
-            <button class="btn btn-primary border-0 px-6 py-2 rounded-lg">
-              Add
-            </button>
-          </div>
-        </div>
-      </div>
+      
     </body>
 </html>

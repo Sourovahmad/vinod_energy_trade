@@ -48,7 +48,21 @@ return new class extends Migration
             $table->date('start_of_supply')->nullable();
             $table->string('total_quantity')->nullable();
             $table->string('cuenca_winter_mix')->nullable();
+
+            $table->string('winter_mqn')->nullable();
+            $table->string('winter_pto')->nullable();
+            $table->string('winter_scr')->nullable();
+            $table->string('winter_chu')->nullable();
+            $table->string('winter_noa')->nullable();
+
+
             $table->string('cuenca_summer_mix')->nullable();
+
+            $table->string('summer_mqn')->nullable();
+            $table->string('summer_pto')->nullable();
+            $table->string('summer_scr')->nullable();
+            $table->string('summer_chu')->nullable();
+            $table->string('summer_noa')->nullable();
 
 
             $table->string('type_of_supply')->nullable();
@@ -70,7 +84,8 @@ return new class extends Migration
             $table->string('auction_commision')->nullable();
             $table->string('bid_maintain_gurantee')->nullable();
 
-
+            $table->string('status')->default('open')->comment('open,awarded,under_analysis,desert');
+            $table->string('code')->nullable();
 
             $table->timestamps();
         });

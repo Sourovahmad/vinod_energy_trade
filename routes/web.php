@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\authController;
 use App\Http\Controllers\BuyerController;
+use App\Http\Controllers\BuyerOrdersController;
 use App\Http\Controllers\indexController;
 use App\Http\Middleware\ensureUserIsBuyer;
+use App\Models\buyerOrders;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -56,10 +58,20 @@ Route::middleware([
 
 
 
+    // Routes for both
+
+    Route::get('home', [indexController::class, 'redirectToHome'])->name('user_home');
+
+
+
+
     // buyer Routes
     Route::middleware(ensureUserIsBuyer::class)->group(function(){
 
-    Route::get('buyer', [BuyerController::class, 'index'])->name('buyer_index');
+        Route::get('buyer', [BuyerController::class, 'index'])->name('buyer_index');
+         Route::get('create-bid', [BuyerController::class, 'create'])->name('buyer_create');
+         Route::post('bidAdd', [BuyerOrdersController::class, 'store'])->name('bidAdd');
+
 
     });
 

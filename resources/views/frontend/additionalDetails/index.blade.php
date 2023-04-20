@@ -111,7 +111,7 @@
                 <div class="form-check mt-4">
                     <input class="form-check-input" type="checkbox" value="" name="natural_gas_checkbox" id="natural_gas_checkbox">
                     <label class="form-check-label" for="flexCheckIndeterminate">
-                      Natural Gas
+                     Vendor and Natural Gas
                     </label>
                 </div>
     
@@ -119,7 +119,7 @@
                 <div class="form-check mt-4">
                     <input class="form-check-input" type="checkbox" value="" name="electric_power_checkbox" id="electric_power_checkbox">
                     <label class="form-check-label" for="flexCheckIndeterminate">
-                      Electric Power
+                     Vendor Electric Power
                     </label>
                 </div>
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\buyer;
 use App\Http\Requests\StorebuyerRequest;
 use App\Http\Requests\UpdatebuyerRequest;
+use App\Models\buyerOrders;
 
 class BuyerController extends Controller
 {
@@ -15,7 +16,14 @@ class BuyerController extends Controller
      */
     public function index()
     {
-        return view('buyer.index');
+        $user = auth()->user();
+
+        $ordersOpen = buyerOrders::where('user_id', $user->id)->where('status', 'open')->get();
+        $ordersAwarded = buyerOrders::where('user_id', $user->id)->where('status', 'awarded')->get();
+        $ordersUnderAnalysis = buyerOrders::where('user_id', $user->id)->where('status', 'under_analysis')->get();
+        $ordersDesert = buyerOrders::where('user_id', $user->id)->where('status', 'desert')->get();
+
+        return view('buyer.index',compact('ordersOpen', 'ordersAwarded', 'ordersUnderAnalysis', 'ordersDesert'));
     }
 
     /**
@@ -25,7 +33,7 @@ class BuyerController extends Controller
      */
     public function create()
     {
-        //
+        return view('buyer.add');
     }
 
     /**
