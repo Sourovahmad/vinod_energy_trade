@@ -69,6 +69,7 @@ Route::middleware([
     Route::middleware(ensureUserIsBuyer::class)->group(function(){
 
         Route::get('buyer', [BuyerController::class, 'index'])->name('buyer_index');
+        Route::get('add-electricity', [BuyerController::class, 'add_electricity'])->name('add_electricity');
          Route::get('create-bid', [BuyerController::class, 'create'])->name('buyer_create');
          Route::post('bidAdd', [BuyerOrdersController::class, 'store'])->name('bidAdd');
 

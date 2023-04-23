@@ -2,10 +2,8 @@
 
 @section('content')
 
+    
 <div class="container mt-4" style="border: 1px solid #3e3e3d">
-  
-
-
 
     @if(session('success'))
     <div class="alert alert-success">
@@ -29,53 +27,47 @@
 
 
 
-
    
-    <div class="header border-bottom mt-2">
-      <p>   Add the Natural Gas bid </p>
+<div class="header border-bottom mt-2">
+    <p>  Add Electric Energy bid </p>
 
-
-       
-      </div>
-
+</div>
 
 
 <form action="{{ route('bidAdd') }}" method="post" enctype="multipart/form-data">  
 
     @csrf
 
-      <div class="d-flex flex-column">
-        <div>
+    <div class="d-flex flex-column">
+
+
+        <input type="text" name="purchase_request_for" id="" value="ELECTRICITY" hidden>
+
+          
+        <div class="form-group mt-2">
+            <div class="row">
+              <div class="col-4">
+                <p>Supply Point Name</p>
+              </div>
+              <div class="col-3">
+                <input type="text" class="select py-2" name="supply_point_name" />
+              </div>
+            </div>
+          </div>
+
 
 
           
-            <div class="form-group mt-2">
-                <div class="row">
-                  <div class="col-4">
-                    <p>Supply Point Name</p>
-                  </div>
-                  <div class="col-3">
-                    <input type="text" class="select py-2" name="supply_point_name" />
-                  </div>
-                </div>
+          <div class="form-group mt-2">
+            <div class="row">
+              <div class="col-4">
+                <p>Geographic Location (Province location)</p>
               </div>
-
-
-
-              <div class="form-group mt-2">
-                <div class="row">
-                  <div class="col-4">
-                    <p>Geographic Location (Province location)</p>
-                  </div>
-                  <div class="col-3">
-                    <input type="text" class="select py-2" name="location_of_supply_point" />
-                  </div>
-                </div>
+              <div class="col-3">
+                <input type="text" class="select py-2" name="location_of_supply_point" />
               </div>
-
-
-              <input type="text" name="purchase_request_for" value="NATURAL GAS" hidden required>
-
+            </div>
+          </div>
 
 
 
@@ -92,6 +84,7 @@
 
 
 
+          
           <div class="form-group">
             <div class="row">
               <div class="col-4">
@@ -112,102 +105,119 @@
                 <p>Natural Gas Distributor POINT OF CONSUMPTION 1:</p>
               </div>
               <div class="col-3">
-                <select class="select" name="natural_gas_point_of_distribution_consumtion_1">
+                <select class="select form-control" name="natural_gas_point_of_distribution_consumtion_1">
+
                   <option value="Metrogas Metropolitan Subzone">
                     Metrogas Metropolitan Subzone
                   </option>
-                  <option value="Naturgy BAN SA Subzone Buenos Aires North">
-                    Naturgy BAN SA Subzone Buenos Aires North
+
+
+
+                  <option value="EDESUR (Distributor of Energia Sur SA)">
+                    EDESUR (Distributor of Energia Sur SA)
                   </option>
-                  <option value="Camuzzi Gas Pampeana Subzone Buenos Aires">
-                    Camuzzi Gas Pampeana Subzone Buenos Aires
+                  <option value="EDENOR (Distributor and Marketer of Energia Norte SA)">
+                    EDENOR (Distributor and Marketer of Energia Norte SA)
                   </option>
-                  <option value="Camuzzi Gas Bahía Blanca Subzone">
-                    Camuzzi Gas Bahía Blanca Subzone
+                  <option value="EDEA (Atlantic Energy Distribution Company SA)">
+                    EDEA (Atlantic Energy Distribution Company SA)
                   </option>
-                  <option value="Camuzzi Gas La Pampa North Subzone">
-                    Camuzzi Gas La Pampa North Subzone
+                  <option value="EDEN (North Energy Distribution Company SA)">
+                    EDEN (North Energy Distribution Company SA)
                   </option>
-                  <option value="Camuzzi Gas La Pampa South Subzone">
-                    Camuzzi Gas La Pampa South Subzone
+                  <option value="EDES (Energy South SA Distribution Company)">
+                    EDES (Energy South SA Distribution Company)
                   </option>
-                  <option value="Camuzzi Gas del Sur Subzone Neuquén">
-                    Camuzzi Gas del Sur Subzone Neuquén
+                  <option value="EDELAP (La Plata SA Distribution Company)">
+                    EDELAP (La Plata SA Distribution Company)
                   </option>
-                  <option value="Camuzzi Gas del Sur Cordillerano Subzone">
-                    Camuzzi Gas del Sur Cordillerano Subzone
+                  <option value="ECS.APEM Energy Catamarca SAPEM (Anonymous Company with Majority State Participation)">
+                    ECS.APEM Energy Catamarca SAPEM (Anonymous Company with Majority State Participation)
                   </option>
-                  <option
-                    value="Camuzzi Gas del Sur Subzone Buenos Aires South"
-                  >
-                    Camuzzi Gas del Sur Subzone Buenos Aires South
+                  <option value="SECHEEP (Energy Services of Chaco Provincial State Company)">
+                    SECHEEP (Energy Services of Chaco Provincial State Company)
                   </option>
-                  <option value="Camuzzi Gas del Sur Subzone Chubut Sur">
-                    Camuzzi Gas del Sur Subzone Chubut Sur
+                  <option value="EPEC (Provincial Energy Company of Córdoba SA)">
+                    EPEC (Provincial Energy Company of Córdoba SA)
                   </option>
-                  <option value="Camuzzi Gas del Sur Subzone Santa Cruz Sur">
-                    Camuzzi Gas del Sur Subzone Santa Cruz Sur
+                  <option value="DPEC (Provincial Directorate of Energy of Corrientes SA)">
+                    DPEC (Provincial Directorate of Energy of Corrientes SA)
                   </option>
-                  <option
-                    value="Camuzzi Gas del Sur Subzone Tierra del Fuego"
-                  >
-                    Camuzzi Gas del Sur Subzone Tierra del Fuego
+                  <option value="ENERSA SA (Energy of Entre Ríos SA)">
+                    ENERSA SA (Energy of Entre Ríos SA)
                   </option>
-                  <option value="Cuyana Gas Distributor Cuyo Subzone">
-                    Cuyana Gas Distributor Cuyo Subzone
+                  <option value="Formosa Electric Resources and Energy Service (REFSA SA)">
+                    Formosa Electric Resources and Energy Service (REFSA SA)
                   </option>
-                  <option value="Cuyana Gas Distributor Malargüe Subzone">
-                    Cuyana Gas Distributor Malargüe Subzone
+                  <option value="EJE SA (Empresa Jujeña De Energía SA)">
+                    EJE SA (Empresa Jujeña De Energía SA)
                   </option>
-                  <option
-                    value="Gas Distributor of the Center Subzone Center"
-                  >
-                    Gas Distributor of the Center Subzone Center
+                  <option value="APE (Pampa Provincial Energy Administration)">
+                    APE (Pampa Provincial Energy Administration)
                   </option>
-                  <option value="Litoral Gas Subzone Litoral">
-                    Litoral Gas Subzone Litoral
+                  <option value="EDELAR (Electricity Distribution Company of La Rioja SA)">
+                    EDELAR (Electricity Distribution Company of La Rioja SA)
                   </option>
-                  <option value="Gasnor Subzone Salta">
-                    Gasnor Subzone Salta
+                  <option value="EDEMSA (Electricity Distribution Company of Mendoza SA)">
+                    EDEMSA (Electricity Distribution Company of Mendoza SA)
                   </option>
-                  <option value="Gasnor Subzone Tucumán">
-                    Gasnor Subzone Tucumán
+                  <option value="EDETE SA (Eastern Electricity Distribution Company SA)">
+                    EDETE SA (Eastern Electricity Distribution Company SA)
                   </option>
-                  <option value="Gasnea Entre Ríos Subzone">
-                    Gasnea Entre Ríos Subzone
+                  <option value="EMSA (Electricity of Misiones SA)">
+                    EMSA (Electricity of Misiones SA)
                   </option>
-                  <option value="Gasnea Subzone Paraná">
-                    Gasnea Subzone Paraná
+                  <option value="EPEN (Neuquén Provincial Energy Entity)">
+                    EPEN (Neuquén Provincial Energy Entity)
                   </option>
-                  <option value="Gasnea Subzone Corrientes">
-                    Gasnea Subzone Corrientes
+                  <option value="EDERSA (Energy Company of Rio Negro SA)">
+                    EDERSA (Energy Company of Rio Negro SA)
                   </option>
-                  <option value="Gasnea Chaco Subzone">
-                    Gasnea Chaco Subzone
+                  <option value="EDESA (Electricity Distribution Company of Salta)">
+                    EDESA (Electricity Distribution Company of Salta)
                   </option>
-                  <option value="Gasnea Subzone Formosa">
-                    Gasnea Subzone Formosa
+                  <option value="ESJ SA (Energy San Juan SA)">
+                    ESJ SA (Energy San Juan SA)
                   </option>
-                  <option value="Gasnea Subzone Misiones">
-                    Gasnea Subzone Misiones
+                  <option value="EDESAL SA (Distribution Company San Luis SA)">
+                    EDESAL SA (Distribution Company San Luis SA)
                   </option>
+                  <option value="EPESF (Provincial Energy Company of Santa Fe SA)">
+                    EPESF (Provincial Energy Company of Santa Fe SA)
+                  </option>
+
+
+                  <option value="EDESE (Electricity Distribution Company of Santiago del Estero SA)">
+                    EDESE (Electricity Distribution Company of Santiago del Estero SA)
+                  </option>
+
+
+                  <option value="EDET (Electrical Distribution Company of Tucumán SA)">
+                    	EDET (Electrical Distribution Company of Tucumán SA)
+                  </option>
+
+
+                
                 </select>
               </div>
             </div>
           </div>
 
 
+
+
+              
           <div class="form-group mt-3">
             <div class="row">
               <div class="col-4">
-                <p>Natural Gas Tariff POINT OF CONSUMPTION 1</p>
+                <p>User Categoy POINT OF CONSUMPTION</p>
               </div>
               <div class="col-3">
-                <select class="select" name="natural_gas_tarrif_point_of_consumption_1">
-                  <option value="SGP3">SGP3</option>
-                  <option value="SGG">SGG</option>
-                  <option value="CNG">CNG</option>
-                  <option value="GU">GU</option>
+                <select class="select" name="user_category_point_of_consumption">
+                  <option value="Distributor 300 KW">	Distributor 300 KW </option>
+                  <option value="GUDI">GUDI</option>
+                  <option value="GUME">GUME</option>
+                  <option value="GUM">GUM</option>
                 </select>
               </div>
             </div>
@@ -215,30 +225,11 @@
 
 
 
-          <span class="h6 p-2 mb-3">If you have selected SGG or GU: </span> <br>
 
-
-          
-          <div class="form-group mt-2">
-            <div class="row">
-              <div class="col-4">
-                <p>RESERVE (dam3/day) </p>
-              </div>
-              <div class="col-3">
-                <input type="text" class="select py-2" name="reserve" />
-              </div>
-            </div>
-          </div>
+          <span class="border-bottom  mb-3 mt-4 p-2"> Expected Consumption</span>
 
 
 
-
-
-
-          <span class="border-bottom  mb-3 mt-4 p-2"> Consumption Curve POINT OF CONSUMPTION 1 </span>
-          
-
-          
           <div class="form-group mt-2">
             <div class="row">
               <div class="col-4">
@@ -379,22 +370,22 @@
 
 
 
-
-          <span class="border-bottom">Contract Conditions:</span>
-          <div class="form-group mt-4">
-            <div class="row">
-              <div class="col-4">
-                <p>Contract Term (months)</p>
-              </div>
-              <div class="col-3">
-                <input type="number" class="select py-2" name="contact_term_months" />
-              </div>
-            </div>
-          </div>
-
-
+      <span class="border-bottom">Contract Conditions:</span>
           
-          <div class="form-group mt-2">
+
+      <div class="form-group mt-4">
+        <div class="row">
+          <div class="col-4">
+            <p>Contract Term (months)</p>
+          </div>
+          <div class="col-3">
+            <input type="number" class="select py-2" name="contact_term_months" />
+          </div>
+        </div>
+      </div>
+
+
+        <div class="form-group mt-2">
             <div class="row">
               <div class="col-4">
                 <p>Start of Supply:</p>
@@ -410,158 +401,27 @@
           <div class="form-group mt-2">
             <div class="row">
               <div class="col-4">
-                <p>Total Quantity:</p>
+                <p>Annual Energy (MWh)</p>
               </div>
               <div class="col-3">
-                <input type="number" class="select py-2" name="total_quantity" />
+                <input type="number" class="select py-2" name="annual_energy" />
               </div>
             </div>
           </div>
 
 
+          
+          <div class="form-group mt-2">
+            <div class="row">
+              <div class="col-4">
+                <p>Priority Given To Agreement (1 to 20)</p>
+              </div>
+              <div class="col-3">
+                <input type="number" class="select py-2" name="priority_given_to_agreement" min="1" max="20"  />
+              </div>
+            </div>
+          </div>
 
-          <span class="border-bottom">Cuenca Winter Mix:</span>
-          <div class="form-group mt-3">
-            <div class="row">
-              <div class="col-4">
-                <p>NQN:</p>
-              </div>
-              <div class="col-3">
-                <input type="number" class="select py-2" max="100" name="winter_mqn" />
-              </div>
-            </div>
-          </div>
-          <div class="form-group mt-2">
-            <div class="row">
-              <div class="col-4">
-                <p>PTO:</p>
-              </div>
-              <div class="col-3">
-                <input type="number" class="select py-2" name="winter_pto"  />
-              </div>
-            </div>
-          </div>
-          <div class="form-group mt-2">
-            <div class="row">
-              <div class="col-4">
-                <p>SCR:</p>
-              </div>
-              <div class="col-3">
-                <input type="number" class="select py-2" max="100" name="winter_scr" />
-              </div>
-            </div>
-          </div>
-          <div class="form-group mt-2">
-            <div class="row">
-              <div class="col-4">
-                <p>CHU:</p>
-              </div>
-              <div class="col-3">
-                <input type="number" class="select py-2"  max="100" name="winter_chu" />
-              </div>
-            </div>
-          </div>
-          <div class="form-group mt-2">
-            <div class="row">
-              <div class="col-4">
-                <p>NOA:</p>
-              </div>
-              <div class="col-3">
-                <input type="number" class="select py-2"  max="100" name="winter_noa" />
-              </div>
-            </div>
-          </div>
-          <span class="border-bottom">Cuencas Summer Mix: </span>
-          <div class="form-group mt-3">
-            <div class="row">
-              <div class="col-4">
-                <p>NQN:</p>
-              </div>
-              <div class="col-3">
-                <input type="number" class="select py-2"   max="100" name="summer_mqn" />
-              </div>
-            </div>
-          </div>
-          <div class="form-group mt-2">
-            <div class="row">
-              <div class="col-4">
-                <p>PTO:</p>
-              </div>
-              <div class="col-3">
-                <input type="number" class="select py-2" name="summer_pto" />
-              </div>
-            </div>
-          </div>
-          <div class="form-group mt-2">
-            <div class="row">
-              <div class="col-4">
-                <p>SCR:</p>
-              </div>
-              <div class="col-3">
-                <input type="number" class="select py-2"  max="100" name="summer_scr" />
-              </div>
-            </div>
-          </div>
-          <div class="form-group mt-2">
-            <div class="row">
-              <div class="col-4">
-                <p>CHU:</p>
-              </div>
-              <div class="col-3">
-                <input type="number" class="select py-2"  max="100" name="summer_chu" />
-              </div>
-            </div>
-          </div>
-          <div class="form-group mt-2">
-            <div class="row">
-              <div class="col-4">
-                <p>NOA:</p>
-              </div>
-              <div class="col-3">
-                <input type="number" class="select py-2"  max="100" name="summer_noa" />
-              </div>
-            </div>
-          </div>
-          <div class="form-group mt-2">
-            <div class="row">
-              <div class="col-4">
-                <p>Type of Supply:</p>
-              </div>
-              <div class="col-3 d-flex">
-                <div class="pr-4">
-                  <input
-                    type="radio"
-                    value="Firm"
-                    id="Firm"
-                    name="type_of_supply"
-                  />
-                  <label for="Firm">Firm</label>
-                </div>
-                <div>
-                  <input
-                    type="radio"
-                    value="Spot"
-                    id="Spot"
-                    name="type_of_supply"
-                  />
-                  <label for="Spot">Spot</label>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="form-group mt-2">
-            <div class="row">
-              <div class="col-4">
-                <p>Exclusivity:</p>
-              </div>
-              <div class="col-3">
-                <select class="select" name="exclusivity">
-                  <option value="YES">YES</option>
-                  <option value="NO">NO</option>
-                </select>
-              </div>
-            </div>
-          </div>
           <div class="form-group mt-2">
             <div class="row">
               <div class="col-4">
@@ -575,19 +435,8 @@
               </div>
             </div>
           </div>
-          <div class="form-group mt-2">
-            <div class="row">
-              <div class="col-4">
-                <p>Price:</p>
-              </div>
-              <div class="col-3">
-                <select class="select" name="price">
-                  <option value="Flat">Flat</option>
-                  <option value="Seasonal">Seasonal</option>
-                </select>
-              </div>
-            </div>
-          </div>
+
+
           <div class="form-group mt-2">
             <div class="row">
               <div class="col-4">
@@ -601,6 +450,26 @@
               </div>
             </div>
           </div>
+
+
+
+          
+          <div class="form-group mt-2">
+            <div class="row">
+              <div class="col-4">
+                <p>early termination Clause:</p>
+              </div>
+              <div class="col-3">
+                <select class="select" name="early_termination">
+                  <option value="YES">YES</option>
+                  <option value="NO">NO</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+
+
           <div class="form-group mt-2">
             <div class="row">
               <div class="col-4">
@@ -614,10 +483,14 @@
               </div>
             </div>
           </div>
+
+
           <span class="border-bottom"
-            >In case the previous answer is NO:
-          </span>
-          <div class="form-group mt-4">
+          >In case the previous answer is NO:
+        </span>
+
+
+        <div class="form-group mt-4">
             <div class="row">
               <div class="col-4">
                 <p>Take or Pay (0 to 100%):</p>
@@ -627,16 +500,8 @@
               </div>
             </div>
           </div>
-          <div class="form-group mt-2 border-bottom">
-            <div class="row">
-              <div class="col-4">
-                <p>Take or Pay Price:</p>
-              </div>
-              <div class="col-3">
-                <input type="text" class="select" name="take_or_pay_price" />
-              </div>
-            </div>
-          </div>
+
+
           <div class="form-group mt-2">
             <div class="row">
               <div class="col-4">
@@ -650,30 +515,24 @@
               </div>
             </div>
           </div>
+
+
           <span class="border-bottom"
-            >In case the previous answer is NO:
-          </span>
-          <div class="form-group mt-4">
-            <div class="row">
-              <div class="col-4">
-                <p>Delivery or Pay (0 to 100%):</p>
-              </div>
-              <div class="col-3">
-                <input type="number" min="0" max="100" class="select" name="delivery_or_pay" />
-              </div>
+          >In case the previous answer is NO:
+        </span>
+        <div class="form-group mt-4">
+          <div class="row">
+            <div class="col-4">
+              <p>Delivery or Pay (0 to 100%):</p>
+            </div>
+            <div class="col-3">
+              <input type="number" min="0" max="100" class="select" name="delivery_or_pay" />
             </div>
           </div>
-          <div class="form-group mt-2 border-bottom">
-            <div class="row">
-              <div class="col-4">
-                <p>Delivery or Pay price:</p>
-              </div>
-              <div class="col-3">
-                <input type="text" class="select" name="delivery_or_pay_price" />
-              </div>
-            </div>
-          </div>
-          <div class="form-group mt-4">
+        </div>
+
+
+        <div class="form-group mt-4">
             <div class="row">
               <div class="col-4">
                 <p>Payment term (5 to 180 days):</p>
@@ -683,6 +542,9 @@
               </div>
             </div>
           </div>
+
+
+
           <div class="form-group mt-2">
             <div class="row">
               <div class="col-4">
@@ -699,6 +561,7 @@
               </div>
             </div>
           </div>
+
           <div class="form-group mt-4">
             <div class="row">
               <div class="col-4">
@@ -709,6 +572,8 @@
               </div>
             </div>
           </div>
+
+
           <div class="form-group mt-4">
             <div class="row">
               <div class="col-4">
@@ -719,6 +584,7 @@
               </div>
             </div>
           </div>
+
 
           <div class="form-group mt-2">
             <div class="row">
@@ -739,6 +605,7 @@
             </div>
           </div>
 
+
           <div class="form-group mt-4">
             <div class="row">
               <div class="col-4">
@@ -751,9 +618,7 @@
           </div>
 
 
-
-
-          
+                    
           <div class="flex items-center justify-end mt-4">
            
 
@@ -762,18 +627,17 @@
             </x-button>
         </div>
 
-          <!-- Group -->
-        </div>
-   
+        
 
-    </form>
+    </div>
 
+
+
+
+
+  
 </div>
 
-
-
-
-</div>
 
 
 @endsection

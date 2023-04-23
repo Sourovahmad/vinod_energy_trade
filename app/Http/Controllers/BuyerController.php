@@ -36,59 +36,8 @@ class BuyerController extends Controller
         return view('buyer.add');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StorebuyerRequest  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(StorebuyerRequest $request)
+    public function add_electricity()
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\buyer  $buyer
-     * @return \Illuminate\Http\Response
-     */
-    public function show(buyer $buyer)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\buyer  $buyer
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(buyer $buyer)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdatebuyerRequest  $request
-     * @param  \App\Models\buyer  $buyer
-     * @return \Illuminate\Http\Response
-     */
-    public function update(UpdatebuyerRequest $request, buyer $buyer)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\buyer  $buyer
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(buyer $buyer)
-    {
-        //
+        return view('buyer.add_electricity');
     }
 }

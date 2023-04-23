@@ -82,43 +82,97 @@
                 <div class="row ml-3 d-flex justify-content-between">
                   <div aria-label="Basic example" role="group" class="btn-group">
                     
+
+
+                    <a  href="{{ route('add_electricity') }}" class="mr-4">
+                      <button
+                        id="add_btn"
+                        
+                        type="button"
+                        class="btn btn-primary d-flex align-items-center w-auto"
+                      >
+                        <svg
+                          class="svg_size mr-2"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                          <g
+                            id="SVGRepo_tracerCarrier"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          ></g>
+                          <g id="SVGRepo_iconCarrier">
+                            <path
+                              d="M4 12H20M12 4V20"
+                              stroke="#ffffff"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            ></path>
+                          </g>
+                        </svg>
+                        Add Electricity
+                      </button>
+                    </a>
+
+
+
+
+
+
+                    
+
+
+                <a  href="{{ route('buyer_create') }}">
+                  <button
+                    id="add_btn"
+                    
+                    type="button"
+                    class="btn btn-primary d-flex align-items-center w-auto"
+                  >
+                    <svg
+                      class="svg_size mr-2"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                      <g
+                        id="SVGRepo_tracerCarrier"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></g>
+                      <g id="SVGRepo_iconCarrier">
+                        <path
+                          d="M4 12H20M12 4V20"
+                          stroke="#ffffff"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </g>
+                    </svg>
+                    Add Natural Gas
+                  </button>
+                </a>
+  
+      
                     
                     
                   </div>
                 </div>
 
-                <a  href="{{ route('buyer_create') }}">
-                <button
-                  id="add_btn"
-                  
-                  type="button"
-                  class="btn btn-primary d-flex align-items-center w-auto"
-                >
-                  <svg
-                    class="svg_size mr-2"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                    <g
-                      id="SVGRepo_tracerCarrier"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    ></g>
-                    <g id="SVGRepo_iconCarrier">
-                      <path
-                        d="M4 12H20M12 4V20"
-                        stroke="#ffffff"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                    </g>
-                  </svg>
-                  Add
-                </button>
-              </a>
+
+                {{-- // add electriciy power --}}
+
+
+
+
+
+
+
               </div>
               <br />
               <div class="row">
