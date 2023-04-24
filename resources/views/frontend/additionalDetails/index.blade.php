@@ -87,7 +87,7 @@
             
             <div class="mt-4">
                 <x-label for="last_balance" value="{{ __('LAST BALANCE of the company') }}" />
-                <x-input id="last_balance" class="block mt-1 w-full" type="file" name="last_balance" :value="old('last_balance')"  autofocus autocomplete="last_balance" accept=".pdf,.doc,.docx" />
+                <x-input id="last_balance" class="block mt-1 w-full" type="file" name="last_balance" :value="old('last_balance')"  autofocus autocomplete="last_balance" accept=".pdf,.doc,.docx" required />
             </div>
 
 
@@ -128,14 +128,14 @@
 
 
             <div class="mt-4" id="average_volume_natural_gas_div" hidden>
-                <x-label for="average_volume_natural_gas" value="{{ __('AVERAGE VOLUME OF NATURAL GAS TRADED IN THE LAST YEAR (dam3/day)') }}" />
+                <x-label for="average_volume_natural_gas" value="{{ __('AVERAGE POWER of LAST YEAR AVERAGE. (MW)') }}" />
                 <x-input id="average_volume_natural_gas_input" class="block mt-1 w-full" type="text" name="average_volume_natural_gas" value="{{ $user->last_year_average_trade_volume_of_natural_gas }}"  autofocus autocomplete="average_volume_natural_gas" />
             </div>
 
 
 
             <div class="mt-4" id="average_volume_electric_power_div" hidden>
-                <x-label for="average_volume_electric_power" value="{{ __('AVERAGE POWER SOLD THROUGH PPAs IN THE LAST YEAR AVERAGE. (MW)') }}" />
+                <x-label for="average_volume_electric_power" value="{{ __('AVERAGE VOLUME OF NATURAL GAS of LAST YEAR (dam3/day)') }}" />
                 <x-input id="average_volume_electric_power_input" class="block mt-1 w-full" type="text" name="average_volume_electric_power" value="{{ $user->last_year_average_powersold_of_electric_engery }}"  autofocus autocomplete="average_volume_electric_power" />
             </div>
 

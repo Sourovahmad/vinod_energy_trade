@@ -37,14 +37,10 @@ return new class extends Migration
             $table->string('role')->nullable();
             $table->string('company_product')->nullable();
 
-
             $table->string('last_year_average_trade_volume_of_natural_gas')->nullable();
             $table->string('last_year_average_powersold_of_electric_engery')->nullable();
 
-
-
-
-
+      
             $table->timestamps();
         });
     }

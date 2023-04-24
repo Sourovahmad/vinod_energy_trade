@@ -102,17 +102,12 @@
           <div class="form-group mt-4">
             <div class="row">
               <div class="col-4">
-                <p>Natural Gas Distributor POINT OF CONSUMPTION 1:</p>
+                <p>Distribuidora de Energía Eléctrica PUNTO DE CONSUMO 1</p>
               </div>
               <div class="col-3">
                 <select class="select form-control" name="natural_gas_point_of_distribution_consumtion_1">
 
-                  <option value="Metrogas Metropolitan Subzone">
-                    Metrogas Metropolitan Subzone
-                  </option>
-
-
-
+                 
                   <option value="EDESUR (Distributor of Energia Sur SA)">
                     EDESUR (Distributor of Energia Sur SA)
                   </option>
