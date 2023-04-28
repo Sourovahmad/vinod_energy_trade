@@ -133,7 +133,7 @@
           <div class="text-center col-1" style="font-size: 10px">
             <b>Deadline</b>
           </div>
-        
+
 
 
            <div class="text-center col" style="font-size: 10px">
@@ -179,7 +179,7 @@
 
             {{--  bid view modal --}}
 
-            
+
 
             {{-- end of the bid view modal --}}
 
