@@ -19,7 +19,7 @@ class indexController extends Controller
             return redirect()->route('buyer_index');
 
         }else if($userType == 'seller'){
-            return redirect()->route('index');
+            return redirect()->route('seller_index');
         }
 
     }

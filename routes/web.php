@@ -4,7 +4,9 @@ use App\Http\Controllers\authController;
 use App\Http\Controllers\BuyerController;
 use App\Http\Controllers\BuyerOrdersController;
 use App\Http\Controllers\indexController;
+use App\Http\Controllers\SellerController;
 use App\Http\Middleware\ensureUserIsBuyer;
+use App\Http\Middleware\ensureUserisSeller;
 use App\Models\buyerOrders;
 use Illuminate\Support\Facades\Route;
 
@@ -72,10 +74,24 @@ Route::middleware([
         Route::get('add-electricity', [BuyerController::class, 'add_electricity'])->name('add_electricity');
          Route::get('create-bid', [BuyerController::class, 'create'])->name('buyer_create');
          Route::post('bidAdd', [BuyerOrdersController::class, 'store'])->name('bidAdd');
+         Route::post('update-order-status', [BuyerController::class, 'update_status'])->name('update_order_status');
+         Route::post('delete-order', [BuyerController::class, 'destroy'])->name('delete_buyer_order');
 
 
     });
 
+
+
+
+    
+    // seller Routes
+    Route::middleware(ensureUserisSeller::class)->group(function(){
+
+        Route::get('seller', [SellerController::class, 'index'])->name('seller_index');
+  
+
+
+    });
 
 
 

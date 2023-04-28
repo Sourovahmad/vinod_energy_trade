@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('location_of_supply_point')->nullable();
             $table->string('purchase_request_for')->nullable()->comment('electricity,naturalGas');
             $table->dateTime('deadline_offer_recive')->nullable();
-            $table->date('publication_date')->nullable();
+            $table->dateTime('publication_date')->nullable();
 
             // natural gas
             $table->string('natural_gas_point_of_distribution_consumtion_1')->nullable();
@@ -45,7 +45,7 @@ return new class extends Migration
             $table->string('contact_term_days')->nullable();
             $table->string('contact_term_months')->nullable();
             $table->string('contact_term_year')->nullable();
-            $table->date('start_of_supply')->nullable();
+            $table->dateTime('start_of_supply')->nullable();
             $table->string('total_quantity')->nullable();
             $table->string('cuenca_winter_mix')->nullable();
 

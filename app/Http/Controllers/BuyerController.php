@@ -6,6 +6,7 @@ use App\Models\buyer;
 use App\Http\Requests\StorebuyerRequest;
 use App\Http\Requests\UpdatebuyerRequest;
 use App\Models\buyerOrders;
+use Illuminate\Http\Request;
 
 class BuyerController extends Controller
 {
@@ -39,5 +40,33 @@ class BuyerController extends Controller
     public function add_electricity()
     {
         return view('buyer.add_electricity');
+    }
+
+    public function update_status(Request $request)
+    {
+        $request->validate([
+            'order_id' => 'required',
+            'status' => 'required'
+        ]);
+
+        $buyerOrder = buyerOrders::findOrFail($request->order_id);
+        $buyerOrder->status = $request->status;
+
+        $buyerOrder->save();
+
+        return back()->withSuccess('Bid order has been updated');
+
+
+    }
+
+    public function destroy(Request $request)
+    {
+        $request->validate([
+            'order_id' => 'required',
+        ]);
+
+        $buyerOrder = buyerOrders::findOrFail($request->order_id);
+        $buyerOrder->delete();
+        return back()->withSuccess('Bid order has been deleted');
     }
 }

@@ -27,7 +27,8 @@
             This is Home page <br>
 
 
-            navigate to buyer <a href="{{ route('buyer_index') }}">Click Me</a>
+            navigate to buyer <a href="{{ route('buyer_index') }}">Click Me</a> <br>
+            navigate to seller <a href="{{ route('seller_index') }}">Click Me</a> <br>
         </div>
 
         <div class="mt-4">
