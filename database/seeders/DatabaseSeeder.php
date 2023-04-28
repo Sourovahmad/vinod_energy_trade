@@ -19,12 +19,26 @@ class DatabaseSeeder extends Seeder
 
 
         DB::table('users')->insert([
-            'first_name' => 'sourov',
-            'last_name' => 'vinod',
-            'email' => 'sourov@gmail.com',
-            'phone' => '11223344',
-            'user_type' => 'buyer',
-            'password' => bcrypt(11223344)
+
+            [
+                'first_name' => 'sourov',
+                'last_name' => 'vinod',
+                'email' => 'sourov@gmail.com',
+                'phone' => '11223344',
+                'user_type' => 'buyer',
+                'password' => bcrypt(11223344)
+            ],
+
+            [
+                'first_name' => 'sourov',
+                'last_name' => 'vinod',
+                'email' => 'sourov2@gmail.com',
+                'phone' => '11223344',
+                'user_type' => 'seller',
+                'password' => bcrypt(11223344)
+
+            ]
+      
         ]);
 
     }

@@ -88,7 +88,8 @@ Route::middleware([
     Route::middleware(ensureUserisSeller::class)->group(function(){
 
         Route::get('seller', [SellerController::class, 'index'])->name('seller_index');
-  
+        Route::post('submit-bid', [SellerController::class, 'submit_bid'])->name('submit_bid');
+        
 
 
     });

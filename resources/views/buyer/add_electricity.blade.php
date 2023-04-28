@@ -5,25 +5,11 @@
     
 <div class="container mt-4" style="border: 1px solid #3e3e3d">
 
-    @if(session('success'))
-    <div class="alert alert-success">
-        {{ session('success') }}
-    </div>
-@endif
 
+{{-- session error messages --}}
 
-
-
-                @if($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
-
+@include('components.additional.errorMessages')
+{{-- end of the error messages --}}
 
 
 
