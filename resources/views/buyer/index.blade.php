@@ -127,9 +127,15 @@
           <div class="text-center col-2" style="font-size: 10px">
             <b>ID</b>
           </div>
+
+
           <div class="text-center col" style="font-size: 10px">
             <b>Name</b>
           </div>
+
+
+      
+
           <div class="text-center col-1" style="font-size: 10px">
             <b>Deadline</b>
           </div>
@@ -155,7 +161,6 @@
           <div class="align-items-center row" style="font-size: 11px">
             <div class="text-center col-2"> {{ $openOrder->code }}</div>
             <div class="text-center col">{{ $openOrder->supply_point_name }}</div>
-
             @php
             $requestTime = $openOrder->deadline_offer_recive;
               $formattedTime = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $requestTime)->format('F j, Y, g:i a');
@@ -257,21 +262,29 @@
                     <div class="shadow text-center card border-secondary">
                       <div class="row">
                         <div class="col-md-4">
-                          <img
-                            src="https://firebasestorage.googleapis.com/v0/b/conecto-energia.appspot.com/o/companyImages%2Ffiasa.jpeg?alt=media&amp;token=6dad9ee3-eab6-47b5-a13f-7b1e168fcff1"
-                            width="200"
-                            height="106"
-                            alt=""
-                          />
+
+
+                         @if(!is_null($openOrder->user->profile_photo_path))
+                                      <img
+                                      src="{{ asset('images/') . '/' . $openOrder->user->profile_photo_path }}"
+                                      width="200"
+                                      height="106"
+                                      alt="logo"
+                                    />
+          
+                          @endif
+
+
+
                         </div>
                         <div class="col-md-4">
                           <br />
                           <div class="justify-content-center row">
-                            <b>{{ $openOrder->user->first_name }}  {{ $openOrder->user->last_name }}</b>
+                            <b>{{ $openOrder->user->social_name }} </b>
                           </div>
                           <div class="col">
                             <div class="justify-content-center row">
-                              Planta R22 - Ácido Nítrico
+                              {{ $openOrder->supply_point_name}} - {{ $openOrder->location_of_supply_point }}
                               <svg
                                 class="MuiSvgIcon-root"
                                 focusable="false"
@@ -561,6 +574,15 @@
                                     </tr>
                                     <tr>
                                       <td>
+                                        <b>Total Quantity</b>
+                                      </td>
+                                      <td>{{ $openOrder->total_quantity }} </td>
+                                    </tr>
+
+
+
+                                    <tr>
+                                      <td>
                                         <b>Take or Pay</b>
                                       </td>
                                       <td>{{ $openOrder->take_or_pay_percentage }} %</td>
@@ -585,7 +607,7 @@
                                     </tr>
                                     <tr>
                                       <td>
-                                        <b>Comisión Conecto Energía</b>
+                                        <b>Comisión</b>
                                       </td>
                                       <td>{{ $openOrder->auction_commision }}</td>
                                     </tr>
@@ -769,21 +791,28 @@
                         <div class="shadow text-center card border-secondary">
                           <div class="row">
                             <div class="col-md-4">
+
+                              @if(!is_null($analysisOrder->user->profile_photo_path))
                               <img
-                                src="https://firebasestorage.googleapis.com/v0/b/conecto-energia.appspot.com/o/companyImages%2Ffiasa.jpeg?alt=media&amp;token=6dad9ee3-eab6-47b5-a13f-7b1e168fcff1"
-                                width="200"
-                                height="106"
-                                alt=""
-                              />
+                              src="{{ asset('images/') . '/' . $analysisOrder->user->profile_photo_path }}"
+                              width="200"
+                              height="106"
+                              alt="logo"
+                            />
+  
+                   @endif
+
+
                             </div>
                             <div class="col-md-4">
                               <br />
                               <div class="justify-content-center row">
-                                <b>{{ $analysisOrder->user->first_name }}  {{ $analysisOrder->user->last_name }}</b>
+                                <b>{{ $analysisOrder->user->social_name }} </b>
                               </div>
                               <div class="col">
                                 <div class="justify-content-center row">
-                                  Planta R22 - Ácido Nítrico
+                                
+         {{ $analysisOrder->supply_point_name}} - {{ $analysisOrder->location_of_supply_point }}
                                   <svg
                                     class="MuiSvgIcon-root"
                                     focusable="false"
@@ -1071,6 +1100,16 @@
                                           </td>
                                           <td>{{ $analysisOrder->exclusivity }}</td>
                                         </tr>
+
+                                        <tr>
+                                          <td>
+                                            <b>Total Quantity</b>
+                                          </td>
+                                          <td>{{ $analysisOrder->total_quantity }} </td>
+                                        </tr>
+    
+
+
                                         <tr>
                                           <td>
                                             <b>Take or Pay</b>
@@ -1097,7 +1136,7 @@
                                         </tr>
                                         <tr>
                                           <td>
-                                            <b>Comisión Conecto Energía</b>
+                                            <b>Comisión </b>
                                           </td>
                                           <td>{{ $analysisOrder->auction_commision }}</td>
                                         </tr>
@@ -1279,21 +1318,30 @@
                       <div class="shadow text-center card border-secondary">
                         <div class="row">
                           <div class="col-md-4">
+
+
+                            @if(!is_null($awardedOrder->user->profile_photo_path))
                             <img
-                              src="https://firebasestorage.googleapis.com/v0/b/conecto-energia.appspot.com/o/companyImages%2Ffiasa.jpeg?alt=media&amp;token=6dad9ee3-eab6-47b5-a13f-7b1e168fcff1"
-                              width="200"
-                              height="106"
-                              alt=""
-                            />
+                            src="{{ asset('images/') . '/' . $awardedOrder->user->profile_photo_path }}"
+                            width="200"
+                            height="106"
+                            alt="logo"
+                          />
+
+                @endif
+
+
+
                           </div>
                           <div class="col-md-4">
                             <br />
                             <div class="justify-content-center row">
-                              <b>{{ $awardedOrder->user->first_name }}  {{ $awardedOrder->user->last_name }}</b>
+
+                              <b>{{ $awardedOrder->user->social_name }} </b>
                             </div>
                             <div class="col">
                               <div class="justify-content-center row">
-                                Planta R22 - Ácido Nítrico
+                                {{ $awardedOrder->supply_point_name}} - {{ $awardedOrder->location_of_supply_point }}
                                 <svg
                                   class="MuiSvgIcon-root"
                                   focusable="false"
@@ -1583,6 +1631,16 @@
                                       </tr>
                                       <tr>
                                         <td>
+                                          <b>Total Quantity</b>
+                                        </td>
+                                        <td>{{ $awardedOrder->total_quantity }} </td>
+                                      </tr>
+  
+
+
+
+                                      <tr>
+                                        <td>
                                           <b>Take or Pay</b>
                                         </td>
                                         <td>{{ $awardedOrder->take_or_pay_percentage }} %</td>
@@ -1607,7 +1665,7 @@
                                       </tr>
                                       <tr>
                                         <td>
-                                          <b>Comisión Conecto Energía</b>
+                                          <b>Comisión </b>
                                         </td>
                                         <td>{{ $awardedOrder->auction_commision }}</td>
                                       </tr>
@@ -1785,21 +1843,26 @@
                       <div class="shadow text-center card border-secondary">
                         <div class="row">
                           <div class="col-md-4">
+
+                            @if(!is_null($desertOrder->user->profile_photo_path))
                             <img
-                              src="https://firebasestorage.googleapis.com/v0/b/conecto-energia.appspot.com/o/companyImages%2Ffiasa.jpeg?alt=media&amp;token=6dad9ee3-eab6-47b5-a13f-7b1e168fcff1"
-                              width="200"
-                              height="106"
-                              alt=""
-                            />
+                            src="{{ asset('images/') . '/' . $desertOrder->user->profile_photo_path }}"
+                            width="200"
+                            height="106"
+                            alt="logo"
+                          />
+
+                @endif
+
                           </div>
                           <div class="col-md-4">
                             <br />
                             <div class="justify-content-center row">
-                              <b>{{ $desertOrder->user->first_name }}  {{ $desertOrder->user->last_name }}</b>
+                              <b>{{ $desertOrder->user->social_name }} </b>
                             </div>
                             <div class="col">
                               <div class="justify-content-center row">
-                                Planta R22 - Ácido Nítrico
+                                {{ $desertOrder->supply_point_name}} - {{ $desertOrder->location_of_supply_point }}
                                 <svg
                                   class="MuiSvgIcon-root"
                                   focusable="false"
@@ -2087,6 +2150,14 @@
                                         </td>
                                         <td>{{ $desertOrder->exclusivity }}</td>
                                       </tr>
+
+
+                                      <tr>
+                                        <td>
+                                          <b>Total Quantity</b>
+                                        </td>
+                                        <td>{{ $desertOrder->total_quantity }} </td>
+                                      </tr>
                                       <tr>
                                         <td>
                                           <b>Take or Pay</b>
@@ -2113,7 +2184,7 @@
                                       </tr>
                                       <tr>
                                         <td>
-                                          <b>Comisión Conecto Energía</b>
+                                          <b>Comisión </b>
                                         </td>
                                         <td>{{ $desertOrder->auction_commision }}</td>
                                       </tr>

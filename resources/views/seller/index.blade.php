@@ -115,7 +115,7 @@
                                       </div>
                                       <div class="col">
                                         <div class="justify-content-center row">
-                                          Planta R22 - Ácido Nítrico
+                                          {{ $openOrder->supply_point_name}} - {{ $openOrder->location_of_supply_point }}
                                           <svg
                                             class="MuiSvgIcon-root"
                                             focusable="false"
@@ -429,7 +429,7 @@
                                                 </tr>
                                                 <tr>
                                                   <td>
-                                                    <b>Comisión Conecto Energía</b>
+                                                    <b>Comisión</b>
                                                   </td>
                                                   <td>{{ $openOrder->auction_commision }}</td>
                                                 </tr>
@@ -1050,6 +1050,14 @@
                                         </td>
                                         <td>{{ $openOrder->exclusivity }}</td>
                                       </tr>
+
+
+                                      <tr>
+                                        <td>
+                                          <b>Total Quantity</b>
+                                        </td>
+                                        <td>{{ $openOrder->total_quantity }} %</td>
+                                      </tr>
                                       <tr>
                                         <td>
                                           <b>Take or Pay</b>
@@ -1076,7 +1084,7 @@
                                       </tr>
                                       <tr>
                                         <td>
-                                          <b>Comisión Conecto Energía</b>
+                                          <b>Comisión </b>
                                         </td>
                                         <td>{{ $openOrder->auction_commision }}</td>
                                       </tr>

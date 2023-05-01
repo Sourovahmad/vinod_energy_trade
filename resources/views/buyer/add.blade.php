@@ -16,14 +16,12 @@
    
     <div class="header border-bottom mt-2">
       <p>   Add the Natural Gas bid </p>
-
-
        
       </div>
 
 
 
-<form action="{{ route('bidAdd') }}" method="post" enctype="multipart/form-data">  
+<form action="{{ route('bidAdd') }}" method="post" enctype="multipart/form-data" id="natural_bid_add_form">  
 
     @csrf
 
@@ -38,7 +36,7 @@
                     <p>Supply Point Name</p>
                   </div>
                   <div class="col-3">
-                    <input type="text" class="select py-2" name="supply_point_name" />
+                    <input type="text" class="select py-2" name="supply_point_name" required  id="input_supply_point_name"/>
                   </div>
                 </div>
               </div>
@@ -51,7 +49,7 @@
                     <p>Geographic Location (Province location)</p>
                   </div>
                   <div class="col-3">
-                    <input type="text" class="select py-2" name="location_of_supply_point" />
+                    <input type="text" class="select py-2" name="location_of_supply_point" id="input_location" />
                   </div>
                 </div>
               </div>
@@ -180,11 +178,15 @@
           </div>
 
 
-          <div class="form-group mt-3">
+          <div class="form-group mt-3 mb-4">
             <div class="row">
+
+
               <div class="col-4">
                 <p>Natural Gas Tariff POINT OF CONSUMPTION 1</p>
               </div>
+
+
               <div class="col-3">
                 <select class="select" name="natural_gas_tarrif_point_of_consumption_1">
                   <option value="SGP3">SGP3</option>
@@ -193,23 +195,24 @@
                   <option value="GU">GU</option>
                 </select>
               </div>
-            </div>
-          </div>
 
 
-
-          <span class="h6 p-2 mb-3">If you have selected SGG or GU: </span> <br>
-
-
-          
-          <div class="form-group mt-2">
-            <div class="row">
               <div class="col-4">
-                <p>RESERVE (dam3/day) </p>
+
+                <div class="row">
+                  <div class="col-6">
+                    <p>RESERVE (dam3/day) </p>
+                  </div>
+                  <div class="col-3">
+                    <input type="text" class="select py-2" name="reserve" />
+                  </div>
+                </div>
+
+
               </div>
-              <div class="col-3">
-                <input type="text" class="select py-2" name="reserve" />
-              </div>
+
+
+
             </div>
           </div>
 
@@ -218,11 +221,13 @@
 
 
 
-          <span class="border-bottom  mb-3 mt-4 p-2"> Consumption Curve POINT OF CONSUMPTION 1 </span>
+
+
+          <span class="border-bottom  mb-4 mt-4 p-2"> Consumption Curve POINT OF CONSUMPTION 1 </span>
           
 
           
-          <div class="form-group mt-2">
+          <div class="form-group mt-3">
             <div class="row">
               <div class="col-4">
                 <p>January </p>
@@ -362,8 +367,10 @@
 
 
 
-
-          <span class="border-bottom">Contract Conditions:</span>
+        <div class="mt-4 mb-4">
+          <span class="border-bottom ">Contract Conditions:</span>
+        </div>
+  
           <div class="form-group mt-4">
             <div class="row">
               <div class="col-4">
@@ -390,27 +397,22 @@
 
 
 
-          <div class="form-group mt-2">
-            <div class="row">
-              <div class="col-4">
-                <p>Total Quantity:</p>
-              </div>
-              <div class="col-3">
-                <input type="number" class="select py-2" name="total_quantity" />
-              </div>
-            </div>
+    
+
+
+ 
+          <div class="mt-4 mb-4">
+            <span class="border-bottom ">Cuenca Winter Mix:</span>
           </div>
 
 
-
-          <span class="border-bottom">Cuenca Winter Mix:</span>
           <div class="form-group mt-3">
             <div class="row">
               <div class="col-4">
                 <p>NQN:</p>
               </div>
               <div class="col-3">
-                <input type="number" class="select py-2" max="100" name="winter_mqn" />
+                <input type="number" class="select py-2" max="100" name="winter_mqn" id="summer_1" />
               </div>
             </div>
           </div>
@@ -420,7 +422,7 @@
                 <p>PTO:</p>
               </div>
               <div class="col-3">
-                <input type="number" class="select py-2" name="winter_pto"  />
+                <input type="number" class="select py-2" name="winter_pto" id="summer_2"  />
               </div>
             </div>
           </div>
@@ -430,7 +432,7 @@
                 <p>SCR:</p>
               </div>
               <div class="col-3">
-                <input type="number" class="select py-2" max="100" name="winter_scr" />
+                <input type="number" class="select py-2" max="100" name="winter_scr" id="summer_3" />
               </div>
             </div>
           </div>
@@ -440,7 +442,7 @@
                 <p>CHU:</p>
               </div>
               <div class="col-3">
-                <input type="number" class="select py-2"  max="100" name="winter_chu" />
+                <input type="number" class="select py-2"  max="100" name="winter_chu" id="summer_4" />
               </div>
             </div>
           </div>
@@ -450,18 +452,25 @@
                 <p>NOA:</p>
               </div>
               <div class="col-3">
-                <input type="number" class="select py-2"  max="100" name="winter_noa" />
+                <input type="number" class="select py-2"  max="100" name="winter_noa" id="summer_5" />
               </div>
             </div>
           </div>
-          <span class="border-bottom">Cuencas Summer Mix: </span>
+
+          
+          <div class="mt-4 mb-4">
+            <span class="border-bottom ">Cuencas Summer Mix</span>
+          </div>
+
+
+
           <div class="form-group mt-3">
             <div class="row">
               <div class="col-4">
                 <p>NQN:</p>
               </div>
               <div class="col-3">
-                <input type="number" class="select py-2"   max="100" name="summer_mqn" />
+                <input type="number" class="select py-2"   max="100" name="summer_mqn" id="winter_1" />
               </div>
             </div>
           </div>
@@ -471,7 +480,7 @@
                 <p>PTO:</p>
               </div>
               <div class="col-3">
-                <input type="number" class="select py-2" name="summer_pto" />
+                <input type="number" class="select py-2" name="summer_pto" id="winter_2" />
               </div>
             </div>
           </div>
@@ -481,7 +490,7 @@
                 <p>SCR:</p>
               </div>
               <div class="col-3">
-                <input type="number" class="select py-2"  max="100" name="summer_scr" />
+                <input type="number" class="select py-2"  max="100" name="summer_scr" id="winter_3" />
               </div>
             </div>
           </div>
@@ -491,7 +500,7 @@
                 <p>CHU:</p>
               </div>
               <div class="col-3">
-                <input type="number" class="select py-2"  max="100" name="summer_chu" />
+                <input type="number" class="select py-2"  max="100" name="summer_chu" id="winter_4" />
               </div>
             </div>
           </div>
@@ -501,7 +510,7 @@
                 <p>NOA:</p>
               </div>
               <div class="col-3">
-                <input type="number" class="select py-2"  max="100" name="summer_noa" />
+                <input type="number" class="select py-2"  max="100" name="summer_noa" id="winter_5" />
               </div>
             </div>
           </div>
@@ -740,7 +749,7 @@
           <div class="flex items-center justify-end mt-4">
            
 
-            <x-button class="ml-4" type="submit" style="background:rgb(18, 21, 179); colour:white">
+            <x-button class="ml-4" type="button" style="background:rgb(18, 21, 179); colour:white" id="submitButton">
                 {{ __('Add') }}
             </x-button>
         </div>
@@ -757,6 +766,80 @@
 
 
 </div>
+
+
+
+<script>
+document.getElementById("submitButton").addEventListener("click", function() {
+
+
+
+  const nameIinput = elementFinder('input_supply_point_name').value;
+
+  if (nameIinput == ''){
+    alert("please provide the suply point name")
+    return false
+  }
+
+
+  const locationIinput = elementFinder('input_location').value;
+
+if (locationIinput == ''){
+  alert("please provide the Geographic Location")
+  return false
+}
+
+
+  const summer_1 = parseInt(elementFinder('summer_1').value);
+  const summer_2 = parseInt(elementFinder('summer_2').value);
+  const summer_3 = parseInt(elementFinder('summer_3').value);
+  const summer_4 = parseInt(elementFinder('summer_4').value);
+  const summer_5 = parseInt(elementFinder('summer_5').value);
+
+
+  const sumOfTheSummer = summer_1 + summer_2 + summer_3 + summer_4 + summer_5;
+
+  if (sumOfTheSummer == 100) {
+    console.log("numberrs are equal to 100");
+  }else {
+    alert("value of Winter NQN, PTO, SCR,CHU and NOA are not equal to 100")
+    return false 
+  }
+
+
+  const winter_1 = parseInt(elementFinder('winter_1').value);
+  const winter_2 = parseInt(elementFinder('winter_2').value);
+  const winter_3 = parseInt(elementFinder('winter_3').value);
+  const winter_4 = parseInt(elementFinder('winter_4').value);
+  const winter_5 = parseInt(elementFinder('winter_5').value);
+
+
+
+  const sumOfTheWinter = winter_1 + winter_2 + winter_3 + winter_4 + winter_5;
+
+  if (sumOfTheWinter == 100) {
+    console.log("numberrs are equal to 100");
+  }else {
+    alert("value of Summer NQN, PTO, SCR,CHU and NOA are not equal to 100")
+    return false 
+  }
+
+
+
+  elementFinder("natural_bid_add_form").submit();
+ 
+
+});
+
+function elementFinder(id) {
+  return document.getElementById(id)
+}
+
+
+
+
+
+</script>
 
 
 @endsection

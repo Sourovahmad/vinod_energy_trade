@@ -105,7 +105,7 @@ class authController extends Controller
         }
 
         $user->save();
-        return redirect()->route('buyer_create');
+        return redirect()->route('user_home');
 
         
     }

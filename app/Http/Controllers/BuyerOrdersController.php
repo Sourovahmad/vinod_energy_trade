@@ -51,6 +51,10 @@ class BuyerOrdersController extends Controller
         $newBuyerOrder->natural_gas_tarrif_point_of_consumption_1 = $request->natural_gas_tarrif_point_of_consumption_1;
         $newBuyerOrder->reserve = $request->reserve;
         $newBuyerOrder->consumption_curve_point_1 = $request->consumption_curve_point_1;
+
+
+
+
         $newBuyerOrder->expected_january = $request->expected_january;
         $newBuyerOrder->expected_february = $request->expected_february;
         $newBuyerOrder->expected_march = $request->expected_march;
@@ -63,6 +67,14 @@ class BuyerOrdersController extends Controller
         $newBuyerOrder->expected_october = $request->expected_october;
         $newBuyerOrder->expected_november = $request->expected_november;
         $newBuyerOrder->expected_december = $request->expected_december;
+
+
+
+
+        $newBuyerOrder->total_quantity = intval($request->expected_january) + intval($request->expected_february) + intval($request->expected_march) + intval($request->expected_april) + intval($request->expected_june) + intval($request->expected_july) + intval($request->expected_august) + intval ($request->expected_september) + intval($request->expected_october) + intval($request->expected_november) + intval($request->expected_december);
+
+
+
         $newBuyerOrder->contact_term_days = $request->contact_term_days;
         $newBuyerOrder->contact_term_months = $request->contact_term_months;
         $newBuyerOrder->contact_term_year = $request->contact_term_year;
@@ -107,7 +119,7 @@ class BuyerOrdersController extends Controller
 
         // generate Code
 
-        $firstThreeLetterOfName = strtoupper(substr(auth()->user()->last_name, 0, 3));
+        $firstThreeLetterOfName = strtoupper(substr(auth()->user()->social_name, 0, 3));
 
         $lastText = '';
         
