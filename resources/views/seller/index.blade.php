@@ -1274,6 +1274,9 @@
 
         </div>
 
+
+
+
         @forelse ($ordersUnderAnalysis as $analysisOrder)
             
         
@@ -1697,7 +1700,490 @@
 
                 {{-- Analysis modal ends here --}}
 
+
            
+</div>
+            
+          </div>
+        </div>
+
+
+        @empty
+
+
+
+        <div
+        class="shadow card border-primary"
+        style="padding: 5px; width: 100%; cursor: pointer"
+      >
+        <div class="align-items-center row text-center" style="font-size: 11px">
+            <div class="col">
+              No Data Available
+            </div>
+        </div>
+      </div>
+
+
+        @endforelse
+
+
+
+      </div>
+      {{-- analysis ends from here --}}
+
+
+
+
+
+
+      {{-- Awarded section start here --}}
+
+      <div class="justify-content-center row">
+        <h5 class="text-success text-center mb-3">
+          <br />
+          Awarded
+        </h5>
+        <div class="row" style="width: 100%">
+          <div class="text-center col-2" style="font-size: 10px">
+            <b>ID</b>
+          </div>
+          <div class="text-center col" style="font-size: 10px">
+            <b>Name</b>
+          </div>
+          <div class="text-center col-1" style="font-size: 10px">
+            <b>Deadline</b>
+          </div>
+         
+        
+          <div class="text-center col" style="font-size: 10px">
+            <b>Action</b>
+          </div>
+
+
+        </div>
+
+        @forelse ($ordersAwarded as $awardedOrder)
+            
+        
+            
+        
+        <div
+          class="shadow card border-primary"
+          style="padding: 5px; width: 100%; cursor: pointer"
+        >
+          <div class="align-items-center row" style="font-size: 11px">
+            <div class="text-center col-2"> {{ $awardedOrder->code }}</div>
+            <div class="text-center col">{{ $awardedOrder->supply_point_name }}</div>
+
+            @php
+            $requestTimeAwarded = $awardedOrder->deadline_offer_recive;
+              $formattedTimeAwarded = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $requestTimeAwarded)->format('F j, Y, g:i a');
+            @endphp
+            <div class="text-center col-1">{{  $formattedTimeAwarded }} </div>
+
+
+
+            
+            <div class="text-center col" >
+              <div class="btn-group">
+             
+                <button type="button" class="btn btn-success btn-sm m-1" data-bs-toggle="modal" data-bs-target="#modal_view{{ $awardedOrder->id }}">view</button>
+             
+              </div>
+
+
+              {{-- Awarded modal start here --}}
+
+              <div class="modal fade" id="modal_view{{ $awardedOrder->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">{{ $awardedOrder->supply_point_name }} </h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="shadow text-center card border-secondary">
+                        <div class="row">
+                          <div class="col-md-4">
+
+
+                            @if(!is_null($awardedOrder->user->profile_photo_path))
+                            <img
+                            src="{{ asset('images/') . '/' . $awardedOrder->user->profile_photo_path }}"
+                            width="200"
+                            height="106"
+                            alt="logo"
+                          />
+
+                @endif
+
+
+
+                          </div>
+                          <div class="col-md-4">
+                            <br />
+                            <div class="justify-content-center row">
+
+                              <b>{{ $awardedOrder->user->social_name }} </b>
+                            </div>
+                            <div class="col">
+                              <div class="justify-content-center row">
+                                {{ $awardedOrder->supply_point_name}} - {{ $awardedOrder->location_of_supply_point }}
+                                <svg
+                                  class="MuiSvgIcon-root"
+                                  focusable="false"
+                                  viewBox="0 0 24 24"
+                                  aria-hidden="true"
+                                >
+                                  <path
+                                    d="M12 4c4.41 0 8 3.59 8 8s-3.59 8-8 8-8-3.59-8-8 3.59-8 8-8m0-2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 13l-4-4h8z"
+                                  ></path>
+                                </svg>
+                              </div>
+                              <div class="justify-content-center collapse row">
+                                Ruta Nacional 7 km. 703 y Ruta Provincial 2 <br />
+                                Villa Mercedes San Luis <br />
+                                <b>Ecogas Cuyo</b>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-4">
+                            <br />
+                            ID Pedido:{{ $awardedOrder->code }}<br />
+                            <a class="text text-center text"><b>{{ $awardedOrder->purchase_request_for }}</b></a
+                            ><br />
+                            <b class="text-success">Abierto</b>
+                          </div>
+                        </div>
+                        <div class="card-body">
+                          <div class="shadow p-3 mb-5 bg-white rounded card border-success">
+                            <div class="justify-content-center row">
+                              <div class="col-4">
+                                
+                                <div class="justify-content-center row">
+                                  <h6 class="text-success">
+                                    <b>Licitación </b>
+                                    <svg
+                                      class="MuiSvgIcon-root text-success"
+                                      focusable="false"
+                                      viewBox="0 0 24 24"
+                                      aria-hidden="true"
+                                      style="font-size: 24px"
+                                    >
+                                      <path
+                                        d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10zm-8-7L4 6h16l-8 5z"
+                                      ></path>
+                                    </svg>
+                                  </h6>
+                                </div>
+                              </div>
+                              <div class="col-6">
+                                <div class="justify-content-center row">
+                                  @php
+                                  $requestTime_publication_awarded = $awardedOrder->deadline_offer_recive;
+                                  $closeTime_publication_awarded = $awardedOrder->deadline_offer_recive;
+                                    $formattedTime_publication_awarded = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $requestTime_publication_awarded)->format('F j, Y, g:i a');
+                                    $endTime_publication_awarded = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $closeTime_publication_awarded)->format('F j, Y, g:i a');
+                                  @endphp
+                                  <h6>Abre el: {{ $formattedTime_publication_awarded }}  </h6>
+                                </div>
+                                <div class="justify-content-center row">
+                                  <h6>Cierra el: {{ $endTime_publication_awarded }}</h6>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="justify-content-center row">
+                              <a class="text-secondary"
+                                >Se aceptan Ofertas con distinto plazo de pago</a
+                              >
+                              <a class="text-success">
+                                <svg
+                                  class="MuiSvgIcon-root"
+                                  focusable="false"
+                                  viewBox="0 0 24 24"
+                                  aria-hidden="true"
+                                >
+                                  <path
+                                    d="M16.59 7.58L10 14.17l-3.59-3.58L5 12l5 5 8-8zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+                                  ></path>
+                                </svg>
+                              </a>
+                            </div>
+                            <hr />
+                            <div class="justify-content-center row">
+                              <div class="col-sm-6">
+                                <div role="alert" class="fade alert alert-success show">
+                                  <div class="alert-heading h4">
+            
+                                    @php
+                                    $startTime_publication_awarded = \Carbon\Carbon::parse(now());
+                                    $endTime_publication_awarded = \Carbon\Carbon::parse($awardedOrder->deadline_offer_recive);
+        
+                                    $different_publication_awarded = $endTime_publication_awarded->diff($startTime_publication_awarded);
+                                  @endphp
+        
+        
+                                <span>{{ $different_publication_awarded->days }} days  {{ $different_publication_awarded->h }}  hours</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          
+                          <br />
+                          
+                          <br />
+                          <div class="shadow text-secondary card">
+                            <div
+                              data-open="false"
+                              onclick="toggleBody(this)"
+                              class="card-title h5"
+                            >
+                              <br />
+                              <div class="justify-content-center text-secondary row">
+                                <div class="col">
+                                  <div class="justify-content-center row">
+                                    <h5>Curva de Demanda</h5>
+                                    &nbsp;
+                                    <svg
+                                      class="MuiSvgIcon-root"
+                                      focusable="false"
+                                      viewBox="0 0 24 24"
+                                      aria-hidden="true"
+                                    >
+                                      <path
+                                        d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7zm-1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+                                      ></path>
+                                    </svg>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="collapse card-body">
+                              <div class="justify-content-center row">
+                                <div class="col">
+                                  <table class="text-secondary text-center table table-sm">
+                                    <thead>
+                                      <tr>
+                                        <th>Mes</th>
+                                        <th>Consumo [dam3/mes]</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>Mayo 2023</td>
+                                        <td>{{ $awardedOrder->expected_may }}</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Junio 2023</td>
+                                        <td>{{ $awardedOrder->expected_june }}</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Julio 2023</td>
+                                        <td>{{ $awardedOrder->expected_july }}</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Agosto 2023</td>
+                                        <td>{{ $awardedOrder->expected_august }}</td>
+            
+                                      </tr>
+                                      <tr>
+                                        <td>Septiembre 2023</td>
+                                        <td>{{ $awardedOrder->expected_september }}</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Octubre 2023</td>
+                                        <td>{{ $awardedOrder->expected_october }}</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Noviembre 2023</td>
+                                        <td>{{ $awardedOrder->expected_november }}</td>
+            
+                                      </tr>
+                                      <tr>
+                                        <td>Diciembre 2023</td>
+                                        <td>{{ $awardedOrder->expected_december }}</td>
+            
+                                      </tr>
+                                      <tr>
+                                        <td>Enero 2024</td>
+                                        <td>{{ $awardedOrder->expected_january }}</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Febrero 2024</td>
+                                        <td>{{ $awardedOrder->expected_february }}</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Marzo 2024</td>
+                                        <td>{{ $awardedOrder->expected_march }}</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Abril 2024</td>
+                                        <td>{{ $awardedOrder->expected_april }}</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                              
+                            </div>
+                          </div>
+                          <br />
+                          <div class="shadow text-secondary card">
+                            <div
+                              data-open="false"
+                              onclick="toggleBody(this)"
+                              class="card-title h5"
+                            >
+                              <br />
+                              <div class="justify-content-center text-secondary row">
+                                <div class="col">
+                                  <div class="justify-content-center row">
+                                    <h5>Condiciones Comerciales</h5>
+                                    &nbsp;
+                                    <svg
+                                      class="MuiSvgIcon-root"
+                                      focusable="false"
+                                      viewBox="0 0 24 24"
+                                      aria-hidden="true"
+                                    >
+                                      <path
+                                        d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7zm-1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+                                      ></path>
+                                    </svg>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="collapse card-body">
+                              <div class="justify-content-md-center row">
+                                <div class="col-lg-10 col-md-12 col-sm-10">
+                                  <table
+                                    class="text-center text-secondary table table-sm table-hover"
+                                  >
+                                    <tbody class="text-secondary">
+                                      <tr>
+                                        <td><b>Producto</b></td>
+                                        <td>{{ $awardedOrder->supply_point_name }}</td>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          <b>Plazo del Contrato</b>
+                                        </td>
+                                      
+                                        <td>{{ $awardedOrder->contact_term_days }} days</td>
+                                      </tr>
+            
+                                      @if(!is_null($awardedOrder->start_of_supply))
+                                        
+                                      
+                                      <tr>
+                                        <td>
+                                          @php
+                                          $formatedSupplyStartTimeAward = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $awardedOrder->start_of_supply)->format('F j, Y, g:i a');
+                                        @endphp
+                                          <b>Inicio de Suministro</b>
+                                        </td>
+                                        <td>{{ $formatedSupplyStartTimeAward }}t</td>
+                                      </tr>
+            
+            
+                                      @endif
+                                    
+                                      
+                                      <tr>
+                                        <td>
+                                          <b>Tipo de Suministro</b>
+                                        </td>
+                                        <td> {{ $awardedOrder->type_of_supply }} </td>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          <b>
+                                            Exclusividad
+                                            <svg
+                                              class="MuiSvgIcon-root"
+                                              focusable="false"
+                                              viewBox="0 0 24 24"
+                                              aria-hidden="true"
+                                            >
+                                              <path
+                                                d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+                                              ></path>
+                                            </svg>
+                                          </b>
+                                        </td>
+                                        <td>{{ $awardedOrder->exclusivity }}</td>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          <b>Total Quantity</b>
+                                        </td>
+                                        <td>{{ $awardedOrder->total_quantity }} </td>
+                                      </tr>
+  
+
+
+
+                                      <tr>
+                                        <td>
+                                          <b>Take or Pay</b>
+                                        </td>
+                                        <td>{{ $awardedOrder->take_or_pay_percentage }} %</td>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          <b>Deliver or Pay</b>
+                                        </td>
+                                        <td>{{ $awardedOrder->delivery_or_pay_price }} %</td>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          <b>Plazo de pago</b>
+                                        </td>
+                                        <td>{{ $awardedOrder->payment_term }} días</td>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          <b>Tasa de Cambio</b>
+                                        </td>
+                                        <td>{{ $awardedOrder->exchange_rate }}</td>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          <b>Comisión </b>
+                                        </td>
+                                        <td>{{ $awardedOrder->auction_commision }}</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                              <div class="justify-content-center row">
+                              
+                              </div>
+                            </div>
+                          </div>
+                          <br />
+                          <div class="shadow text-secondary card">
+                            
+                            
+                          </div>
+                          <br />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+         
 </div>
             
           </div>
@@ -1727,7 +2213,491 @@
       </div>
 
 
-      {{-- analysis ends from here --}}
+      {{-- Awarded section end here --}}
+
+
+
+
+      <div class="justify-content-center row">
+        <h5 class="text-danger text-center mb-3">
+          <br />
+          Deserts
+        </h5>
+        <div class="row" style="width: 100%">
+          <div class="text-center col-2" style="font-size: 10px">
+            <b>ID</b>
+          </div>
+          <div class="text-center col" style="font-size: 10px">
+            <b>Name</b>
+          </div>
+          <div class="text-center col-1" style="font-size: 10px">
+            <b>Deadline</b>
+          </div>
+         
+        
+          <div class="text-center col" style="font-size: 10px">
+            <b>Action</b>
+          </div>
+
+
+        </div>
+
+        @forelse ($ordersDesert as $desertOrder)
+            
+        
+            
+        
+        <div
+          class="shadow card border-primary"
+          style="padding: 5px; width: 100%; cursor: pointer"
+        >
+          <div class="align-items-center row" style="font-size: 11px">
+            <div class="text-center col-2"> {{ $desertOrder->code }}</div>
+            <div class="text-center col">{{ $desertOrder->supply_point_name }}</div>
+
+            @php
+            $requestTimeDesert = $desertOrder->deadline_offer_recive;
+              $formattedTimeDesert = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $requestTimeDesert)->format('F j, Y, g:i a');
+            @endphp
+            <div class="text-center col-1">{{  $formattedTimeDesert }} </div>
+
+
+            <div class="text-center col" >
+              <div class="btn-group">
+             
+                <button type="button" class="btn btn-success btn-sm m-1" data-bs-toggle="modal" data-bs-target="#modal_view{{ $desertOrder->id }}">view</button>
+               
+              </div>
+
+
+
+
+              {{-- desert modal start here --}}
+
+              <div class="modal fade" id="modal_view{{ $desertOrder->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">{{ $desertOrder->supply_point_name }} </h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="shadow text-center card border-secondary">
+                        <div class="row">
+                          <div class="col-md-4">
+
+                            @if(!is_null($desertOrder->user->profile_photo_path))
+                            <img
+                            src="{{ asset('images/') . '/' . $desertOrder->user->profile_photo_path }}"
+                            width="200"
+                            height="106"
+                            alt="logo"
+                          />
+
+                @endif
+
+                          </div>
+                          <div class="col-md-4">
+                            <br />
+                            <div class="justify-content-center row">
+                              <b>{{ $desertOrder->user->social_name }} </b>
+                            </div>
+                            <div class="col">
+                              <div class="justify-content-center row">
+                                {{ $desertOrder->supply_point_name}} - {{ $desertOrder->location_of_supply_point }}
+                                <svg
+                                  class="MuiSvgIcon-root"
+                                  focusable="false"
+                                  viewBox="0 0 24 24"
+                                  aria-hidden="true"
+                                >
+                                  <path
+                                    d="M12 4c4.41 0 8 3.59 8 8s-3.59 8-8 8-8-3.59-8-8 3.59-8 8-8m0-2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 13l-4-4h8z"
+                                  ></path>
+                                </svg>
+                              </div>
+                              <div class="justify-content-center collapse row">
+                                Ruta Nacional 7 km. 703 y Ruta Provincial 2 <br />
+                                Villa Mercedes San Luis <br />
+                                <b>Ecogas Cuyo</b>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-4">
+                            <br />
+                            ID Pedido:{{ $desertOrder->code }}<br />
+                            <a class="text text-center text"><b>{{ $desertOrder->purchase_request_for }}</b></a
+                            ><br />
+                            <b class="text-success">Abierto</b>
+                          </div>
+                        </div>
+                        <div class="card-body">
+                          <div class="shadow p-3 mb-5 bg-white rounded card border-success">
+                            <div class="justify-content-center row">
+                              <div class="col-4">
+                                
+                                <div class="justify-content-center row">
+                                  <h6 class="text-success">
+                                    <b>Licitación </b>
+                                    <svg
+                                      class="MuiSvgIcon-root text-success"
+                                      focusable="false"
+                                      viewBox="0 0 24 24"
+                                      aria-hidden="true"
+                                      style="font-size: 24px"
+                                    >
+                                      <path
+                                        d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10zm-8-7L4 6h16l-8 5z"
+                                      ></path>
+                                    </svg>
+                                  </h6>
+                                </div>
+                              </div>
+                              <div class="col-6">
+                                <div class="justify-content-center row">
+                                  @php
+                                  $requestTime_publication_desert = $desertOrder->publication_date;
+                                  $closeTime_publication_desert = $desertOrder->deadline_offer_recive;
+                                    $formattedTime_publication_desert = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $requestTime_publication_desert)->format('F j, Y, g:i a');
+                                    $endTime_publication_desert = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $closeTime_publication_desert)->format('F j, Y, g:i a');
+                                  @endphp
+                                  <h6>Abre el: {{ $formattedTime_publication_desert }}  </h6>
+                                </div>
+                                <div class="justify-content-center row">
+                                  <h6>Cierra el: {{ $endTime_publication_desert }}</h6>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="justify-content-center row">
+                              <a class="text-secondary"
+                                >Se aceptan Ofertas con distinto plazo de pago</a
+                              >
+                              <a class="text-success">
+                                <svg
+                                  class="MuiSvgIcon-root"
+                                  focusable="false"
+                                  viewBox="0 0 24 24"
+                                  aria-hidden="true"
+                                >
+                                  <path
+                                    d="M16.59 7.58L10 14.17l-3.59-3.58L5 12l5 5 8-8zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+                                  ></path>
+                                </svg>
+                              </a>
+                            </div>
+                            <hr />
+                            <div class="justify-content-center row">
+                              <div class="col-sm-6">
+                                <div role="alert" class="fade alert alert-success show">
+                                  <div class="alert-heading h4">
+            
+                                      @php
+                                        $startTimePublicationDesertABBS = \Carbon\Carbon::parse(now());
+                                        $endTimePublicationDesertSBBS = \Carbon\Carbon::parse($desertOrder->deadline_offer_recive);
+            
+                                        $differentPublicationDesserABBS = $endTimePublicationDesertSBBS->diff($startTimePublicationDesertABBS);
+                                      @endphp
+            
+            
+                                    <span>{{ $differentPublicationDesserABBS->days }} days  {{ $differentPublicationDesserABBS->h }}  hours</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          
+                          <br />
+                          
+                          <br />
+                          <div class="shadow text-secondary card">
+                            <div
+                              data-open="false"
+                              onclick="toggleBody(this)"
+                              class="card-title h5"
+                            >
+                              <br />
+                              <div class="justify-content-center text-secondary row">
+                                <div class="col">
+                                  <div class="justify-content-center row">
+                                    <h5>Curva de Demanda</h5>
+                                    &nbsp;
+                                    <svg
+                                      class="MuiSvgIcon-root"
+                                      focusable="false"
+                                      viewBox="0 0 24 24"
+                                      aria-hidden="true"
+                                    >
+                                      <path
+                                        d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7zm-1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+                                      ></path>
+                                    </svg>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="collapse card-body">
+                              <div class="justify-content-center row">
+                                <div class="col">
+                                  <table class="text-secondary text-center table table-sm">
+                                    <thead>
+                                      <tr>
+                                        <th>Mes</th>
+                                        <th>Consumo [dam3/mes]</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>Mayo 2023</td>
+                                        <td>{{ $desertOrder->expected_may }}</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Junio 2023</td>
+                                        <td>{{ $desertOrder->expected_june }}</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Julio 2023</td>
+                                        <td>{{ $desertOrder->expected_july }}</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Agosto 2023</td>
+                                        <td>{{ $desertOrder->expected_august }}</td>
+            
+                                      </tr>
+                                      <tr>
+                                        <td>Septiembre 2023</td>
+                                        <td>{{ $desertOrder->expected_september }}</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Octubre 2023</td>
+                                        <td>{{ $desertOrder->expected_october }}</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Noviembre 2023</td>
+                                        <td>{{ $desertOrder->expected_november }}</td>
+            
+                                      </tr>
+                                      <tr>
+                                        <td>Diciembre 2023</td>
+                                        <td>{{ $desertOrder->expected_december }}</td>
+            
+                                      </tr>
+                                      <tr>
+                                        <td>Enero 2024</td>
+                                        <td>{{ $desertOrder->expected_january }}</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Febrero 2024</td>
+                                        <td>{{ $desertOrder->expected_february }}</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Marzo 2024</td>
+                                        <td>{{ $desertOrder->expected_march }}</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Abril 2024</td>
+                                        <td>{{ $desertOrder->expected_april }}</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                              
+                            </div>
+                          </div>
+                          <br />
+                          <div class="shadow text-secondary card">
+                            <div
+                              data-open="false"
+                              onclick="toggleBody(this)"
+                              class="card-title h5"
+                            >
+                              <br />
+                              <div class="justify-content-center text-secondary row">
+                                <div class="col">
+                                  <div class="justify-content-center row">
+                                    <h5>Condiciones Comerciales</h5>
+                                    &nbsp;
+                                    <svg
+                                      class="MuiSvgIcon-root"
+                                      focusable="false"
+                                      viewBox="0 0 24 24"
+                                      aria-hidden="true"
+                                    >
+                                      <path
+                                        d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7zm-1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+                                      ></path>
+                                    </svg>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="collapse card-body">
+                              <div class="justify-content-md-center row">
+                                <div class="col-lg-10 col-md-12 col-sm-10">
+                                  <table
+                                    class="text-center text-secondary table table-sm table-hover"
+                                  >
+                                    <tbody class="text-secondary">
+                                      <tr>
+                                        <td><b>Producto</b></td>
+                                        <td>{{ $desertOrder->supply_point_name }}</td>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          <b>Plazo del Contrato</b>
+                                        </td>
+                                      
+                                        <td>{{ $desertOrder->contact_term_days }} days</td>
+                                      </tr>
+            
+                                      @if(!is_null($desertOrder->start_of_supply))
+                                        
+                                      
+                                      <tr>
+                                        <td>
+                                          @php
+                                          $formatedSupplyStartTimeDesert = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $desertOrder->start_of_supply)->format('F j, Y, g:i a');
+                                        @endphp
+                                          <b>Inicio de Suministro</b>
+                                        </td>
+                                        <td>{{ $formatedSupplyStartTimeDesert }}t</td>
+                                      </tr>
+            
+            
+                                      @endif
+                                    
+                                      
+                                      <tr>
+                                        <td>
+                                          <b>Tipo de Suministro</b>
+                                        </td>
+                                        <td> {{ $desertOrder->type_of_supply }} </td>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          <b>
+                                            Exclusividad
+                                            <svg
+                                              class="MuiSvgIcon-root"
+                                              focusable="false"
+                                              viewBox="0 0 24 24"
+                                              aria-hidden="true"
+                                            >
+                                              <path
+                                                d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+                                              ></path>
+                                            </svg>
+                                          </b>
+                                        </td>
+                                        <td>{{ $desertOrder->exclusivity }}</td>
+                                      </tr>
+
+
+                                      <tr>
+                                        <td>
+                                          <b>Total Quantity</b>
+                                        </td>
+                                        <td>{{ $desertOrder->total_quantity }} </td>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          <b>Take or Pay</b>
+                                        </td>
+                                        <td>{{ $desertOrder->take_or_pay_percentage }} %</td>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          <b>Deliver or Pay</b>
+                                        </td>
+                                        <td>{{ $desertOrder->delivery_or_pay_price }} %</td>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          <b>Plazo de pago</b>
+                                        </td>
+                                        <td>{{ $desertOrder->payment_term }} días</td>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          <b>Tasa de Cambio</b>
+                                        </td>
+                                        <td>{{ $desertOrder->exchange_rate }}</td>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          <b>Comisión </b>
+                                        </td>
+                                        <td>{{ $desertOrder->auction_commision }}</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                              <div class="justify-content-center row">
+                              
+                              </div>
+                            </div>
+                          </div>
+                          <br />
+                          <div class="shadow text-secondary card">
+                            
+                            
+                          </div>
+                          <br />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              {{-- Analysis modal ends here --}}
+
+         
+</div>
+
+
+
+
+
+            
+          </div>
+        </div>
+
+
+        @empty
+
+
+
+        <div
+        class="shadow card border-primary"
+        style="padding: 5px; width: 100%; cursor: pointer"
+      >
+        <div class="align-items-center row text-center" style="font-size: 11px">
+            <div class="col">
+              No Data Available
+            </div>
+        </div>
+      </div>
+
+
+        @endforelse
+
+
+
+      </div>
+
+
+
+
+
+
+
     </div>
 
     
