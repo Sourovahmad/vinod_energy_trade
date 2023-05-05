@@ -80,7 +80,7 @@ class BuyerOrdersController extends Controller
         $newBuyerOrder->contact_term_year = $request->contact_term_year;
         $newBuyerOrder->start_of_supply = $request->start_of_supply;
 
-        
+
         $newBuyerOrder->cuenca_winter_mix = $request->cuenca_winter_mix;
         $newBuyerOrder->winter_mqn = $request->winter_mqn;
         $newBuyerOrder->winter_pto = $request->winter_pto;
@@ -119,6 +119,9 @@ class BuyerOrdersController extends Controller
 
 
         // generate Code
+
+
+        
 
         $firstThreeLetterOfName = strtoupper(substr(auth()->user()->social_name, 0, 3));
 
