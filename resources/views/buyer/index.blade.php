@@ -8,6 +8,9 @@
 {{-- end of the error messages --}}
 
 
+
+
+
 <div class="justify-content-md-center row">
   <div class="col-xl-12 col-md-12 pl-4">
     <br />
@@ -173,13 +176,18 @@
               <div class="btn-group">
                 <button type="button" class="btn btn-success btn-sm m-1" data-bs-toggle="modal" data-bs-target="#modal_view{{ $openOrder->id }}">view</button>
                 <button type="button" class="btn btn-primary btn-sm m-1" data-bs-toggle="modal" data-bs-target="#modal_edit{{ $openOrder->id }}">change status</button>
-                <button type="button" class="btn btn-primary btn-sm m-1">view bids</button>
+                <button type="button" class="btn btn-primary btn-sm m-1" onclick="incomingAlert()">view bids</button>
                 <button type="button" class="btn btn-danger btn-sm m-1" onclick="deleteTheOrder({{ $openOrder->id }})">delete</button>
               </div>
             </div>
 
 
 
+            <script>
+              function incomingAlert(){
+                alert("the feature will be enable soon")
+              }
+            </script>
 
 
             {{--  bid view modal --}}

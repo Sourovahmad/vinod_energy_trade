@@ -28,19 +28,49 @@
           </svg>
         </a>
         
-        <a href="#" class="ml-auto nav-link" role="button">
+        <a  class="ml-auto nav-link" role="button" onclick="logoutFormSubmit()" title="logout">
           <svg
-            class="MuiSvgIcon-root MuiSvgIcon-colorAction"
-            focusable="false"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-          >
-            <path
-              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
-            ></path>
-          </svg>
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#000000"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="MuiSvgIcon-root MuiSvgIcon-colorAction"
+          focusable="false"
+        >
+          <path d="M15 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z"></path>
+          <polyline points="10 17 15 12 10 7"></polyline>
+        </svg>
+        
+        
           {{ auth()->user()->name }}
         </a>
+
+
+        
       </div>
     </div>
   </nav>
+
+
+  <form action="{{ route('logout') }}" method="POST" id="logout_form_id" hidden>
+    @csrf
+    <button type="submit" style="color: black"> Logout</button>
+  </form>
+
+
+  <script>
+    
+    function logoutFormSubmit(){
+
+     if (confirm("Are You Sure Want to logout ?")) {
+       document.getElementById("logout_form_id").submit();
+     }else{
+      return false
+     }
+    }
+
+  </script>
+  

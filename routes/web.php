@@ -21,9 +21,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('index');
+Route::get('/', [indexController::class, "index"])->name('index');
 
 
 
@@ -89,10 +87,15 @@ Route::middleware([
 
         Route::get('seller', [SellerController::class, 'index'])->name('seller_index');
         Route::post('submit-bid', [SellerController::class, 'submit_bid'])->name('submit_bid');
-        
 
+
+
+    
 
     });
+
+
+
 
 
 

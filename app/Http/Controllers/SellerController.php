@@ -23,17 +23,35 @@ class SellerController extends Controller
         ->where('status', 'open')
         ->orderBy('id', 'desc')
         ->get();
-        return view('seller.index', compact('ordersOpen'));
+
+
+        $ordersAwarded = buyerOrders::where('status', 'awarded')->get();
+        $ordersUnderAnalysis = buyerOrders::where('status', 'under_analysis')->get();
+        $ordersDesert = buyerOrders::where('status', 'desert')->get();
+
+
+        $sellerHasBids = orderHasBid::where('user_id', auth()->user()->id)->get();
+
+
+        return view('seller.index', compact('ordersOpen', 'sellerHasBids','ordersAwarded', 'ordersUnderAnalysis', 'ordersDesert'));
     }
 
     public function submit_bid(Request $reqeust)
     {
         $reqeust->validate([
             'order_id' => 'required',
+            'status' => 'required'
         ]);
 
 
-        $orderHasBid = new orderHasBid;
+        $orderHasBid = null;
+
+        if($reqeust->status == 'update'){
+            $orderHasBid = orderHasBid::find($reqeust->order_id);
+        }else{
+            $orderHasBid = new orderHasBid;
+        }
+
         $orderHasBid->order_id = $reqeust->order_id;
 
 
@@ -66,11 +84,22 @@ class SellerController extends Controller
 
         $orderHasBid->save();
 
-        return back()->withSuccess('Bid has been successfully placed');
+        $mesage = '';
+
+        
+        if($reqeust->status == 'update'){
+            $mesage = 'Bid has been Updated successfully';
+        }else{
+            $mesage = 'Bid has been successfully placed';
+        }
+
+
+        return back()->withSuccess($mesage);
 
 
 
 
     }
+
 
 }

@@ -233,7 +233,7 @@
                 <p>January </p>
               </div>
               <div class="col-3">
-                <input type="text" class="select py-2" name="expected_january" />
+                <input type="number" class="select py-2" name="expected_january" />
               </div>
             </div>
           </div>
@@ -248,7 +248,7 @@
                 <p>February </p>
               </div>
               <div class="col-3">
-                <input type="text" class="select py-2" name="expected_february" />
+                <input type="number" class="select py-2" name="expected_february" />
               </div>
             </div>
           </div>
@@ -260,7 +260,7 @@
                 <p>March</p>
               </div>
               <div class="col-3">
-                <input type="text" class="select py-2" name="expected_march" />
+                <input type="number" class="select py-2" name="expected_march" />
               </div>
             </div>
           </div>
@@ -271,7 +271,7 @@
                 <p>April</p>
               </div>
               <div class="col-3">
-                <input type="text" class="select py-2" name="expected_april" />
+                <input type="number" class="select py-2" name="expected_april" />
               </div>
             </div>
           </div>
@@ -282,7 +282,7 @@
                 <p>May</p>
               </div>
               <div class="col-3">
-                <input type="text" class="select py-2" name="expected_may" />
+                <input type="number" class="select py-2" name="expected_may" />
               </div>
             </div>
           </div>
@@ -293,7 +293,7 @@
                 <p>June</p>
               </div>
               <div class="col-3">
-                <input type="text" class="select py-2" name="expected_june" />
+                <input type="number" class="select py-2" name="expected_june" />
               </div>
             </div>
           </div>
@@ -304,7 +304,7 @@
                 <p>July</p>
               </div>
               <div class="col-3">
-                <input type="text" class="select py-2" name="expected_july" />
+                <input type="number" class="select py-2" name="expected_july" />
               </div>
             </div>
           </div>
@@ -315,7 +315,7 @@
                 <p>August</p>
               </div>
               <div class="col-3">
-                <input type="text" class="select py-2" name="expected_august" />
+                <input type="number" class="select py-2" name="expected_august" />
               </div>
             </div>
           </div>
@@ -326,7 +326,7 @@
                 <p>September</p>
               </div>
               <div class="col-3">
-                <input type="text" class="select py-2" name="expected_september" />
+                <input type="number" class="select py-2" name="expected_september" />
               </div>
             </div>
           </div>
@@ -337,7 +337,7 @@
                 <p>October</p>
               </div>
               <div class="col-3">
-                <input type="text" class="select py-2" name="expected_october" />
+                <input type="number" class="select py-2" name="expected_october" />
               </div>
             </div>
           </div>
@@ -348,7 +348,7 @@
                 <p>November</p>
               </div>
               <div class="col-3">
-                <input type="text" class="select py-2" name="expected_november" />
+                <input type="number" class="select py-2" name="expected_november" />
               </div>
             </div>
           </div>
@@ -359,7 +359,7 @@
                 <p>December</p>
               </div>
               <div class="col-3">
-                <input type="text" class="select py-2" name="expected_december" />
+                <input type="number" class="select py-2" name="expected_december" />
             </div>
         </div>
       </div>

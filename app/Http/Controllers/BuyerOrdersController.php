@@ -79,7 +79,8 @@ class BuyerOrdersController extends Controller
         $newBuyerOrder->contact_term_months = $request->contact_term_months;
         $newBuyerOrder->contact_term_year = $request->contact_term_year;
         $newBuyerOrder->start_of_supply = $request->start_of_supply;
-        $newBuyerOrder->total_quantity = $request->total_quantity;
+
+        
         $newBuyerOrder->cuenca_winter_mix = $request->cuenca_winter_mix;
         $newBuyerOrder->winter_mqn = $request->winter_mqn;
         $newBuyerOrder->winter_pto = $request->winter_pto;
