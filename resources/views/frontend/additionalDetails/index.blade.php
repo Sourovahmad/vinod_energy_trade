@@ -68,7 +68,7 @@
 
             <div class="mt-4">
                 <x-label for="cuit_proof" value="{{ __('PROOF of CUIT ') }}" />
-                <x-input id="cuit_proof" class="block mt-1 w-full" type="file" name="cuit_proof" :value="old('cuit_proof')" required autofocus autocomplete="cuit_proof" />
+                <x-input id="cuit_proof" class="block mt-1 w-full" type="file" name="cuit_proof" :value="old('cuit_proof')" required autofocus autocomplete="cuit_proof" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" />
             </div>
 
 
@@ -87,7 +87,7 @@
             
             <div class="mt-4">
                 <x-label for="last_balance" value="{{ __('LAST BALANCE of the company') }}" />
-                <x-input id="last_balance" class="block mt-1 w-full" type="file" name="last_balance" :value="old('last_balance')"  autofocus autocomplete="last_balance" accept=".pdf,.doc,.docx" required />
+                <x-input id="last_balance" class="block mt-1 w-full" type="file" name="last_balance" :value="old('last_balance')"  autofocus autocomplete="last_balance" accept=".pdf" required />
             </div>
 
 
@@ -111,7 +111,7 @@
                 <div class="form-check mt-4">
                     <input class="form-check-input" type="checkbox" value="" name="natural_gas_checkbox" id="natural_gas_checkbox">
                     <label class="form-check-label" for="flexCheckIndeterminate">
-                     Vendor and Natural Gas
+                        Gas Natural
                     </label>
                 </div>
     
@@ -119,7 +119,7 @@
                 <div class="form-check mt-4">
                     <input class="form-check-input" type="checkbox" value="" name="electric_power_checkbox" id="electric_power_checkbox">
                     <label class="form-check-label" for="flexCheckIndeterminate">
-                     Vendor Electric Power
+                        Electric Power
                     </label>
                 </div>
 
@@ -168,7 +168,8 @@
         choseProductDropdown.onchange = function() {
             const selectedElement = choseProductDropdown.value;
 
-            if (selectedElement == 'natural_gas') {
+            if (selectedElement == 'electricity_power') {
+
             idFinder('average_volume_natural_gas_div').removeAttribute('hidden');
             idFinder('average_volume_electric_power_div').setAttribute('hidden', 'true');
 
@@ -177,7 +178,7 @@
 
 
 
-            } else if (selectedElement == 'electricity_power') {
+            } else if (selectedElement == 'natural_gas') {
 
             idFinder('average_volume_electric_power_div').removeAttribute('hidden');
             idFinder('average_volume_natural_gas_div').setAttribute('hidden', 'true');

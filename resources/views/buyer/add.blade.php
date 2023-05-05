@@ -49,7 +49,7 @@
                     <p>Geographic Location (Province location)</p>
                   </div>
                   <div class="col-3">
-                    <input type="text" class="select py-2" name="location_of_supply_point" id="input_location" />
+                    <input type="text" class="select py-2" name="location_of_supply_point" id="input_location" required />
                   </div>
                 </div>
               </div>
@@ -66,7 +66,7 @@
                 <p>Deadline for receipt of Offers:</p>
               </div>
               <div class="col-3">
-                <input type="datetime-local" class="select" name="deadline_offer_recive" />
+                <input type="datetime-local" class="select" name="deadline_offer_recive" required />
               </div>
             </div>
           </div>
@@ -79,7 +79,7 @@
                 <p>Date of publication of the Purchase Order:</p>
               </div>
               <div class="col-3">
-                <input type="datetime-local" class="select" name="publication_date" />
+                <input type="datetime-local" class="select" name="publication_date" required />
               </div>
             </div>
           </div>
@@ -204,7 +204,7 @@
                     <p>RESERVE (dam3/day) </p>
                   </div>
                   <div class="col-3">
-                    <input type="text" class="select py-2" name="reserve" />
+                    <input type="text" class="select py-2" name="reserve" required />
                   </div>
                 </div>
 
@@ -233,7 +233,7 @@
                 <p>January </p>
               </div>
               <div class="col-3">
-                <input type="number" class="select py-2" name="expected_january" />
+                <input type="number" class="select py-2" name="expected_january" required />
               </div>
             </div>
           </div>
@@ -248,7 +248,7 @@
                 <p>February </p>
               </div>
               <div class="col-3">
-                <input type="number" class="select py-2" name="expected_february" />
+                <input type="number" class="select py-2" name="expected_february" required />
               </div>
             </div>
           </div>
@@ -260,7 +260,7 @@
                 <p>March</p>
               </div>
               <div class="col-3">
-                <input type="number" class="select py-2" name="expected_march" />
+                <input type="number" class="select py-2" name="expected_march"  required/>
               </div>
             </div>
           </div>
@@ -271,7 +271,7 @@
                 <p>April</p>
               </div>
               <div class="col-3">
-                <input type="number" class="select py-2" name="expected_april" />
+                <input type="number" class="select py-2" name="expected_april" required />
               </div>
             </div>
           </div>
@@ -282,7 +282,7 @@
                 <p>May</p>
               </div>
               <div class="col-3">
-                <input type="number" class="select py-2" name="expected_may" />
+                <input type="number" class="select py-2" name="expected_may" required />
               </div>
             </div>
           </div>
@@ -293,7 +293,7 @@
                 <p>June</p>
               </div>
               <div class="col-3">
-                <input type="number" class="select py-2" name="expected_june" />
+                <input type="number" class="select py-2" name="expected_june" required />
               </div>
             </div>
           </div>
@@ -304,7 +304,7 @@
                 <p>July</p>
               </div>
               <div class="col-3">
-                <input type="number" class="select py-2" name="expected_july" />
+                <input type="number" class="select py-2" name="expected_july" required />
               </div>
             </div>
           </div>
@@ -315,7 +315,7 @@
                 <p>August</p>
               </div>
               <div class="col-3">
-                <input type="number" class="select py-2" name="expected_august" />
+                <input type="number" class="select py-2" name="expected_august" required />
               </div>
             </div>
           </div>
@@ -326,7 +326,7 @@
                 <p>September</p>
               </div>
               <div class="col-3">
-                <input type="number" class="select py-2" name="expected_september" />
+                <input type="number" class="select py-2" name="expected_september" required />
               </div>
             </div>
           </div>
@@ -337,7 +337,7 @@
                 <p>October</p>
               </div>
               <div class="col-3">
-                <input type="number" class="select py-2" name="expected_october" />
+                <input type="number" class="select py-2" name="expected_october" required />
               </div>
             </div>
           </div>
@@ -348,7 +348,7 @@
                 <p>November</p>
               </div>
               <div class="col-3">
-                <input type="number" class="select py-2" name="expected_november" />
+                <input type="number" class="select py-2" name="expected_november" required />
               </div>
             </div>
           </div>
@@ -359,7 +359,7 @@
                 <p>December</p>
               </div>
               <div class="col-3">
-                <input type="number" class="select py-2" name="expected_december" />
+                <input type="number" class="select py-2" name="expected_december" required />
             </div>
         </div>
       </div>
@@ -377,7 +377,7 @@
                 <p>Contract Term (months)</p>
               </div>
               <div class="col-3">
-                <input type="number" class="select py-2" name="contact_term_months" />
+                <input type="number" class="select py-2" name="contact_term_months" required />
               </div>
             </div>
           </div>
@@ -390,7 +390,7 @@
                 <p>Start of Supply:</p>
               </div>
               <div class="col-3">
-                <input type="date" class="select" name="start_of_supplystart_of_supply" />
+                <input type="date" class="select" name="start_of_supplystart_of_supply" required />
               </div>
             </div>
           </div>
@@ -412,7 +412,7 @@
                 <p>NQN:</p>
               </div>
               <div class="col-3">
-                <input type="number" class="select py-2" max="100" name="winter_mqn" id="summer_1" />
+                <input type="number" class="select py-2" max="100" name="winter_mqn" id="summer_1" required />
               </div>
             </div>
           </div>
@@ -422,7 +422,7 @@
                 <p>PTO:</p>
               </div>
               <div class="col-3">
-                <input type="number" class="select py-2" name="winter_pto" id="summer_2"  />
+                <input type="number" class="select py-2" name="winter_pto" id="summer_2" required  />
               </div>
             </div>
           </div>
@@ -432,7 +432,7 @@
                 <p>SCR:</p>
               </div>
               <div class="col-3">
-                <input type="number" class="select py-2" max="100" name="winter_scr" id="summer_3" />
+                <input type="number" class="select py-2" max="100" name="winter_scr" id="summer_3" required />
               </div>
             </div>
           </div>
@@ -442,7 +442,7 @@
                 <p>CHU:</p>
               </div>
               <div class="col-3">
-                <input type="number" class="select py-2"  max="100" name="winter_chu" id="summer_4" />
+                <input type="number" class="select py-2"  max="100" name="winter_chu" id="summer_4" required />
               </div>
             </div>
           </div>
@@ -452,7 +452,7 @@
                 <p>NOA:</p>
               </div>
               <div class="col-3">
-                <input type="number" class="select py-2"  max="100" name="winter_noa" id="summer_5" />
+                <input type="number" class="select py-2"  max="100" name="winter_noa" id="summer_5" required />
               </div>
             </div>
           </div>
@@ -470,7 +470,7 @@
                 <p>NQN:</p>
               </div>
               <div class="col-3">
-                <input type="number" class="select py-2"   max="100" name="summer_mqn" id="winter_1" />
+                <input type="number" class="select py-2"   max="100" name="summer_mqn" id="winter_1" required />
               </div>
             </div>
           </div>
@@ -480,7 +480,7 @@
                 <p>PTO:</p>
               </div>
               <div class="col-3">
-                <input type="number" class="select py-2" name="summer_pto" id="winter_2" />
+                <input type="number" class="select py-2" name="summer_pto" id="winter_2" required />
               </div>
             </div>
           </div>
@@ -490,7 +490,7 @@
                 <p>SCR:</p>
               </div>
               <div class="col-3">
-                <input type="number" class="select py-2"  max="100" name="summer_scr" id="winter_3" />
+                <input type="number" class="select py-2"  max="100" name="summer_scr" id="winter_3" required />
               </div>
             </div>
           </div>
@@ -500,7 +500,7 @@
                 <p>CHU:</p>
               </div>
               <div class="col-3">
-                <input type="number" class="select py-2"  max="100" name="summer_chu" id="winter_4" />
+                <input type="number" class="select py-2"  max="100" name="summer_chu" id="winter_4" required />
               </div>
             </div>
           </div>
@@ -510,7 +510,7 @@
                 <p>NOA:</p>
               </div>
               <div class="col-3">
-                <input type="number" class="select py-2"  max="100" name="summer_noa" id="winter_5" />
+                <input type="number" class="select py-2"  max="100" name="summer_noa" id="winter_5" required />
               </div>
             </div>
           </div>
@@ -526,6 +526,7 @@
                     value="Firm"
                     id="Firm"
                     name="type_of_supply"
+                    required
                   />
                   <label for="Firm">Firm</label>
                 </div>
@@ -535,6 +536,7 @@
                     value="Spot"
                     id="Spot"
                     name="type_of_supply"
+                    required
                   />
                   <label for="Spot">Spot</label>
                 </div>
@@ -547,7 +549,7 @@
                 <p>Exclusivity:</p>
               </div>
               <div class="col-3">
-                <select class="select" name="exclusivity">
+                <select class="select" name="exclusivity" required>
                   <option value="YES">YES</option>
                   <option value="NO">NO</option>
                 </select>
@@ -560,7 +562,7 @@
                 <p>Partial Award:</p>
               </div>
               <div class="col-3">
-                <select class="select" name="partial_award">
+                <select class="select" name="partial_award" required>
                   <option value="YES">YES</option>
                   <option value="NO">NO</option>
                 </select>
@@ -573,7 +575,7 @@
                 <p>Price:</p>
               </div>
               <div class="col-3">
-                <select class="select" name="price">
+                <select class="select" name="price" required>
                   <option value="Flat">Flat</option>
                   <option value="Seasonal">Seasonal</option>
                 </select>
@@ -586,7 +588,7 @@
                 <p>Price Renegotiation Clause:</p>
               </div>
               <div class="col-3">
-                <select class="select" name="price_renegotiation">
+                <select class="select" name="price_renegotiation" required>
                   <option value="YES">YES</option>
                   <option value="NO">NO</option>
                 </select>
@@ -599,7 +601,7 @@
                 <p>Take or Pay optional to the Seller:</p>
               </div>
               <div class="col-3">
-                <select class="select" name="take_or_pay_optional_to_seller">
+                <select class="select" name="take_or_pay_optional_to_seller" required>
                   <option value="YES">YES</option>
                   <option value="NO">NO</option>
                 </select>
@@ -635,7 +637,7 @@
                 <p>Optional Delivery or Pay to the Seller:</p>
               </div>
               <div class="col-3">
-                <select class="select" name="optional_delivery_to_seller">
+                <select class="select" name="optional_delivery_to_seller" required>
                   <option value="YES">YES</option>
                   <option value="NO">NO</option>
                 </select>
@@ -671,7 +673,7 @@
                 <p>Payment term (5 to 180 days):</p>
               </div>
               <div class="col-3">
-                <input type="number" class="select" name="payment_term" min="5" max="180" />
+                <input type="number" class="select" name="payment_term" min="5" max="180" required />
               </div>
             </div>
           </div>
@@ -681,7 +683,7 @@
                 <p>Exchange Rate:</p>
               </div>
               <div class="col-3">
-                <select class="select" name="exchange_rate">
+                <select class="select" name="exchange_rate" required>
                   <option value="BNA Ticket Seller">BNA Ticket Seller</option>
                   <option value="BNA Currency Seller">
                     BNA Currency Seller
@@ -697,7 +699,7 @@
                 <p>Default Rate Debts in USD:</p>
               </div>
               <div class="col-3">
-                <input type="number" class="select" name="default_rates_debts" />
+                <input type="number" class="select" name="default_rates_debts" required />
               </div>
             </div>
           </div>
@@ -707,7 +709,7 @@
                 <p>Mortgage Rate Debts in Pesos:</p>
               </div>
               <div class="col-3">
-                <input type="number" class="select" name="mortage_rate_debts" />
+                <input type="number" class="select" name="mortage_rate_debts" required />
               </div>
             </div>
           </div>
@@ -718,7 +720,7 @@
                 <p>Auction Commission:</p>
               </div>
               <div class="col-3">
-                <select class="select" name="auction_commision">
+                <select class="select" name="auction_commision" required>
                   <option value="Paid by the Buyer">Paid by the Buyer</option>
                   <option value="Paid by the Seller">
                     Paid by the Seller
@@ -737,7 +739,7 @@
                 <p>Bid Maintenance Guarantee (Amount in ARS or USD):</p>
               </div>
               <div class="col-3">
-                <input type="number" class="select" name="bid_maintain_gurantee" />
+                <input type="number" class="select" name="bid_maintain_gurantee" required />
               </div>
             </div>
           </div>
@@ -773,21 +775,22 @@
 document.getElementById("submitButton").addEventListener("click", function() {
 
 
+  var inputs = document.getElementsByTagName("input");
 
-  const nameIinput = elementFinder('input_supply_point_name').value;
-
-  if (nameIinput == ''){
-    alert("please provide the suply point name")
-    return false
+  var filled = true;
+  
+  for (var i = 0; i < inputs.length; i++) {
+    if (inputs[i].value == "") {
+      filled = false;
+      break;
+    }
+  }
+  
+  if (!filled) {
+    alert("Please fill in all fields");
+    return false;
   }
 
-
-  const locationIinput = elementFinder('input_location').value;
-
-if (locationIinput == ''){
-  alert("please provide the Geographic Location")
-  return false
-}
 
 
   const summer_1 = parseInt(elementFinder('summer_1').value);

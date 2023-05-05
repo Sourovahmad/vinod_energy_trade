@@ -536,6 +536,7 @@
                                                     class="form-control"
                                                     name="price_january"
                                                     value="{{ $currentBid ? $currentBid->price_january : '' }}"
+                                                    required
                                                   />
                                                 </div>
                                                 <div class="col-xl-1"></div>
@@ -557,6 +558,7 @@
                                                     class="form-control"
                                                     name="price_february"
                                                     value="{{ $currentBid ? $currentBid->price_february : '' }}"
+                                                    required
                                                   />
                                                 </div>
                                                 <div class="col-xl-1"></div>
@@ -573,7 +575,7 @@
                                                 </div>
                                                 <div class="col">
                                                   <input type="number" placeholder="USD/dam3" class="form-control" name="price_march"             
-                                                      value="{{ $currentBid ? $currentBid->price_march : '' }}" />
+                                                      value="{{ $currentBid ? $currentBid->price_march : '' }}" required />
                                                 </div>
                                                 <div class="col-xl-1"></div>
                                               </div>
@@ -588,6 +590,7 @@
                                                 <div class="col">
                                                   <input type="number" placeholder="USD/dam3" class="form-control" name="price_april" 
                                                   value="{{ $currentBid ? $currentBid->price_april : '' }}"
+                                                  required
                                                   />
                                                 </div>
                                                 <div class="col-xl-1"></div>
@@ -603,6 +606,7 @@
                                                 <div class="col">
                                                   <input type="number" placeholder="USD/dam3" class="form-control" name="price_may"
                                                   value="{{ $currentBid ? $currentBid->price_may : '' }}"
+                                                  required
                                                   />
                                                 </div>
                                                 <div class="col-xl-1"></div>
@@ -618,6 +622,7 @@
                                                 <div class="col">
                                                   <input placeholder="USD/dam3" class="form-control" name="price_june"
                                                   value="{{ $currentBid ? $currentBid->price_june : '' }}"
+                                                  required
                                                   
                                                   />
                                                 </div>
@@ -635,6 +640,7 @@
                                                 <div class="col">
                                                   <input type="number" placeholder="USD/dam3" class="form-control" name="price_july"
                                                   value="{{ $currentBid ? $currentBid->price_july : '' }}"
+                                                  required
                                                   
                                                   />
                                                 </div>
@@ -652,6 +658,8 @@
                                                 <div class="col">
                                                   <input type="number" placeholder="USD/dam3" class="form-control" name="price_august"
                                                   value="{{ $currentBid ? $currentBid->price_august : '' }}"
+
+                                                  required
                                                   
                                                   />
                                                 </div>
@@ -669,6 +677,8 @@
                                                 <div class="col">
                                                   <input  type="number" placeholder="USD/dam3" class="form-control" name="price_september"
                                                   value="{{ $currentBid ? $currentBid->price_september : '' }}"
+
+                                                  required
                                                   
                                                   
                                                   />
@@ -687,6 +697,8 @@
                                                 <div class="col">
                                                   <input type="number" placeholder="USD/dam3" class="form-control" name="price_october" 
                                                   value="{{ $currentBid ? $currentBid->price_october : '' }}"
+
+                                                  required
                                                   
                                                   
                                                   />
@@ -705,6 +717,8 @@
                                                 <div class="col">
                                                   <input type="number" placeholder="USD/dam3" class="form-control" name="price_november"
                                                   value="{{ $currentBid ? $currentBid->price_november : '' }}"
+
+                                                  required
                                                   
                                                   />
                                                 </div>
@@ -723,6 +737,8 @@
                                                 <div class="col">
                                                   <input type="number" placeholder="USD/dam3" class="form-control" name="price_december"
                                                   value="{{ $currentBid ? $currentBid->price_december : '' }}"
+
+                                                  required
                                                   />
                                                 </div>
                                                 <div class="col-xl-1"></div>

@@ -137,7 +137,7 @@ class BuyerOrdersController extends Controller
         $newBuyerOrder->save();
 
 
-        return back()->withSuccess('Bid order has been created');
+        return redirect(route('buyer_index'))->withSuccess('Bid order has been created');
     }
 
     /**
