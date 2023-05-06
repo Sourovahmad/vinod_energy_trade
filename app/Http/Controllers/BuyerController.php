@@ -19,11 +19,10 @@ class BuyerController extends Controller
     {
         $user = auth()->user();
 
-        $ordersOpen = buyerOrders::where('user_id', $user->id)->where('status', 'open')->get();
-        $ordersAwarded = buyerOrders::where('user_id', $user->id)->where('status', 'awarded')->get();
-        $ordersUnderAnalysis = buyerOrders::where('user_id', $user->id)->where('status', 'under_analysis')->get();
-        $ordersDesert = buyerOrders::where('user_id', $user->id)->where('status', 'desert')->get();
-
+        $ordersOpen = buyerOrders::with(['bids'])->where('user_id', $user->id)->where('status', 'open')->get();
+        $ordersAwarded = buyerOrders::with(['bids'])->where('user_id', $user->id)->where('status', 'awarded')->get();
+        $ordersUnderAnalysis = buyerOrders::with(['bids'])->where('user_id', $user->id)->where('status', 'under_analysis')->get();
+        $ordersDesert = buyerOrders::with(['bids'])->where('user_id', $user->id)->where('status', 'desert')->get();
         return view('buyer.index',compact('ordersOpen', 'ordersAwarded', 'ordersUnderAnalysis', 'ordersDesert'));
     }
 

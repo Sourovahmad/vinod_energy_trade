@@ -16,6 +16,13 @@ class ensureUserIsSuperadmin
      */
     public function handle(Request $request, Closure $next)
     {
-        return $next($request);
+        if(auth()->user()->user_type == 'thesupersuperadmin'){
+
+            return $next($request);
+            
+        }else{
+            return redirect()->route('index');
+        }
+
     }
 }

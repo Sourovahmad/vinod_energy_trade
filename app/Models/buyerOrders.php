@@ -13,4 +13,9 @@ class buyerOrders extends Model
     {
         return $this->belongsTo(User::class, 'user_id', 'id');
     }
+
+    public function bids()
+    {
+        return $this->hasMany(orderHasBid::class, 'order_id', 'id')->where('reviewed', true); 
+    }
 }

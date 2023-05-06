@@ -3,6 +3,7 @@
         <title>CONECTO ENERGIA</title>
         <link rel="stylesheet" href="{{ asset('css/bootstrap/main.css') }}" />
         <link rel="stylesheet" href="{{ asset('css/buyer_main_css.css') }}" />
+ 
         <script src="{{ asset('js/buyerConfig.js') }}" defer></script>
     </head>
     <body>

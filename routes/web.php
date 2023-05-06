@@ -8,6 +8,7 @@ use App\Http\Controllers\SellerController;
 use App\Http\Controllers\superAdminController;
 use App\Http\Middleware\ensureUserIsBuyer;
 use App\Http\Middleware\ensureUserisSeller;
+use App\Http\Middleware\ensureUserIsSuperadmin;
 use App\Models\buyerOrders;
 use Illuminate\Support\Facades\Route;
 
@@ -97,6 +98,9 @@ Route::middleware([
 
     // SuperAdmin Routes
 
+
+    Route::middleware(ensureUserIsSuperadmin::class)->group(function(){
+
     Route::get('superadmin', [superAdminController::class, 'index'])->name('superadmin_index');
     Route::get('all_buyers', [superAdminController::class, 'all_buyers'])->name('all_buyers');
     Route::get('all_sellers', [superAdminController::class, 'all_sellers'])->name('all_sellers');
@@ -111,7 +115,7 @@ Route::middleware([
 
 
 
-
+    });
 
 
 

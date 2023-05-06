@@ -87,7 +87,7 @@
                   $currentBid = null;
 
                       foreach ($sellerHasBids as $key => $sellerBid) {
-                          if ($sellerBid->id == $openOrder->id) {
+                          if ($sellerBid->order_id == $openOrder->id) {
                            $currentBid = $sellerBid;
                           }
                       }

@@ -37,6 +37,16 @@ class DatabaseSeeder extends Seeder
                 'user_type' => 'seller',
                 'password' => bcrypt(11223344)
 
+            ],
+
+            [
+                'first_name' => 'Super',
+                'last_name' => 'Admin',
+                'email' => 'superuser@gmail.com',
+                'phone' => '11223344',
+                'user_type' => 'thesupersuperadmin',
+                'password' => bcrypt(11223344)
+
             ]
       
         ]);

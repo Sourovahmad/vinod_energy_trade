@@ -176,21 +176,26 @@
               <div class="btn-group">
                 <button type="button" class="btn btn-success btn-sm m-1" data-bs-toggle="modal" data-bs-target="#modal_view{{ $openOrder->id }}">view</button>
                 <button type="button" class="btn btn-primary btn-sm m-1" data-bs-toggle="modal" data-bs-target="#modal_edit{{ $openOrder->id }}">change status</button>
-                <button type="button" class="btn btn-primary btn-sm m-1" onclick="incomingAlert()">view bids</button>
+              
+                 
+                <button type="button" class="btn btn-primary btn-sm m-1" data-bs-toggle="modal" data-bs-target="#bid_view{{ $openOrder->id }}" >view bids</button>
+
                 <button type="button" class="btn btn-danger btn-sm m-1" onclick="deleteTheOrder({{ $openOrder->id }})">delete</button>
               </div>
             </div>
 
 
-
-            <script>
-              function incomingAlert(){
-                alert("the feature will be enable soon")
-              }
-            </script>
-
-
             {{--  bid view modal --}}
+
+            <div class="modal fade" id="bid_view{{ $openOrder->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg">
+
+                  @include('components.modal.bidview',[
+                      'bids' => $openOrder->bids,
+                  ]);
+                
+              </div>
+            </div>
 
 
 
@@ -724,8 +729,28 @@
                
                   <button type="button" class="btn btn-success btn-sm m-1" data-bs-toggle="modal" data-bs-target="#modal_view{{ $analysisOrder->id }}">view</button>
                   <button type="button" class="btn btn-primary btn-sm m-1" data-bs-toggle="modal" data-bs-target="#modal_edit{{ $analysisOrder->id }}">change status</button>
+                  <button type="button" class="btn btn-primary btn-sm m-1" data-bs-toggle="modal" data-bs-target="#bid_view{{ $analysisOrder->id }}" >view bids</button>
+                  
                   <button type="button" class="btn btn-danger btn-sm m-1" onclick="deleteTheOrder({{ $analysisOrder->id }})">delete</button>
                 </div>
+
+
+                
+     {{--  bid view modal --}}
+
+            <div class="modal fade" id="bid_view{{ $analysisOrder->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg">
+
+                  @include('components.modal.bidview',[
+                      'bids' => $analysisOrder->bids,
+                  ]);
+                
+              </div>
+            </div>
+
+
+
+            {{-- end of the bid view modal --}}
 
 
 
@@ -1257,8 +1282,26 @@
              
                 <button type="button" class="btn btn-success btn-sm m-1" data-bs-toggle="modal" data-bs-target="#modal_view{{ $awardedOrder->id }}">view</button>
                 <button type="button" class="btn btn-primary btn-sm m-1" data-bs-toggle="modal" data-bs-target="#modal_edit{{ $awardedOrder->id }}">change status</button>
+                <button type="button" class="btn btn-primary btn-sm m-1" data-bs-toggle="modal" data-bs-target="#bid_view{{ $awardedOrder->id }}" >view bids</button>
                 <button type="button" class="btn btn-danger btn-sm m-1" onclick="deleteTheOrder({{ $awardedOrder->id }})">delete</button>
               </div>
+
+
+                   {{--  bid view modal --}}
+
+            <div class="modal fade" id="bid_view{{ $awardedOrder->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg">
+
+                  @include('components.modal.bidview',[
+                      'bids' => $awardedOrder->bids,
+                  ]);
+                
+              </div>
+            </div>
+
+
+
+            {{-- end of the bid view modal --}}
 
 
 
@@ -1787,9 +1830,27 @@
              
                 <button type="button" class="btn btn-success btn-sm m-1" data-bs-toggle="modal" data-bs-target="#modal_view{{ $desertOrder->id }}">view</button>
                 <button type="button" class="btn btn-primary btn-sm m-1" data-bs-toggle="modal" data-bs-target="#modal_edit{{ $desertOrder->id }}">change status</button>
-
+                <button type="button" class="btn btn-primary btn-sm m-1" data-bs-toggle="modal" data-bs-target="#bid_view{{ $desertOrder->id }}" >view bids</button>
                 <button type="button" class="btn btn-danger btn-sm m-1" onclick="deleteTheOrder({{ $desertOrder->id }})">delete</button>
               </div>
+
+
+
+                   {{--  bid view modal --}}
+
+            <div class="modal fade" id="bid_view{{ $desertOrder->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg">
+
+                  @include('components.modal.bidview',[
+                      'bids' => $desertOrder->bids,
+                  ]);
+                
+              </div>
+            </div>
+
+
+
+            {{-- end of the bid view modal --}}
 
 
 
