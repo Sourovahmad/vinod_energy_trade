@@ -5,6 +5,7 @@ use App\Http\Controllers\BuyerController;
 use App\Http\Controllers\BuyerOrdersController;
 use App\Http\Controllers\indexController;
 use App\Http\Controllers\SellerController;
+use App\Http\Controllers\superAdminController;
 use App\Http\Middleware\ensureUserIsBuyer;
 use App\Http\Middleware\ensureUserisSeller;
 use App\Models\buyerOrders;
@@ -89,10 +90,14 @@ Route::middleware([
         Route::post('submit-bid', [SellerController::class, 'submit_bid'])->name('submit_bid');
 
 
-
-    
-
     });
+
+
+
+
+    // SuperAdmin Routes
+
+    Route::get('superadmin', [superAdminController::class, 'index'])->name('superadmin_index');
 
 
 
