@@ -91,6 +91,7 @@ return new class extends Migration
             $table->string('annual_energy')->nullable();
             $table->string('priority_given_to_agreement')->nullable();
             $table->string('early_termination')->nullable();
+  
 
             $table->timestamps();
         });
