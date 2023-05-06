@@ -10,8 +10,7 @@
 
             {{-- <img src="{{asset(  )}}" height="60px" alt="Logo"> --}}
 
-             <span class="h2 title d-none d-md-block text-dark " > <a class="text-dark" style="text-decoration:none;"  href="{{ route('superadmin_index') }}">
-             </a> </span>
+             <span class="h2 title d-none d-md-block text-dark " > <a class="text-dark" style="text-decoration:none;"  href="{{ route('superadmin_index') }}">      </a> </span>
 
 
             <!-- Topbar Navbar -->

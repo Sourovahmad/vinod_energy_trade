@@ -22,7 +22,6 @@
 
         <link rel="stylesheet" href="{{ asset('bootstrap-select/css/bootstrap-select.min.css') }}">
        <link rel="stylesheet" href="{{ asset('css/table.css') }}">
-       <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
 
 
@@ -33,7 +32,6 @@
     <script src="{{asset('js/admin/sb-admin-2.min.js')}}"></script>
     <script src="{{asset('js/admin/datatables.min.js')}}"></script>
 <script src="{{ asset('bootstrap-select/js/bootstrap-select.min.js') }}"></script>
-<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 
 
         <!-- Styles -->

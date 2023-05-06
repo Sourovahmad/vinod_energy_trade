@@ -38,14 +38,15 @@
     <!-- Product Collapse Menu -->
     <li class="nav-item">
         <a class="nav-link collapsed  p-3 " href="#" data-toggle="collapse" data-target="#collapseProducts" aria-expanded="true" aria-controls="collapseProducts">
-            <i class="fas fa-shopping-bag"></i>
-            <span>{{__('Product')}}</span>
+            <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+            <span>{{__('Users')}}</span>
         </a>
         <div id="collapseProducts" class="collapse" aria-labelledby="headingProducts" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
 
 
-                <a class="collapse-item" href=""> Itm </a>
+                <a class="collapse-item" href="{{ route("all_buyers") }}"> Buyer  </a>
+                <a class="collapse-item" href="{{ route("all_sellers") }}"> Seller  </a>
 
 
             </div>

@@ -98,6 +98,10 @@ Route::middleware([
     // SuperAdmin Routes
 
     Route::get('superadmin', [superAdminController::class, 'index'])->name('superadmin_index');
+    Route::get('all_buyers', [superAdminController::class, 'all_buyers'])->name('all_buyers');
+    Route::get('all_sellers', [superAdminController::class, 'all_sellers'])->name('all_sellers');
+    Route::delete('admin_user_destroy/{id}', [superAdminController::class, 'admin_user_destroy'])->name('admin_user_destroy');
+    Route::post('admin_update_user', [superAdminController::class, 'admin_update_user'])->name('admin_update_user');
 
 
 
