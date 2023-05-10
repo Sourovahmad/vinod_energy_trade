@@ -71,8 +71,10 @@ class BuyerOrdersController extends Controller
 
 
 
-        $newBuyerOrder->total_quantity = intval($request->expected_january) + intval($request->expected_february) + intval($request->expected_march) + intval($request->expected_april) + intval($request->expected_june) + intval($request->expected_july) + intval($request->expected_august) + intval ($request->expected_september) + intval($request->expected_october) + intval($request->expected_november) + intval($request->expected_december);
-
+        
+       $totalExpectedEnergy =  intval($request->expected_january) + intval($request->expected_february) + intval($request->expected_march) + intval($request->expected_april) + intval($request->expected_june) + intval($request->expected_july) + intval($request->expected_august) + intval ($request->expected_september) + intval($request->expected_october) + intval($request->expected_november) + intval($request->expected_december);
+       $newBuyerOrder->total_quantity =  $totalExpectedEnergy;
+       $newBuyerOrder->annual_energy = $totalExpectedEnergy;
 
 
         $newBuyerOrder->contact_term_days = $request->contact_term_days;

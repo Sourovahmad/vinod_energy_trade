@@ -179,14 +179,10 @@
 
 
           <div class="form-group mt-3 mb-4">
-            <div class="row">
-
-
+            <div class="row align-items-center">
               <div class="col-4">
                 <p>Natural Gas Tariff POINT OF CONSUMPTION 1</p>
               </div>
-
-
               <div class="col-3">
                 <select class="select" name="natural_gas_tarrif_point_of_consumption_1">
                   <option value="SGP3">SGP3</option>
@@ -195,28 +191,20 @@
                   <option value="GU">GU</option>
                 </select>
               </div>
-
-
               <div class="col-4">
-
-                <div class="row">
+                <div class="row align-items-center">
                   <div class="col-6">
                     <p>RESERVE (dam3/day) </p>
                   </div>
-                  <div class="col-3">
+                  <div class="col-6">
                     <input type="text" class="select py-2" name="reserve" required />
                   </div>
                 </div>
-
-
               </div>
-
-
-
             </div>
           </div>
-
-
+          
+          
 
 
 

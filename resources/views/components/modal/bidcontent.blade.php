@@ -413,25 +413,7 @@
         <div class="card-body">
           <div class="shadow p-3 mb-5 bg-white rounded card border-success">
             <div class="justify-content-center row">
-              <div class="col-4">
-                
-                <div class="justify-content-center row">
-                  <h6 class="text-success">
-                    <b>Licitación </b>
-                    <svg
-                      class="MuiSvgIcon-root text-success"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                      aria-hidden="true"
-                      style="font-size: 24px"
-                    >
-                      <path
-                        d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10zm-8-7L4 6h16l-8 5z"
-                      ></path>
-                    </svg>
-                  </h6>
-                </div>
-              </div>
+              
               <div class="col-6">
                 <div class="justify-content-center row">
                   @php
@@ -447,23 +429,7 @@
                 </div>
               </div>
             </div>
-            <div class="justify-content-center row">
-              <a class="text-secondary"
-                >Se aceptan Ofertas con distinto plazo de pago</a
-              >
-              <a class="text-success">
-                <svg
-                  class="MuiSvgIcon-root"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M16.59 7.58L10 14.17l-3.59-3.58L5 12l5 5 8-8zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
-                  ></path>
-                </svg>
-              </a>
-            </div>
+            
             <hr />
             <div class="justify-content-center row">
               <div class="col-sm-6">

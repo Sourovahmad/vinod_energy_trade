@@ -3,8 +3,9 @@
       <a href="{{ route("user_home") }}" class="nav-link" role="button"
         ><img
           alt="Image"
-          src="https://conectoenergia.com/logoConecto.636f4a8f.png"
+          src="{{ asset('logo/logo.jpeg') }}"
           class="img-fluid d-inline"
+          style="height:100px; border-radius:25px"
       /></a>
     </span>
     <button

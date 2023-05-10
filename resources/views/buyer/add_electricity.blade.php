@@ -178,6 +178,12 @@
                   </option>
 
 
+
+                  <option value="Other Distributor or Cooperative">
+                    Other Distributor or Cooperative
+                </option>
+
+
                 
                 </select>
               </div>
@@ -379,17 +385,7 @@
 
 
 
-          <div class="form-group mt-2">
-            <div class="row">
-              <div class="col-4">
-                <p>Annual Energy (MWh)</p>
-              </div>
-              <div class="col-3">
-                <input type="number" class="select py-2" name="annual_energy" required />
-              </div>
-            </div>
-          </div>
-
+      
 
           
           <div class="form-group mt-2">

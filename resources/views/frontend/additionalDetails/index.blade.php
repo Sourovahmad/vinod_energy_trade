@@ -128,14 +128,14 @@
 
 
             <div class="mt-4" id="average_volume_natural_gas_div" hidden>
-                <x-label for="average_volume_natural_gas" value="{{ __('AVERAGE POWER of LAST YEAR AVERAGE. (MW)') }}" />
+                <x-label for="average_volume_natural_gas" value="{{ __('AVERAGE VOLUME OF NATURAL GAS of LAST YEAR (dam3/day)') }}" />
                 <x-input id="average_volume_natural_gas_input" class="block mt-1 w-full" type="text" name="average_volume_natural_gas" value="{{ $user->last_year_average_trade_volume_of_natural_gas }}"  autofocus autocomplete="average_volume_natural_gas" />
             </div>
 
 
 
             <div class="mt-4" id="average_volume_electric_power_div" hidden>
-                <x-label for="average_volume_electric_power" value="{{ __('AVERAGE VOLUME OF NATURAL GAS of LAST YEAR (dam3/day)') }}" />
+                <x-label for="average_volume_electric_power" value="{{ __('AVERAGE POWER of LAST YEAR AVERAGE. (MW)') }}  " />
                 <x-input id="average_volume_electric_power_input" class="block mt-1 w-full" type="text" name="average_volume_electric_power" value="{{ $user->last_year_average_powersold_of_electric_engery }}"  autofocus autocomplete="average_volume_electric_power" />
             </div>
 
@@ -163,39 +163,7 @@
 
 
         <script>
-            window.onload = function() {
-        const choseProductDropdown = idFinder('company_product');
-        choseProductDropdown.onchange = function() {
-            const selectedElement = choseProductDropdown.value;
-
-            if (selectedElement == 'electricity_power') {
-
-            idFinder('average_volume_natural_gas_div').removeAttribute('hidden');
-            idFinder('average_volume_electric_power_div').setAttribute('hidden', 'true');
-
-            idFinder('average_volume_electric_power_input').removeAttribute('required');
-            idFinder('average_volume_natural_gas_input').setAttribute('required', 'true');
-
-
-
-            } else if (selectedElement == 'natural_gas') {
-
-            idFinder('average_volume_electric_power_div').removeAttribute('hidden');
-            idFinder('average_volume_natural_gas_div').setAttribute('hidden', 'true');
-
-
-            idFinder('average_volume_natural_gas_input').removeAttribute('required');
-            idFinder('average_volume_electric_power_input').setAttribute('required', 'true');
-
-
-
-            } else {
-            idFinder('average_volume_natural_gas_div').setAttribute('hidden', 'true');
-            idFinder('average_volume_electric_power_div').setAttribute('hidden', 'true');
-            }
-        }
-        }
-
+      
 
         const choseProductCheckbox = idFinder('natural_gas_checkbox');
         choseProductCheckbox.onchange = function() {

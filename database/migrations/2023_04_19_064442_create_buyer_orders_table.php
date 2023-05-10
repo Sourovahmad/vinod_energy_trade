@@ -20,7 +20,7 @@ return new class extends Migration
 
             $table->string('supply_point_name')->nullable();
             $table->string('location_of_supply_point')->nullable();
-            $table->string('purchase_request_for')->nullable()->comment('electricity,naturalGas');
+            $table->string('purchase_request_for')->nullable()->comment('ELECTRICITY,NATURAL GAS');
             $table->dateTime('deadline_offer_recive')->nullable();
             $table->dateTime('publication_date')->nullable();
 
@@ -49,20 +49,20 @@ return new class extends Migration
             $table->string('total_quantity')->nullable();
             $table->string('cuenca_winter_mix')->nullable();
 
-            $table->string('winter_mqn')->nullable();
-            $table->string('winter_pto')->nullable();
-            $table->string('winter_scr')->nullable();
-            $table->string('winter_chu')->nullable();
-            $table->string('winter_noa')->nullable();
+            $table->string('winter_mqn')->default(0);
+            $table->string('winter_pto')->default(0);
+            $table->string('winter_scr')->default(0);
+            $table->string('winter_chu')->default(0);
+            $table->string('winter_noa')->default(0);
 
 
             $table->string('cuenca_summer_mix')->nullable();
 
-            $table->string('summer_mqn')->nullable();
-            $table->string('summer_pto')->nullable();
-            $table->string('summer_scr')->nullable();
-            $table->string('summer_chu')->nullable();
-            $table->string('summer_noa')->nullable();
+            $table->string('summer_mqn')->default(0);
+            $table->string('summer_pto')->default(0);
+            $table->string('summer_scr')->default(0);
+            $table->string('summer_chu')->default(0);
+            $table->string('summer_noa')->default(0);
 
 
             $table->string('type_of_supply')->nullable();
