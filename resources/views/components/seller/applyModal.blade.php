@@ -148,7 +148,7 @@
                   <thead>
                     <tr>
                       <th>Mes</th>
-                      <th>Consumo [dam3/mes]</th>
+                      <th>Demand [MWh]</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -243,100 +243,330 @@
                 <table
                   class="text-center text-secondary table table-sm table-hover"
                 >
-                  <tbody class="text-secondary">
-                    <tr>
-                      <td><b>Producto</b></td>
-                      <td>{{ $openOrder->supply_point_name }}</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <b>Plazo del Contrato</b>
-                      </td>
-                    
-                      <td>{{ $openOrder->contact_term_days }} days</td>
-                    </tr>
-
-                    @if(!is_null($openOrder->start_of_supply))
-                      
-                    
-                    <tr>
-                      <td>
-                        @php
-                        $formatedSupplyStartTime = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $openOrder->start_of_supply)->format('F j, Y, g:i a');
-                      @endphp
-                        <b>Inicio de Suministro</b>
-                      </td>
-                      <td>{{ $formatedSupplyStartTime }}t</td>
-                    </tr>
+                <tbody class="text-secondary" style="text-align: start">
 
 
-                    @endif
+                  <tr>
+                    <td><b>Supply Point Name</b></td>
+                    <td>{{ $openOrder->supply_point_name }}</td>
+                  </tr>
+
+
+
+                  <tr>
+                    <td>
+                      <b>Producto</b>
+                    </td>
                   
+                    <td>{{ $openOrder->purchase_request_for }} </td>
+                  </tr>
+
+
+                  
+                  <tr>
+                      <td>
+                        <b>Natural Gas Distributor POINT OF CONSUMPTION 1 </b>
+                      </td>
                     
-                    <tr>
-                      <td>
-                        <b>Tipo de Suministro</b>
-                      </td>
-                      <td> {{ $openOrder->type_of_supply }} </td>
+                      <td>{{ $openOrder->natural_gas_point_of_distribution_consumtion_1 }} </td>
                     </tr>
-                    <tr>
+
+
+
+                          
+                  <tr>
                       <td>
-                        <b>
-                          Exclusividad
-                          <svg
-                            class="MuiSvgIcon-root"
-                            focusable="false"
-                            viewBox="0 0 24 24"
-                            aria-hidden="true"
-                          >
-                            <path
-                              d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
-                            ></path>
-                          </svg>
-                        </b>
+                        <b>Natural Gas Tariff POINT OF CONSUMPTION 1
+                          RESERVE (dam3/day)
+                          </b>
                       </td>
-                      <td>{{ $openOrder->exclusivity }}</td>
+                    
+                      <td>{{ $openOrder->reserve }} </td>
                     </tr>
+
+
+
+                                 
+                  <tr>
+                      <td>
+                        <b>Contract Term (months)
+                          </b>
+                      </td>
+                    
+                      <td>{{ $openOrder->contact_term_months }}  months</td>
+                  </tr>
+
+
+
+
+                  
+                                 
+                  <tr>
+                      <td>
+                        <b>Cuenca Winter Mix
+                          </b>
+                      </td>
+                    
+                      <td> {{ $openOrder->winter_mqn }}% NQN, {{ $openOrder->winter_pto }}% PTO,  {{ $openOrder->winter_scr }}% SCR, {{ $openOrder->winter_chu }}% CHU, {{ $openOrder->winter_noa }}% NOA</td>
+                  </tr>
+
+
+                  <tr>
+                      <td>
+                        <b>Cuenca Summer Mix
+                          </b>
+                      </td>
+                    
+                      <td> {{ $openOrder->summer_mqn }}% NQN, {{ $openOrder->summer_pto }}% PTO,  {{ $openOrder->summer_scr }}% SCR, {{ $openOrder->summer_chu }}% CHU, {{ $openOrder->summer_noa }}% NOA</td>
+                  </tr>
+
+
+
+                  <tr>
+                      <td>
+                        <b>Type of Supply
+                          </b>
+                      </td>
+                    
+                      <td> {{$openOrder->type_of_supply}}</td>
+                  </tr>
+
+
+                  
+                  <tr>
+                      <td>
+                        <b>Exclusivity
+                          </b>
+                      </td>
+                    
+                      <td> {{$openOrder->exclusivity}}</td>
+                  </tr>
+
+
+                  
+                  
+                  <tr>
+                      <td>
+                        <b>Partial Award
+                          </b>
+                      </td>
+                    
+                      <td> {{$openOrder->partial_award}}</td>
+                  </tr>
+
+
 
                      
-                    <tr>
+                  <tr>
                       <td>
-                        <b>Total Quantity</b>
+                        <b>Price
+                          </b>
                       </td>
-                      <td>{{ $openOrder->total_quantity }} </td>
-                    </tr>
+                    
+                      <td> {{$openOrder->price}}</td>
+                  </tr>
 
-                    <tr>
+
+                  <tr>
                       <td>
-                        <b>Take or Pay</b>
+                        <b>Price Renegotiation Clause
+                          </b>
                       </td>
-                      <td>{{ $openOrder->take_or_pay_percentage }} %</td>
-                    </tr>
-                    <tr>
+                    
+                      <td> {{$openOrder->price_renegotiation}}</td>
+                  </tr>
+
+
+
+                  <tr>
                       <td>
-                        <b>Deliver or Pay</b>
+                        <b>Take or Pay optional to the Seller
+                          </b>
                       </td>
-                      <td>{{ $openOrder->delivery_or_pay_price }} %</td>
-                    </tr>
-                    <tr>
+                    
+                      <td> {{$openOrder->take_or_pay_optional_to_seller}}</td>
+                  </tr>
+
+
+
+
+                  <tr>
                       <td>
-                        <b>Plazo de pago</b>
+                        <b>Take or Pay (0 to 100%)
+                          </b>
                       </td>
-                      <td>{{ $openOrder->payment_term }} días</td>
-                    </tr>
-                    <tr>
+                    
+                      <td> {{$openOrder->take_or_pay_percentage}}</td>
+                  </tr>
+
+
+                  
+
+                  <tr>
                       <td>
-                        <b>Tasa de Cambio</b>
+                        <b>Take or Pay price
+                          </b>
                       </td>
-                      <td>{{ $openOrder->exchange_rate }}</td>
-                    </tr>
-                    <tr>
+                    
+                      <td> {{$openOrder->take_or_pay_price}}</td>
+                  </tr>
+
+
+
+
+                              
+
+                  <tr>
                       <td>
-                        <b>Comisión</b>
+                        <b>Optional Delivery or Pay to the Seller
+                          </b>
                       </td>
-                      <td>{{ $openOrder->auction_commision }}</td>
-                    </tr>
-                  </tbody>
+                    
+                      <td> {{$openOrder->optional_delivery_to_seller}}</td>
+                  </tr>
+
+
+
+                                        
+
+                  <tr>
+                      <td>
+                        <b>Optional Delivery or Pay price
+                          </b>
+                      </td>
+                    
+                      <td> {{$openOrder->delivery_or_pay_price}} USD/MMBtu </td>
+                  </tr>
+
+
+
+
+
+
+                                              
+
+                  <tr>
+                      <td>
+                        <b>Payment term
+                          </b>
+                      </td>
+                    
+                      <td> {{$openOrder->payment_term}} days </td>
+                  </tr>
+
+
+
+                  <tr>
+                      <td>
+                        <b>
+                          Exchange Rate
+                          </b>
+                      </td>
+                    
+                      <td> {{$openOrder->exchange_rate}} </td>
+                  </tr>
+
+
+                  <tr>
+                      <td>
+                        <b>
+                          Default Rate Debts in USD
+                          </b>
+                      </td>
+                    
+                      <td> {{$openOrder->default_rates_debts}} %</td>
+                  </tr>
+
+
+
+                  <tr>
+                      <td>
+                        <b>
+                          Mortgage Rate Debts in Pesos
+                          </b>
+                      </td>
+                    
+                      <td> {{$openOrder->mortage_rate_debts}} %</td>
+                  </tr>
+
+
+
+
+                  
+                  <tr>
+                      <td>
+                        <b>
+                          Auction Commission
+                          </b>
+                      </td>
+                    
+                      <td> {{$openOrder->auction_commision ? $openOrder->auction_commision : '0'}} %</td>
+                  </tr>
+
+
+
+
+                  <tr>
+                      <td>
+                        <b>
+                          Bid Maintenance Guarantee
+                          </b>
+                      </td>
+                    
+                      <td> {{$openOrder->bid_maintain_gurantee}} USD</td>
+                  </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  @if(!is_null($openOrder->start_of_supply))
+                    
+                  
+                  <tr>
+                    <td>
+                      @php
+                      $formatedSupplyStartTime = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $openOrder->start_of_supply)->format('F j, Y, g:i a');
+                    @endphp
+                      <b>Inicio de Suministro</b>
+                    </td>
+                    <td>{{ $formatedSupplyStartTime }}t</td>
+                  </tr>
+
+
+                  @endif
+                
+                  
+                  <tr>
+                    <td>
+                      <b>Tipo de Suministro</b>
+                    </td>
+                    <td> {{ $openOrder->type_of_supply }} </td>
+                  </tr>
+                  
+                  <tr>
+                    <td>
+                      <b>Total Quantity</b>
+                    </td>
+                    <td>{{ $openOrder->total_quantity }} </td>
+                  </tr>
+
+
+               
+                </tbody>
                 </table>
               </div>
             </div>
@@ -358,10 +588,7 @@
 
                 <div class="row">
                   <div class="col h4">Enter Your offer</div>
-                  <div class="col-sm-7">
-                    <b>Suggested payment term:</b>
-                  {{ $openOrder->contact_term_months }} Months
-                  </div>
+                 
                 </div>
               </div>
               <form method="post" action="{{ route('submit_bid') }}" enctype="multipart/form-data">
@@ -390,7 +617,7 @@
                     <div class="col">
                       <input
                         type="number"
-                        placeholder="USD/dam3"
+                        placeholder="USD/MWh"
                         class="form-control"
                         name="price_january"
                         value="{{ $currentBid ? $currentBid->price_january : '' }}"
@@ -412,7 +639,7 @@
                     <div class="col">
                       <input
                       type="number"
-                        placeholder="USD/dam3"
+                        placeholder="USD/MWh"
                         class="form-control"
                         name="price_february"
                         value="{{ $currentBid ? $currentBid->price_february : '' }}"
@@ -432,7 +659,7 @@
                       <label class="form-label">Price March</label>
                     </div>
                     <div class="col">
-                      <input type="number" placeholder="USD/dam3" class="form-control" name="price_march"             
+                      <input type="number" placeholder="USD/MWh" class="form-control" name="price_march"             
                           value="{{ $currentBid ? $currentBid->price_march : '' }}" required />
                     </div>
                     <div class="col-xl-1"></div>
@@ -446,7 +673,7 @@
                       <label class="form-label">Price April</label>
                     </div>
                     <div class="col">
-                      <input type="number" placeholder="USD/dam3" class="form-control" name="price_april" 
+                      <input type="number" placeholder="USD/MWh" class="form-control" name="price_april" 
                       value="{{ $currentBid ? $currentBid->price_april : '' }}"
                       required
                       />
@@ -462,7 +689,7 @@
                       <label class="form-label">Price May</label>
                     </div>
                     <div class="col">
-                      <input type="number" placeholder="USD/dam3" class="form-control" name="price_may"
+                      <input type="number" placeholder="USD/MWh" class="form-control" name="price_may"
                       value="{{ $currentBid ? $currentBid->price_may : '' }}"
                       required
                       />
@@ -478,7 +705,7 @@
                       <label type="number" class="form-label">Price June</label>
                     </div>
                     <div class="col">
-                      <input placeholder="USD/dam3" class="form-control" name="price_june"
+                      <input placeholder="USD/MWh" class="form-control" name="price_june"
                       value="{{ $currentBid ? $currentBid->price_june : '' }}"
                       required
                       
@@ -496,7 +723,7 @@
                       <label class="form-label">Price July</label>
                     </div>
                     <div class="col">
-                      <input type="number" placeholder="USD/dam3" class="form-control" name="price_july"
+                      <input type="number" placeholder="USD/MWh" class="form-control" name="price_july"
                       value="{{ $currentBid ? $currentBid->price_july : '' }}"
                       required
                       
@@ -514,7 +741,7 @@
                       <label class="form-label">Price August</label>
                     </div>
                     <div class="col">
-                      <input type="number" placeholder="USD/dam3" class="form-control" name="price_august"
+                      <input type="number" placeholder="USD/MWh" class="form-control" name="price_august"
                       value="{{ $currentBid ? $currentBid->price_august : '' }}"
 
                       required
@@ -533,7 +760,7 @@
                       <label class="form-label">Price September</label>
                     </div>
                     <div class="col">
-                      <input  type="number" placeholder="USD/dam3" class="form-control" name="price_september"
+                      <input  type="number" placeholder="USD/MWh" class="form-control" name="price_september"
                       value="{{ $currentBid ? $currentBid->price_september : '' }}"
 
                       required
@@ -553,7 +780,7 @@
                       <label class="form-label">Price October</label>
                     </div>
                     <div class="col">
-                      <input type="number" placeholder="USD/dam3" class="form-control" name="price_october" 
+                      <input type="number" placeholder="USD/MWh" class="form-control" name="price_october" 
                       value="{{ $currentBid ? $currentBid->price_october : '' }}"
 
                       required
@@ -573,7 +800,7 @@
                       <label class="form-label">Price November</label>
                     </div>
                     <div class="col">
-                      <input type="number" placeholder="USD/dam3" class="form-control" name="price_november"
+                      <input type="number" placeholder="USD/MWh" class="form-control" name="price_november"
                       value="{{ $currentBid ? $currentBid->price_november : '' }}"
 
                       required
@@ -593,7 +820,7 @@
                       <label class="form-label">Price December</label>
                     </div>
                     <div class="col">
-                      <input type="number" placeholder="USD/dam3" class="form-control" name="price_december"
+                      <input type="number" placeholder="USD/MWh" class="form-control" name="price_december"
                       value="{{ $currentBid ? $currentBid->price_december : '' }}"
 
                       required

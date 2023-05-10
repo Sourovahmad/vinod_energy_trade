@@ -543,24 +543,7 @@
                       </td>
                       <td> {{ $openOrder->type_of_supply }} </td>
                     </tr>
-                    <tr>
-                      <td>
-                        <b>
-                          Exclusividad
-                          <svg
-                            class="MuiSvgIcon-root"
-                            focusable="false"
-                            viewBox="0 0 24 24"
-                            aria-hidden="true"
-                          >
-                            <path
-                              d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
-                            ></path>
-                          </svg>
-                        </b>
-                      </td>
-                      <td>{{ $openOrder->exclusivity }}</td>
-                    </tr>
+                    
                     <tr>
                       <td>
                         <b>Total Quantity</b>
@@ -569,37 +552,7 @@
                     </tr>
 
 
-
-                    <tr>
-                      <td>
-                        <b>Take or Pay</b>
-                      </td>
-                      <td>{{ $openOrder->take_or_pay_percentage }} %</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <b>Deliver or Pay</b>
-                      </td>
-                      <td>{{ $openOrder->delivery_or_pay_price }} %</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <b>Plazo de pago</b>
-                      </td>
-                      <td>{{ $openOrder->payment_term }} días</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <b>Tasa de Cambio</b>
-                      </td>
-                      <td>{{ $openOrder->exchange_rate }}</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <b>Comisión</b>
-                      </td>
-                      <td>{{ $openOrder->auction_commision }}</td>
-                    </tr>
+                 
                   </tbody>
                 </table>
               </div>
