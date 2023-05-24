@@ -112,6 +112,7 @@ Route::middleware([
     // reivew section [superadmin]
     Route::get('orders-which-need-review', [superAdminController::class, 'orders_which_need_review'])->name('orders_which_need_review');
     Route::post('bid-approve-or-delete', [superAdminController::class, 'superadmin_approve_or_delete_bid'])->name('superadmin_approve_or_delete_bid');
+    Route::post('super_admin_user_update_additional_info', [superAdminController::class, 'super_admin_user_update_additional_info'])->name('super_admin_user_update_additional_info');
 
 
 

@@ -40,16 +40,17 @@ class authController extends Controller
 
     public function user_update_additional_info(Request $request)
     {
+
+            $request->validate([
+                'person_id' => 'required',
+                'social_name' => 'required',
+                'company_suit' => 'required',
+                'cuit_proof' => 'required|file|mimes:jpeg,png,pdf|max:5120',
+                'logo' => 'required',
+                'last_balance' => 'required',
+                'role' => 'required',
+            ]);
      
-        $request->validate([
-            'person_id' => 'required',
-            'social_name' => 'required',
-            'company_suit' => 'required',
-            'cuit_proof' => 'required|file|mimes:jpeg,png,pdf|max:5120',
-            'logo' => 'required',
-            'last_balance' => 'required',
-            'role' => 'required',
-        ]);
 
 
         $user = User::find(auth()->user()->id);

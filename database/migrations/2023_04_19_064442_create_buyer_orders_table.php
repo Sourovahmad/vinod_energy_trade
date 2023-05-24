@@ -49,20 +49,20 @@ return new class extends Migration
             $table->string('total_quantity')->nullable();
             $table->string('cuenca_winter_mix')->nullable();
 
-            $table->string('winter_mqn')->default(0);
-            $table->string('winter_pto')->default(0);
-            $table->string('winter_scr')->default(0);
-            $table->string('winter_chu')->default(0);
-            $table->string('winter_noa')->default(0);
+            $table->string('winter_mqn')->nullable()->default('0');
+            $table->string('winter_pto')->nullable()->default('0');
+            $table->string('winter_scr')->nullable()->default('0');
+            $table->string('winter_chu')->nullable()->default('0');
+            $table->string('winter_noa')->nullable()->default('0');
 
 
             $table->string('cuenca_summer_mix')->nullable();
 
-            $table->string('summer_mqn')->default(0);
-            $table->string('summer_pto')->default(0);
-            $table->string('summer_scr')->default(0);
-            $table->string('summer_chu')->default(0);
-            $table->string('summer_noa')->default(0);
+            $table->string('summer_mqn')->nullable()->default('0');
+            $table->string('summer_pto')->nullable()->default('0');
+            $table->string('summer_scr')->nullable()->default('0');
+            $table->string('summer_chu')->nullable()->default('0');
+            $table->string('summer_noa')->nullable()->default('0');
 
 
             $table->string('type_of_supply')->nullable();

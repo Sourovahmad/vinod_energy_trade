@@ -1,3 +1,10 @@
+
+
+<link rel="stylesheet" href="{{ asset('css/buyer_main_css.css') }}" />
+<script src="{{ asset('js/buyerConfig.js') }}" defer></script>
+
+
+
 <div class="modal-body">
     <!-- Nav tabs -->
     <ul class="nav nav-tabs" id="myTabs" role="tablist">
@@ -37,44 +44,17 @@
 
       <!-- Tab 2 content -->
       <div class="tab-pane fade" id="content_2{{ $user->id }}" role="tabpanel" aria-labelledby="tab2">
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Column A</th>
-              <th>Column B</th>
-              <th>Column C</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Data 2-A</td>
-              <td>Data 2-B</td>
-              <td>Data 2-C</td>
-            </tr>
-            <!-- Add more rows as needed -->
-          </tbody>
-        </table>
+        @include('components.admin.userInfoSingle.buyer_purchase',[
+          'purchase_requests' => $user->buyerOrders
+        ])
       </div>
 
       <!-- Tab 3 content -->
       <div class="tab-pane fade" id="content_3{{ $user->id }}" role="tabpanel" aria-labelledby="tab3">
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Column X</th>
-              <th>Column Y</th>
-              <th>Column Z</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Data 3-X</td>
-              <td>Data 3-Y</td>
-              <td>Data 3-Z</td>
-            </tr>
-            <!-- Add more rows as needed -->
-          </tbody>
-        </table>
+       @include('components.admin.userInfoSingle.sellerBids',[
+        "bids" => $user->sellerOffers
+       ])
+        
       </div>
     </div>
   </div>

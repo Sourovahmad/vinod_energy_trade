@@ -75,4 +75,83 @@ class superAdminController extends Controller
             return back()->withSuccess('bid has been deleted');
         }
     }
+
+
+    public function super_admin_user_update_additional_info(Request $request)
+    {
+
+        $request->validate([
+            'person_id' => 'required',
+            'social_name' => 'required',
+            'company_suit' => 'required',
+            'role' => 'required',
+            'user_id' => 'required'
+        ]);
+ 
+        $user = User::find($request->user_id);
+
+        $user->person_id = $request->person_id;
+        $user->social_name = $request->social_name;
+        $user->company_suit = $request->company_suit;
+        $user->role = $request->role;
+
+
+
+        if (!is_null($request->cuit_proof)) {
+       
+                // saving suitproof file
+                $suitproofFile = $request->file('cuit_proof');
+                $suitproofImgname = $suitproofFile->getClientOriginalName();
+                $uniqueNameForSuitFile = time().$suitproofImgname;
+                $suitproofFile->move('images', $uniqueNameForSuitFile);
+
+                $user->cuit_proof = $uniqueNameForSuitFile;
+        }
+
+
+
+
+        
+        if (!is_null($request->logo)) {
+        //saving logo
+        $logoFile = $request->file('logo');
+        $logoFileName = $logoFile->getClientOriginalName();
+        $uniqueLogoNAme = time().$logoFileName;
+        $logoFile->move('images', $uniqueLogoNAme);
+
+        $user->profile_photo_path = $uniqueLogoNAme;
+        }
+
+
+        // last balance
+
+
+        
+        
+        if (!is_null($request->last_balance)) {
+
+        $lastBalanceFile = $request->file('last_balance');
+        $lastBalanceFileNAme = $lastBalanceFile->getClientOriginalName();
+        $uniquelastBalanceNAme = time().$lastBalanceFileNAme;
+        $lastBalanceFile->move('images', $uniquelastBalanceNAme);
+
+        $user->last_balance = $uniquelastBalanceNAme;
+
+        }
+
+
+        if($request->has('average_volume_natural_gas')){
+            $user->last_year_average_trade_volume_of_natural_gas = $request->average_volume_natural_gas;
+        }
+
+
+        
+        if($request->has('average_volume_electric_power')){
+            $user->last_year_average_powersold_of_electric_engery = $request->average_volume_electric_power;
+        }
+
+        $user->save();
+
+        return back()->withSuccess("user has been updated");
+    }
 }
