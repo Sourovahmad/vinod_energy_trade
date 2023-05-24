@@ -6,53 +6,13 @@
 @include('components.additional.adminError')
 
 
-    <!-- Begin Page Content -->
-    {{-- <div class="collapse" id="createNewForm">
-        <div class="card mb-4 shadow">
-
-            <div class="card-header py-3  bg-techbot-dark">
-                <nav class="navbar navbar-dark">
-                    <a class="navbar-brand text-light"> Add Category </a>
-                </nav>
-            </div>
-
-            <div class="card-body">
-                <form method="POST" action="{{ route('admin.categories.store') }}">
-                    @csrf
-                    <div class="row">
-
-                        <div class="col-12 col-md-4 form-group">
-                            <label for="name">Category Name <span class="text-danger">*</span> </label>
-                            <input type="text" class="form-control" name="name" id="name" required>
-
-                        </div>
-
-                        <div class="col-12 col-md-4 form-group">
-                             <label for="description">Description  </label>
-                            <input type="text" class="form-control" name="description" id="description">
-
-                        </div>
-
-                        <div class="col-12">
-                            <button type="submit" class="btn bg-techbot-dark mt-3">Submit</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div> --}}
-
     <div class="card shadow mb-4">
 
         <div class="card-header py-3 bg-techbot-dark">
             <nav class="navbar">
 
                 <div class="navbar-brand">  {{ $user_type == 'Buyers' ? "Buyers" : "Sellers" }}  </div>
-                {{-- <div id="AddNewFormButtonDiv"><button type="button" class="btn btn-success btn-lg" id="AddNewFormButton"
-                        data-toggle="collapse" data-target="#createNewForm" aria-expanded="false"
-                        aria-controls="collapseExample"><i class="fas fa-plus" id="PlusButton"></i></button></div> --}}
-
-
+               
             </nav>
         </div>
         <div class="card-body">
@@ -124,6 +84,35 @@
                                         </i>
                                     </button>
 
+
+
+
+                                    {{-- user information mdoal --}}
+
+                                        <button title="Edit" type="button" class="btn btn-primary btn-sm"  data-toggle="modal" data-target="#information_view_modal_{{ $user->id }}" data-item-id={{ $user->id }}> <i class="fas fa-eye"
+                                            aria-hidden="false">
+                                        </i></button>
+
+
+                                        <div class="modal fade" id="information_view_modal_{{ $user->id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                          <div class="modal-dialog modal-lg" role="document">
+                                            <div class="modal-content">
+                                              <div class="modal-header">
+                                                <h5 class="modal-title" id="myModalLabel">User Informations</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                  <span aria-hidden="true">&times;</span>
+                                                </button>
+                                              </div>
+                                              {{--  modal body start here --}}
+
+                                              @include('components.admin.userInfo',[
+                                                'user' => $user,
+                                              ])
+                                  
+                                              {{-- modal body end here --}}
+                                            </div>
+                                          </div>
+                                        </div>
 
 
 
@@ -207,8 +196,6 @@
             </div>
         </div>
     </div>
-    <!-- /Attachment Modal -->
-
 
 
 
