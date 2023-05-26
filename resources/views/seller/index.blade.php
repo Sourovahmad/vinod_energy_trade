@@ -11,10 +11,6 @@
 
 
 
-
-
-
-
 <div class="justify-content-md-center row">
     <div class="col-xl-12 col-md-12 pl-4">
       <br />

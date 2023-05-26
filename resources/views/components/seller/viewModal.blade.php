@@ -265,13 +265,16 @@
 
 
                   
+                  @if($openOrder->purchase_request_for != 'ELECTRICITY')
                   <tr>
-                      <td>
-                        <b>Natural Gas Distributor POINT OF CONSUMPTION 1 </b>
-                      </td>
-                    
-                      <td>{{ $openOrder->natural_gas_point_of_distribution_consumtion_1 }} </td>
-                    </tr>
+                    <td>
+                      <b>Natural Gas Distributor POINT OF CONSUMPTION 1 </b>
+                    </td>
+                  
+                    <td>{{ $openOrder->natural_gas_point_of_distribution_consumtion_1 }} </td>
+                </tr>
+
+                  @endif
 
 
 
@@ -301,16 +304,18 @@
 
 
 
-                  
+                      
+                  @if($openOrder->purchase_request_for != 'ELECTRICITY')
                                  
-                  <tr>
-                      <td>
-                        <b>Cuenca Winter Mix
-                          </b>
-                      </td>
-                    
-                      <td> {{ $openOrder->winter_mqn }}% NQN, {{ $openOrder->winter_pto }}% PTO,  {{ $openOrder->winter_scr }}% SCR, {{ $openOrder->winter_chu }}% CHU, {{ $openOrder->winter_noa }}% NOA</td>
-                  </tr>
+                    <tr>
+                        <td>
+                          <b>Cuenca Winter Mix
+                            </b>
+                        </td>
+                      
+                        <td> {{ $openOrder->winter_mqn }}% NQN, {{ $openOrder->winter_pto }}% PTO,  {{ $openOrder->winter_scr }}% SCR, {{ $openOrder->winter_chu }}% CHU, {{ $openOrder->winter_noa }}% NOA</td>
+                    </tr>
+              
 
 
                   <tr>
@@ -321,6 +326,8 @@
                     
                       <td> {{ $openOrder->summer_mqn }}% NQN, {{ $openOrder->summer_pto }}% PTO,  {{ $openOrder->summer_scr }}% SCR, {{ $openOrder->summer_chu }}% CHU, {{ $openOrder->summer_noa }}% NOA</td>
                   </tr>
+
+               
 
 
 
@@ -344,7 +351,7 @@
                       <td> {{$openOrder->exclusivity}}</td>
                   </tr>
 
-
+                  @endif
                   
                   
                   <tr>
@@ -357,7 +364,8 @@
                   </tr>
 
 
-
+    
+                  @if($openOrder->purchase_request_for != 'ELECTRICITY')
                      
                   <tr>
                       <td>
@@ -367,6 +375,7 @@
                     
                       <td> {{$openOrder->price}}</td>
                   </tr>
+                  @endif
 
 
                   <tr>
@@ -379,6 +388,7 @@
                   </tr>
 
 
+                  @if($openOrder->purchase_request_for != 'ELECTRICITY')
 
                   <tr>
                       <td>
@@ -388,6 +398,8 @@
                     
                       <td> {{$openOrder->take_or_pay_optional_to_seller}}</td>
                   </tr>
+
+                  @endif
 
 
 
@@ -404,6 +416,7 @@
 
                   
 
+                  @if($openOrder->purchase_request_for != 'ELECTRICITY')
                   <tr>
                       <td>
                         <b>Take or Pay price
@@ -413,6 +426,7 @@
                       <td> {{$openOrder->take_or_pay_price}}</td>
                   </tr>
 
+                  @endif
 
 
 
@@ -522,19 +536,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
                   @if(!is_null($openOrder->start_of_supply))
                     
                   
@@ -550,14 +551,19 @@
 
 
                   @endif
+          
                 
                   
+                  
+                  @if($openOrder->purchase_request_for != 'ELECTRICITY')
                   <tr>
                     <td>
                       <b>Tipo de Suministro</b>
                     </td>
                     <td> {{ $openOrder->type_of_supply }} </td>
                   </tr>
+
+                  @endif
                   
                   <tr>
                     <td>
