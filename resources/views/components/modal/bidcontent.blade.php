@@ -375,25 +375,21 @@
 
 
                 <div class="row">
-                  <div class="col h4">Bid No:  {{ $loop->index }} </div>
+                  <div class="col h4">Bid No:  {{ $loop->index + 1 }} </div>
                   <div class="col-sm-7">
                     <b>Bid Created By : </b>
                   {{ $currentBid->user->social_name }}
                   </div>
                 </div>
               </div>
-              <form method="post" action="{{ route('submit_bid') }}" enctype="multipart/form-data">
+              <form method="post" action="{{ route('superadmin_update_bid') }}" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group mb-2">
                   <br />
                   <div class="row">
 
-                    <input type="text" name="order_id" value="{{ $openOrder->id }}" required hidden>
+                    <input type="text" name="bid_id" value="{{ $currentBid->id }}" required hidden>
 
-
-                    <input type="text" name="status" value="update" required hidden>
-
-                
 
                     <div class="col">
                       <label class="form-label">Price January </label>
@@ -405,7 +401,7 @@
                         class="form-control"
                         name="price_january"
                         value="{{ $currentBid ? $currentBid->price_january : '' }}"
-                        required
+                        
                       />
                     </div>
                     <div class="col-xl-1"></div>
@@ -427,7 +423,7 @@
                         class="form-control"
                         name="price_february"
                         value="{{ $currentBid ? $currentBid->price_february : '' }}"
-                        required
+                        
                       />
                     </div>
                     <div class="col-xl-1"></div>
@@ -444,7 +440,7 @@
                     </div>
                     <div class="col">
                       <input type="number" placeholder="USD/dam3" class="form-control" name="price_march"             
-                          value="{{ $currentBid ? $currentBid->price_march : '' }}" required />
+                          value="{{ $currentBid ? $currentBid->price_march : '' }}"  />
                     </div>
                     <div class="col-xl-1"></div>
                   </div>
@@ -459,7 +455,7 @@
                     <div class="col">
                       <input type="number" placeholder="USD/dam3" class="form-control" name="price_april" 
                       value="{{ $currentBid ? $currentBid->price_april : '' }}"
-                      required
+                      
                       />
                     </div>
                     <div class="col-xl-1"></div>
@@ -475,7 +471,7 @@
                     <div class="col">
                       <input type="number" placeholder="USD/dam3" class="form-control" name="price_may"
                       value="{{ $currentBid ? $currentBid->price_may : '' }}"
-                      required
+                      
                       />
                     </div>
                     <div class="col-xl-1"></div>
@@ -491,7 +487,7 @@
                     <div class="col">
                       <input placeholder="USD/dam3" class="form-control" name="price_june"
                       value="{{ $currentBid ? $currentBid->price_june : '' }}"
-                      required
+                      
                       
                       />
                     </div>
@@ -509,7 +505,7 @@
                     <div class="col">
                       <input type="number" placeholder="USD/dam3" class="form-control" name="price_july"
                       value="{{ $currentBid ? $currentBid->price_july : '' }}"
-                      required
+                      
                       
                       />
                     </div>
@@ -528,7 +524,7 @@
                       <input type="number" placeholder="USD/dam3" class="form-control" name="price_august"
                       value="{{ $currentBid ? $currentBid->price_august : '' }}"
 
-                      required
+                      
                       
                       />
                     </div>
@@ -547,7 +543,7 @@
                       <input  type="number" placeholder="USD/dam3" class="form-control" name="price_september"
                       value="{{ $currentBid ? $currentBid->price_september : '' }}"
 
-                      required
+                      
                       
                       
                       />
@@ -567,7 +563,7 @@
                       <input type="number" placeholder="USD/dam3" class="form-control" name="price_october" 
                       value="{{ $currentBid ? $currentBid->price_october : '' }}"
 
-                      required
+                      
                       
                       
                       />
@@ -587,7 +583,7 @@
                       <input type="number" placeholder="USD/dam3" class="form-control" name="price_november"
                       value="{{ $currentBid ? $currentBid->price_november : '' }}"
 
-                      required
+                      
                       
                       />
                     </div>
@@ -607,7 +603,7 @@
                       <input type="number" placeholder="USD/dam3" class="form-control" name="price_december"
                       value="{{ $currentBid ? $currentBid->price_december : '' }}"
 
-                      required
+                      
                       />
                     </div>
                     <div class="col-xl-1"></div>
@@ -633,7 +629,7 @@
                       value="{{ $currentBid ? $currentBid->optional_take_or_pay_to_seller : '' }}"
                       
                       
-                      required/>
+                      />
                     </div>
                     <div class="col-xl-1"></div>
                   </div>
@@ -659,7 +655,7 @@
                       value="{{ $currentBid ? $currentBid->optional_delivery_or_pay_to_seller : '' }}"
 
                       
-                      required/>
+                      />
                     </div>
                     <div class="col-xl-1"></div>
                   </div>
@@ -668,7 +664,15 @@
                 @endif
 
                 
-                
+                <div class="text-center justify-end m-6 ">
+           
+
+                  <button class="ml-4 text-white btn-lg mb-4" type="submit" style="background:rgb(18, 21, 179); colour:white" id="submitButton">
+                      {{ __('Update') }}
+                  </button>
+      
+      
+              </div>
 
 
                 <hr>

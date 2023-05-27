@@ -67,9 +67,9 @@
 
                 <a class="collapse-item" href="{{ route("superadmin_orders") }}"> PURCHASE ORDERS  </a>
                 <a class="collapse-item" href="{{ route("superadmin_orders_which_open") }}"> Open Orders  </a>
-                <a class="collapse-item" href="{{ route("superadmin_orders") }}"> Under Analysis </a>
-                <a class="collapse-item" href="{{ route("superadmin_orders") }}"> Awarded Ordres </a>
-                <a class="collapse-item" href="{{ route("superadmin_orders") }}"> Desert Orders  </a>
+                <a class="collapse-item" href="{{ route("superadmin_orders_under_analysis") }}"> Under Analysis </a>
+                <a class="collapse-item" href="{{ route("superadmin_orders_awarded") }}"> Awarded Ordres </a>
+                <a class="collapse-item" href="{{ route("superadmin_orders_desert") }}"> Desert Orders  </a>
 
 
             </div>

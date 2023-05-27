@@ -4,12 +4,14 @@ use App\Http\Controllers\authController;
 use App\Http\Controllers\BuyerController;
 use App\Http\Controllers\BuyerOrdersController;
 use App\Http\Controllers\indexController;
+use App\Http\Controllers\OrderHasBidController;
 use App\Http\Controllers\SellerController;
 use App\Http\Controllers\superAdminController;
 use App\Http\Middleware\ensureUserIsBuyer;
 use App\Http\Middleware\ensureUserisSeller;
 use App\Http\Middleware\ensureUserIsSuperadmin;
 use App\Models\buyerOrders;
+use App\Models\orderHasBid;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -115,11 +117,24 @@ Route::middleware([
 
 
     // superadmin order section
-    Route::get('superadmin_orders_which_open', [superAdminController::class, 'superadmin_orders_which_open'])->name('superadmin_orders_which_open');
+
     Route::get('superadmin_orders_edit/{id}', [BuyerOrdersController::class, 'superadmin_orders_edit_index'])->name('superadmin_orders_edit');
     Route::post('superadmin_order_update', [BuyerOrdersController::class, 'superadmin_orders_edit'])->name('superadmin_order_update');
     Route::post('superadmin_update_order_status', [BuyerOrdersController::class, 'superadmin_update_order_status'])->name('superadmin_update_order_status');
     Route::delete('superadmin_delete_order/{id}', [BuyerOrdersController::class, 'superadmin_delete_order'])->name('superadmin_delete_order');
+
+
+
+    Route::get('superadmin_orders_which_open', [superAdminController::class, 'superadmin_orders_which_open'])->name('superadmin_orders_which_open');
+    Route::get('superadmin_orders_under_analysis', [superAdminController::class, 'superadmin_orders_under_analysis'])->name('superadmin_orders_under_analysis');
+    Route::get('superadmin_orders_awarded', [superAdminController::class, 'superadmin_orders_awarded'])->name('superadmin_orders_awarded');
+    Route::get('superadmin_orders_desert', [superAdminController::class, 'superadmin_orders_desert'])->name('superadmin_orders_desert');
+
+
+    // bid section
+    Route::post('superadmin_update_bid', [OrderHasBidController::class, 'superadmin_update_bid'])->name('superadmin_update_bid');
+    
+
 
 
 

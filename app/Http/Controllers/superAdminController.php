@@ -154,4 +154,33 @@ class superAdminController extends Controller
         $page_title = 'Open Orders';
         return view('admin.orders.index', compact('orders', 'page_title'));
     }
+
+
+    
+    public function superadmin_orders_under_analysis()
+    {
+        $orders = buyerOrders::with(['bids'])->where('status', 'under_analysis')->get();
+        $page_title = 'Under Analysis Orders';
+        return view('admin.orders.index', compact('orders', 'page_title'));
+    }
+
+    public function superadmin_orders_awarded()
+    {
+        $orders = buyerOrders::with(['bids'])->where('status', 'awarded')->get();
+        $page_title = 'Awarded Orders';
+        return view('admin.orders.index', compact('orders', 'page_title'));
+    }
+
+
+    public function superadmin_orders_desert()
+    {
+        $orders = buyerOrders::with(['bids'])->where('status', 'desert')->get();
+        $page_title = 'Awarded Orders';
+        return view('admin.orders.index', compact('orders', 'page_title'));
+    }
+
+
+
+
+
 }
