@@ -186,16 +186,13 @@
     </div>
 
 
-    @if(!is_null($user->cuit_proof))
+    @if($user->cuit_proof && file_exists(public_path('images/' . $user->cuit_proof)))
         
-@php
-$userProofOfcuitFile = public_path('images/' . $user->cuit_proof); // Replace with the actual file path
-$fileExtensionCuit = pathinfo($userProofOfcuitFile, PATHINFO_EXTENSION);
-$cuit_fileType = mime_content_type($userProofOfcuitFile);
-@endphp
-
-
-
+                @php
+                $userProofOfcuitFile = public_path('images/' . $user->cuit_proof); // Replace with the actual file path
+                $fileExtensionCuit = pathinfo($userProofOfcuitFile, PATHINFO_EXTENSION);
+                $cuit_fileType = mime_content_type($userProofOfcuitFile);
+                @endphp
 
 
 <div class="mt-4">
@@ -224,18 +221,17 @@ $cuit_fileType = mime_content_type($userProofOfcuitFile);
 
 
 
-                    @if(!is_null($user->profile_photo_path))
-<div class="mt-4">
-    <label  > Previous Logo </label>
-    <img width="100%" height="400px" src="{{ asset('images/') }}/{{ $user->profile_photo_path }}" alt="logo">
-</div>
-
+@if($user->profile_photo_path)
+    <div class="mt-4">
+        <label  > Previous Logo </label>
+        <img width="100%" height="400px" src="{{ asset('images/') }}/{{ $user->profile_photo_path }}" alt="logo">
+    </div>
 
 @endif
 
 
 
-@if(!is_null($user->last_balance))
+@if($user->last_balance)
         
 <div class="mt-4">
     <label  class="w-100"> Previous (Last Balance)    </label>

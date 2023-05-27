@@ -65,7 +65,11 @@
             <div class="bg-white py-2 collapse-inner rounded">
 
 
-                <a class="collapse-item" href="{{ route("orders_which_need_review") }}"> Need Review  </a>
+                <a class="collapse-item" href="{{ route("superadmin_orders") }}"> PURCHASE ORDERS  </a>
+                <a class="collapse-item" href="{{ route("superadmin_orders_which_open") }}"> Open Orders  </a>
+                <a class="collapse-item" href="{{ route("superadmin_orders") }}"> Under Analysis </a>
+                <a class="collapse-item" href="{{ route("superadmin_orders") }}"> Awarded Ordres </a>
+                <a class="collapse-item" href="{{ route("superadmin_orders") }}"> Desert Orders  </a>
 
 
             </div>

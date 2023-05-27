@@ -36,7 +36,7 @@ return new class extends Migration
     
             $table->string('optional_take_or_pay_to_seller')->nullable();
             $table->string('optional_delivery_or_pay_to_seller')->nullable();
-            $table->boolean('reviewed')->default(false);
+            $table->boolean('reviewed')->default(true);
 
             $table->timestamps();
         });

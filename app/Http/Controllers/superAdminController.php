@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\buyerOrders;
 use App\Models\orderHasBid;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -50,31 +51,6 @@ class superAdminController extends Controller
 
     }
 
-
-    public function orders_which_need_review()
-    {
-        $orders = orderHasBid::with(['user', 'order'])->where('reviewed', false)->get();
-        return view('admin.review.index', compact('orders'));
-    }
-
-    public function superadmin_approve_or_delete_bid(Request $request)
-    {
-        $request->validate([
-            'bid_id' => 'required',
-            'status' => 'required'
-        ]);
-
-        $bid = orderHasBid::findOrFail($request->bid_id);
-
-        if ($request->status == 'approve') {
-            $bid->reviewed = true;
-            $bid->save();
-            return back()->withSuccess('bid Approved');
-        }else{
-            $bid->delete();
-            return back()->withSuccess('bid has been deleted');
-        }
-    }
 
 
     public function super_admin_user_update_additional_info(Request $request)
@@ -153,5 +129,29 @@ class superAdminController extends Controller
         $user->save();
 
         return back()->withSuccess("user has been updated");
+    }
+
+
+
+
+
+
+
+    // super admin purchase request section
+
+
+    
+    public function superadmin_orders()
+    {
+        $orders = buyerOrders::with(['bids'])->orderBy('id', 'desc')->get();
+        $page_title = 'All Purchase Requests';
+        return view('admin.orders.index', compact('orders','page_title'));
+    }
+
+    public function superadmin_orders_which_open()
+    {
+        $orders = buyerOrders::with(['bids'])->where('status', 'open')->get();
+        $page_title = 'Open Orders';
+        return view('admin.orders.index', compact('orders', 'page_title'));
     }
 }

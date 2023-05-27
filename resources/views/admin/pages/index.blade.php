@@ -32,7 +32,7 @@
                             <div class="card-body">
                             <div class="row no-gutters align-items-center">
                                 <div class="col mr-2">
-                                <div class="h5 mb-0 font-weight-bold text-gray-800"> <a href="{{ route('orders_which_need_review') }}"> Pending Bids   </a></div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800"> <a href="{{ route('superadmin_orders') }}"> All Purchase Requests   </a></div>
                                 </div>
 
                             </div>

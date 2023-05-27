@@ -15,7 +15,7 @@
         <div class="card-header py-3 bg-techbot-dark">
             <nav class="navbar">
 
-                <div class="navbar-brand"> Bid Review  </div>
+                <div class="navbar-brand">{{ $page_title }} </div>
               
 
             </nav>
@@ -31,7 +31,6 @@
                             <th> #</th>
                             <th>Order Code</th>
                             <th>Buyer</th>
-                            <th>Seller</th>
                             <th>Action</th>
 
                         </tr>
@@ -42,7 +41,6 @@
                             <th> #</th>
                             <th>Order Code</th>
                             <th>Buyer</th>
-                            <th>Seller</th>
                             <th>Action</th>
 
                         </tr>
@@ -57,13 +55,35 @@
 
                                 <td>{{ $order->id }}</td>
 
-                                <td class="word-break">{{ $order->order->code }} </td>
-                                <td class="word-break">{{ $order->order->user->social_name }} </td>
+                                <td class="word-break">{{ $order->code }} </td>
                                 <td class="word-break">{{ $order->user->social_name }} </td>
                                
                                 <td class="align-middle">
 
-                                    <button title="Edit" type="button" data-toggle="modal" data-target="#modal_view{{ $order->id }}" class="dataEditItemClass btn btn-success btn-sm"> <i class="fas fa-eye"></i> </button>
+                                    <button title="Edit" type="button" data-toggle="modal" data-target="#modal_view{{ $order->id }}" class="dataEditItemClass btn btn-success btn-sm"> view & Bids 
+                                    
+                                    </button>
+
+
+
+
+                                    
+                                    <button title="Edit" type="button" data-toggle="modal" data-target="#modal_edit{{ $order->id }}" class="btn btn-info btn-sm"> Edit 
+                                    
+                                    </button>
+
+
+
+                                    <button title="Edit" type="button" data-toggle="modal" data-target="#modal_status{{ $order->id }}" class="btn btn-primary btn-sm"> Change status 
+                                    
+                                    </button>
+
+
+                                    
+                                    <button title="Edit" type="button" data-toggle="modal" data-target="#modal_delete{{ $order->id }}" class="btn btn-danger btn-sm"> Delete 
+                                    
+                                    </button>
+
 
 
 
@@ -71,10 +91,9 @@
 
 
                                     @php
-                                        $openOrder = $order->order;
-                                        $currentBid = $order;
+                                        $openOrder = $order;
+                                        $bids = $order->bids;
                                     @endphp
-
 
 
                                     <div class="modal fade" id="modal_view{{ $order->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -82,7 +101,7 @@
 
                                             @include('components.modal.bidcontent',[
                                                 'openOrder' => $openOrder,
-                                                'currentBid' => $currentBid
+                                                'bids' => $bids
                                             ]);
                                           
                                         </div>
