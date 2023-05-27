@@ -68,8 +68,11 @@
 
 
                                     
-                                    <button title="Edit" type="button" data-toggle="modal" data-target="#modal_edit{{ $order->id }}" class="btn btn-info btn-sm"> Edit 
-                                    
+                                    <button title="Edit" type="button" class="btn btn-info btn-sm">
+                                        
+                                        <a class="text-white" href="{{ route('superadmin_orders_edit', $order->id) }}">Edit</a>
+                                         
+                        
                                     </button>
 
 

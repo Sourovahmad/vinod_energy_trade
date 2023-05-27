@@ -378,7 +378,7 @@
                 <p>Start of Supply:</p>
               </div>
               <div class="col-3">
-                <input type="date" class="select" name="start_of_supplystart_of_supply" required />
+                <input type="date" class="select" name="start_of_supply" required />
               </div>
             </div>
           </div>
