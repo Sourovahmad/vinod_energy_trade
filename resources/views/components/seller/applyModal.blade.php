@@ -611,13 +611,17 @@
 
                     @endif
 
+
+                    @if($openOrder->purchase_request_for == 'NATURAL GAS')
+                      
+
                     <div class="col">
                       <label class="form-label">Price January </label>
                     </div>
                     <div class="col">
                       <input
                         type="number"
-                        placeholder="USD/MWh"
+                        placeholder="USD/ MMbtu"
                         class="form-control"
                         name="price_january"
                         value="{{ $currentBid ? $currentBid->price_january : '' }}"
@@ -639,7 +643,7 @@
                     <div class="col">
                       <input
                       type="number"
-                        placeholder="USD/MWh"
+                        placeholder="USD/ MMbtu"
                         class="form-control"
                         name="price_february"
                         value="{{ $currentBid ? $currentBid->price_february : '' }}"
@@ -659,7 +663,7 @@
                       <label class="form-label">Price March</label>
                     </div>
                     <div class="col">
-                      <input type="number" placeholder="USD/MWh" class="form-control" name="price_march"             
+                      <input type="number" placeholder="USD/ MMbtu" class="form-control" name="price_march"             
                           value="{{ $currentBid ? $currentBid->price_march : '' }}" required />
                     </div>
                     <div class="col-xl-1"></div>
@@ -673,7 +677,7 @@
                       <label class="form-label">Price April</label>
                     </div>
                     <div class="col">
-                      <input type="number" placeholder="USD/MWh" class="form-control" name="price_april" 
+                      <input type="number" placeholder="USD/ MMbtu" class="form-control" name="price_april" 
                       value="{{ $currentBid ? $currentBid->price_april : '' }}"
                       required
                       />
@@ -689,7 +693,7 @@
                       <label class="form-label">Price May</label>
                     </div>
                     <div class="col">
-                      <input type="number" placeholder="USD/MWh" class="form-control" name="price_may"
+                      <input type="number" placeholder="USD/ MMbtu" class="form-control" name="price_may"
                       value="{{ $currentBid ? $currentBid->price_may : '' }}"
                       required
                       />
@@ -705,7 +709,7 @@
                       <label type="number" class="form-label">Price June</label>
                     </div>
                     <div class="col">
-                      <input placeholder="USD/MWh" class="form-control" name="price_june"
+                      <input placeholder="USD/ MMbtu" class="form-control" name="price_june"
                       value="{{ $currentBid ? $currentBid->price_june : '' }}"
                       required
                       
@@ -723,7 +727,7 @@
                       <label class="form-label">Price July</label>
                     </div>
                     <div class="col">
-                      <input type="number" placeholder="USD/MWh" class="form-control" name="price_july"
+                      <input type="number" placeholder="USD/ MMbtu" class="form-control" name="price_july"
                       value="{{ $currentBid ? $currentBid->price_july : '' }}"
                       required
                       
@@ -741,7 +745,7 @@
                       <label class="form-label">Price August</label>
                     </div>
                     <div class="col">
-                      <input type="number" placeholder="USD/MWh" class="form-control" name="price_august"
+                      <input type="number" placeholder="USD/ MMbtu" class="form-control" name="price_august"
                       value="{{ $currentBid ? $currentBid->price_august : '' }}"
 
                       required
@@ -760,7 +764,7 @@
                       <label class="form-label">Price September</label>
                     </div>
                     <div class="col">
-                      <input  type="number" placeholder="USD/MWh" class="form-control" name="price_september"
+                      <input  type="number" placeholder="USD/ MMbtu" class="form-control" name="price_september"
                       value="{{ $currentBid ? $currentBid->price_september : '' }}"
 
                       required
@@ -780,7 +784,7 @@
                       <label class="form-label">Price October</label>
                     </div>
                     <div class="col">
-                      <input type="number" placeholder="USD/MWh" class="form-control" name="price_october" 
+                      <input type="number" placeholder="USD/ MMbtu" class="form-control" name="price_october" 
                       value="{{ $currentBid ? $currentBid->price_october : '' }}"
 
                       required
@@ -800,7 +804,7 @@
                       <label class="form-label">Price November</label>
                     </div>
                     <div class="col">
-                      <input type="number" placeholder="USD/MWh" class="form-control" name="price_november"
+                      <input type="number" placeholder="USD/ MMbtu" class="form-control" name="price_november"
                       value="{{ $currentBid ? $currentBid->price_november : '' }}"
 
                       required
@@ -820,7 +824,7 @@
                       <label class="form-label">Price December</label>
                     </div>
                     <div class="col">
-                      <input type="number" placeholder="USD/MWh" class="form-control" name="price_december"
+                      <input type="number" placeholder="USD/ MMbtu" class="form-control" name="price_december"
                       value="{{ $currentBid ? $currentBid->price_december : '' }}"
 
                       required
@@ -830,6 +834,30 @@
                   </div>
                 </div>
 
+                @else
+
+
+
+                            
+                <div class="form-group mb-3">
+                  <div class="row">
+                    <div class="col">
+                      <label class="form-label">Price </label>
+                    </div>
+                    <div class="col">
+                      <input type="number" placeholder="USD/MWh" class="form-control" name="electricity_price"
+                      value="{{ $currentBid ? $currentBid->electricity_price : '' }}"
+
+                      required
+                      />
+                    </div>
+                    <div class="col-xl-1"></div>
+                  </div>
+                </div>
+
+
+
+                @endif
 
 
 
