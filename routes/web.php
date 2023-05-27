@@ -118,7 +118,8 @@ Route::middleware([
     Route::get('superadmin_orders_which_open', [superAdminController::class, 'superadmin_orders_which_open'])->name('superadmin_orders_which_open');
     Route::get('superadmin_orders_edit/{id}', [BuyerOrdersController::class, 'superadmin_orders_edit_index'])->name('superadmin_orders_edit');
     Route::post('superadmin_order_update', [BuyerOrdersController::class, 'superadmin_orders_edit'])->name('superadmin_order_update');
-
+    Route::post('superadmin_update_order_status', [BuyerOrdersController::class, 'superadmin_update_order_status'])->name('superadmin_update_order_status');
+    Route::delete('superadmin_delete_order/{id}', [BuyerOrdersController::class, 'superadmin_delete_order'])->name('superadmin_delete_order');
 
 
 

@@ -82,11 +82,26 @@
                                     </button>
 
 
-                                    
-                                    <button title="Edit" type="button" data-toggle="modal" data-target="#modal_delete{{ $order->id }}" class="btn btn-danger btn-sm"> Delete 
-                                    
-                                    </button>
+                               
+                                    <form method="POST" action="{{ route('superadmin_delete_order', $order->id) }}"
+                                        id="delete-form-{{ $order->id }}" style="display:none; ">
+                                        {{ csrf_field() }}
+                                        {{ method_field('delete') }}
+                                    </form>
 
+
+
+                                    <button title="Delete" class="dataDeleteItemClass btn btn-danger btn-sm" onclick="if(confirm('Are you sure Want To Delete ?')){
+            document.getElementById('delete-form-{{ $order->id }}').submit();
+           }
+           else{
+            event.preventDefault();
+           }
+           " class="btn btn-danger btn-sm btn-raised">
+                                        <i class="fa fa-trash" aria-hidden="false">
+
+                                        </i>
+                                    </button>
 
 
 
@@ -110,11 +125,65 @@
                                         </div>
                                       </div>
 
-
-
-
-
                                     {{-- bid view modal end here here --}}
+
+
+
+                                    {{-- order edit modal start here --}}
+
+                                    <div class="modal fade" id="modal_status{{ $order->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                          <div class="modal-content">
+                                            <div class="modal-header">
+                                              <h5 class="modal-title" id="exampleModalLabel">change status {{ $order->supply_point_name }}</h5>
+
+                                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                              </button>
+                                            </div>
+                      
+                                            <form action="{{ route('superadmin_update_order_status') }}" method="POST" >
+                                              @csrf
+                                            
+                                            <input type="text" name="order_hidden_id" id="" value="{{ $order->id  }}" required hidden>
+                                         
+                                            <div class="modal-body">
+                                              
+                      
+                                              <div class="form-group mt-3">
+                                                 <label for="status_change_select"> Status</label>
+                                               
+                                                    <select class="select form-control" name="status" required id="status_change_select">
+
+                                                        @php
+                                                            $currentStatus = $order->status;
+                                                        @endphp
+                      
+                                                      <option value="open" {{ $currentStatus == 'open' ? 'selected' : '' }}  >Open</option>
+                                                      <option value="awarded" {{ $currentStatus == 'awarded' ? 'selected' : '' }}  >Awarded</option>
+                                                      <option value="under_analysis" {{ $currentStatus == 'under_analysis' ? 'selected' : '' }}  >Under Analysis</option>
+                                                      <option value="desert"  {{ $currentStatus == 'desert' ? 'selected' : '' }}  >Desert</option>
+
+
+                                                    </select>
+                                              </div>
+                                    
+                      
+                      
+                                            </div>
+                                            <div class="modal-footer">
+                                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                              <button type="submit" class="btn btn-primary">Save changes</button>
+                                            </div>
+                      
+                                          </form>
+                                          </div>
+                                        </div>
+                                      </div>
+
+
+
+                                    {{-- order edit modal end here --}}
 
                                  </td>
 

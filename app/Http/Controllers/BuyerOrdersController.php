@@ -295,4 +295,40 @@ class BuyerOrdersController extends Controller
 
 
     }
+
+
+    public function superadmin_update_order_status(Request $request)
+    {
+        $request->validate([
+            'order_hidden_id' => 'required'
+        ]);
+
+        $order = buyerOrders::findOrFail($request->order_hidden_id);
+        $order->status = $request->status;
+        $order->save();
+
+        return back()->withSuccess("order status has been updated");
+
+    }
+
+    public function superadmin_delete_order($id)
+    {
+    
+        $order = buyerOrders::findOrFail($id);
+
+        $orderBids = $order->bids;
+
+        foreach ($orderBids as $singleBid) {
+           $singleBid->delete();
+        }
+
+        $order->delete();
+
+        return back()->withSuccess("order has been deleted");
+
+    }
+
+
+
+
 }
