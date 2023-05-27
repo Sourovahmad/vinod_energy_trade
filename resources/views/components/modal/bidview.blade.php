@@ -20,27 +20,7 @@
 
           <div class="row">
             <div class="col h4">Offerd by :   {{ $currentBid->user->social_name }} </div>
-            <div class="col-sm-7 text-end">
-              <b>  
-
-      
-                <form action="{{ route('superadmin_approve_or_delete_bid') }}" method="post" >
-                    @csrf
-                
-                    <input type="text" name="bid_id"  value="{{ $currentBid->id }}" required hidden>
-                    <input type="text" name="status" value="delete"  required hidden>
-                
-                    <button type="submit" class="btn btn-danger" >  
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M7 21q-.825 0-1.413-.588T5 19V6H4V4h5V3h6v1h5v2h-1v13q0 .825-.588 1.413T17 21H7ZM17 6H7v13h10V6ZM9 17h2V8H9v9Zm4 0h2V8h-2v9ZM7 6v13V6Z"/></svg>
-                        
-                          </button>
-                
-                    
-                  </form>
-            
-            </b>
            
-            </div>
           </div>
         </div>
         <form method="post" action="{{ route('submit_bid') }}" enctype="multipart/form-data">
@@ -49,7 +29,7 @@
             <br />
             <div class="row">
 
-              <input type="text" name="order_id" value="{{ $openOrder->id }}" required hidden>
+              {{-- <input type="text" name="order_id" value="{{ $openOrder->id }}" required hidden> --}}
 
 
               @if($currentBid != null)
@@ -286,8 +266,8 @@
 
 
 
-
-          @if($openOrder->take_or_pay_optional_to_seller == 'YES')
+          
+          @if(!is_null($currentBid->take_or_pay_optional_to_seller))
 
 
           <div class="form-group mb-3">
@@ -314,7 +294,7 @@
 
 
 
-          @if($openOrder->optional_delivery_to_seller == 'YES')
+          @if(!is_null($currentBid->optional_delivery_to_seller))
 
 
           <div class="form-group mb-3">

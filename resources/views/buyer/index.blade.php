@@ -179,80 +179,12 @@
             <div class="text-center col" >
               <div class="btn-group">
                 <button type="button" class="btn btn-success btn-sm m-1" data-bs-toggle="modal" data-bs-target="#modal_view{{ $openOrder->id }}">view</button>
-                {{-- <button type="button" class="btn btn-primary btn-sm m-1" data-bs-toggle="modal" data-bs-target="#modal_edit{{ $openOrder->id }}">change status</button> --}}
-              
-                 
-                {{-- <button type="button" class="btn btn-primary btn-sm m-1" data-bs-toggle="modal" data-bs-target="#bid_view{{ $openOrder->id }}" >view bids</button> --}}
-
+             
                 <button type="button" class="btn btn-danger btn-sm m-1" onclick="deleteTheOrder({{ $openOrder->id }})">delete</button>
               </div>
             </div>
 
-
-            {{--  bid view modal --}}
-
-            <div class="modal fade" id="bid_view{{ $openOrder->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog modal-lg">
-
-                  @include('components.modal.bidview',[
-                      'bids' => $openOrder->bids,
-                  ]);
-                
-              </div>
-            </div>
-
-
-
-            {{-- end of the bid view modal --}}
-
-
-
-            {{-- edit modal start here --}}
-
-            <!-- Modal -->
-                      <div class="modal fade" id="modal_edit{{ $openOrder->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h5 class="modal-title" id="exampleModalLabel">change status {{ $openOrder->supply_point_name }}</h5>
-                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-
-                            <form action="{{ route('update_order_status') }}" method="POST" >
-                              @csrf
-                            
-                            <input type="text" name="order_id" id="" value="{{ $openOrder->id  }}" required hidden>
-                         
-                            <div class="modal-body">
-                              
-
-                              <div class="form-group mt-3">
-                                 <label for="status_change_select"> Status</label>
-                               
-                                    <select class="select form-control" name="status" required id="status_change_select">
-
-                                      <option value="open" selected >Open</option>
-                                      <option value="awarded">Awarded</option>
-                                      <option value="under_analysis">Under Analysis</option>
-                                      <option value="desert">Desert</option>
-                                    </select>
-                              </div>
-                    
-
-
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                              <button type="submit" class="btn btn-primary">Save changes</button>
-                            </div>
-
-                          </form>
-                          </div>
-                        </div>
-                      </div>
-
-
-            {{-- edit modal end here --}}
+  
 
 
 
@@ -359,86 +291,10 @@
                 <div class="btn-group">
                
                   <button type="button" class="btn btn-success btn-sm m-1" data-bs-toggle="modal" data-bs-target="#modal_view{{ $analysisOrder->id }}">view</button>
-                  {{-- <button type="button" class="btn btn-primary btn-sm m-1" data-bs-toggle="modal" data-bs-target="#modal_edit{{ $analysisOrder->id }}">change status</button> --}}
-                  <button type="button" class="btn btn-primary btn-sm m-1" data-bs-toggle="modal" data-bs-target="#bid_view{{ $analysisOrder->id }}" >view bids</button>
+            
                   
                   <button type="button" class="btn btn-danger btn-sm m-1" onclick="deleteTheOrder({{ $analysisOrder->id }})">delete</button>
                 </div>
-
-
-                
-     {{--  bid view modal --}}
-
-            <div class="modal fade" id="bid_view{{ $analysisOrder->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog modal-lg">
-
-                  @include('components.modal.bidview',[
-                      'bids' => $analysisOrder->bids,
-                  ]);
-                
-              </div>
-            </div>
-
-
-
-            {{-- end of the bid view modal --}}
-
-
-
-                {{-- analysis edit modal start here --}}
-
-                <div class="modal fade" id="modal_edit{{ $analysisOrder->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">change status {{ $analysisOrder->supply_point_name }}</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                      </div>
-
-                      <form action="{{ route('update_order_status') }}" method="POST" >
-                        @csrf
-                      
-                      <input type="text" name="order_id" id="" value="{{ $analysisOrder->id  }}" required hidden>
-                   
-                      <div class="modal-body">
-                        
-
-                        <div class="form-group mt-3">
-                           <label for="status_change_select"> Status</label>
-                         
-                              <select class="select form-control" name="status" required id="status_change_select">
-
-                                <option value="open"  >Open</option>
-                                <option value="awarded">Awarded</option>
-                                <option value="under_analysis" selected>Under Analysis</option>
-                                <option value="desert">Desert</option>
-                              </select>
-                        </div>
-              
-
-
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Save changes</button>
-                      </div>
-
-                    </form>
-                    </div>
-                  </div>
-                </div>
-
-
-
-
-                {{-- analysis edit modal ends here --}}
-
-
-
-
-
-
-
 
 
 
@@ -546,8 +402,7 @@
               <div class="btn-group">
              
                 <button type="button" class="btn btn-success btn-sm m-1" data-bs-toggle="modal" data-bs-target="#modal_view{{ $awardedOrder->id }}">view</button>
-                {{-- <button type="button" class="btn btn-primary btn-sm m-1" data-bs-toggle="modal" data-bs-target="#modal_edit{{ $awardedOrder->id }}">change status</button> --}}
-                {{-- <button type="button" class="btn btn-primary btn-sm m-1" data-bs-toggle="modal" data-bs-target="#bid_view{{ $awardedOrder->id }}" >view bids</button> --}}
+                <button type="button" class="btn btn-primary btn-sm m-1" data-bs-toggle="modal" data-bs-target="#bid_view{{ $awardedOrder->id }}" >view bids</button>
                 <button type="button" class="btn btn-danger btn-sm m-1" onclick="deleteTheOrder({{ $awardedOrder->id }})">delete</button>
               </div>
 
