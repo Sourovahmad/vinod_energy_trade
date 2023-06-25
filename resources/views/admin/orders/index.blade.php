@@ -31,6 +31,7 @@
                             <th> #</th>
                             <th>Order Code</th>
                             <th>Buyer</th>
+                            <th>Request Type</th>
                             <th>Action</th>
 
                         </tr>
@@ -41,6 +42,7 @@
                             <th> #</th>
                             <th>Order Code</th>
                             <th>Buyer</th>
+                            <th>Request Type</th>
                             <th>Action</th>
 
                         </tr>
@@ -57,7 +59,7 @@
 
                                 <td class="word-break">{{ $order->code }} </td>
                                 <td class="word-break">{{ $order->user->social_name }} </td>
-                               
+                                <td class="word-break">{{ $order->purchase_request_for}} </td>
                                 <td class="align-middle">
 
                                     <button title="Edit" type="button" data-toggle="modal" data-target="#modal_view{{ $order->id }}" class="dataEditItemClass btn btn-success btn-sm"> view & Bids 
@@ -108,28 +110,6 @@
                                     {{-- bid view modal start here --}}
 
 
-                                    @php
-                                        $openOrder = $order;
-                                        $bids = $order->bids;
-                                    @endphp
-
-
-                                    <div class="modal fade" id="modal_view{{ $order->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-lg">
-
-                                            @include('components.modal.bidcontent',[
-                                                'openOrder' => $openOrder,
-                                                'bids' => $bids
-                                            ]);
-                                          
-                                        </div>
-                                      </div>
-
-                                    {{-- bid view modal end here here --}}
-
-
-
-                                    {{-- order edit modal start here --}}
 
                                     <div class="modal fade" id="modal_status{{ $order->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog">
@@ -182,8 +162,26 @@
                                       </div>
 
 
+                                    @php
+                                        $openOrder = $order;
+                                        $bids = $order->bids;
+                                    @endphp
 
-                                    {{-- order edit modal end here --}}
+
+                                    <div class="modal fade" id="modal_view{{ $order->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+
+                                            @include('components.modal.bidcontent',[
+                                                'openOrder' => $openOrder,
+                                                'bids' => $bids
+                                            ]);
+                                          
+                                        </div>
+                                    </div>
+
+                                    {{-- bid view modal end here here --}}
+
+
 
                                  </td>
 

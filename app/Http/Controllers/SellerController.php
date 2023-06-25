@@ -47,7 +47,7 @@ class SellerController extends Controller
         $orderHasBid = null;
 
         if($reqeust->status == 'update'){
-            $orderHasBid = orderHasBid::find($reqeust->order_id);
+            $orderHasBid = orderHasBid::find($reqeust->bid_id);
         }else{
             $orderHasBid = new orderHasBid;
         }
@@ -69,6 +69,7 @@ class SellerController extends Controller
         $orderHasBid->price_october = $reqeust->price_october;
         $orderHasBid->price_november = $reqeust->price_november;
         $orderHasBid->price_december = $reqeust->price_december;
+        $orderHasBid->electricity_price = $reqeust->electricity_price;
 
 
         if ($reqeust->has('optional_take_or_pay_to_seller')) {

@@ -604,6 +604,8 @@
 
                     <input type="text" name="status" value="update" required hidden>
 
+                    <input type="text" name="bid_id" value="{{ $currentBid->id }}" required hidden>
+
                     @else
 
                         <input type="text" name="status" value="create" required hidden>
@@ -621,6 +623,7 @@
                     <div class="col">
                       <input
                         type="number"
+                        step="0.01"
                         placeholder="USD/ MMbtu"
                         class="form-control"
                         name="price_january"
@@ -643,6 +646,7 @@
                     <div class="col">
                       <input
                       type="number"
+                      step="0.01"
                         placeholder="USD/ MMbtu"
                         class="form-control"
                         name="price_february"
@@ -664,7 +668,7 @@
                     </div>
                     <div class="col">
                       <input type="number" placeholder="USD/ MMbtu" class="form-control" name="price_march"             
-                          value="{{ $currentBid ? $currentBid->price_march : '' }}" required />
+                          value="{{ $currentBid ? $currentBid->price_march : '' }}"  step="0.01" required />
                     </div>
                     <div class="col-xl-1"></div>
                   </div>
@@ -678,7 +682,7 @@
                     </div>
                     <div class="col">
                       <input type="number" placeholder="USD/ MMbtu" class="form-control" name="price_april" 
-                      value="{{ $currentBid ? $currentBid->price_april : '' }}"
+                      value="{{ $currentBid ? $currentBid->price_april : '' }}"  step="0.01"
                       required
                       />
                     </div>
@@ -694,7 +698,7 @@
                     </div>
                     <div class="col">
                       <input type="number" placeholder="USD/ MMbtu" class="form-control" name="price_may"
-                      value="{{ $currentBid ? $currentBid->price_may : '' }}"
+                      value="{{ $currentBid ? $currentBid->price_may : '' }}"  step="0.01"
                       required
                       />
                     </div>
@@ -710,7 +714,7 @@
                     </div>
                     <div class="col">
                       <input placeholder="USD/ MMbtu" class="form-control" name="price_june"
-                      value="{{ $currentBid ? $currentBid->price_june : '' }}"
+                      value="{{ $currentBid ? $currentBid->price_june : '' }}"  step="0.01"
                       required
                       
                       />
@@ -728,7 +732,7 @@
                     </div>
                     <div class="col">
                       <input type="number" placeholder="USD/ MMbtu" class="form-control" name="price_july"
-                      value="{{ $currentBid ? $currentBid->price_july : '' }}"
+                      value="{{ $currentBid ? $currentBid->price_july : '' }}"  step="0.01"
                       required
                       
                       />
@@ -746,7 +750,7 @@
                     </div>
                     <div class="col">
                       <input type="number" placeholder="USD/ MMbtu" class="form-control" name="price_august"
-                      value="{{ $currentBid ? $currentBid->price_august : '' }}"
+                      value="{{ $currentBid ? $currentBid->price_august : '' }}"  step="0.01"
 
                       required
                       
@@ -765,7 +769,7 @@
                     </div>
                     <div class="col">
                       <input  type="number" placeholder="USD/ MMbtu" class="form-control" name="price_september"
-                      value="{{ $currentBid ? $currentBid->price_september : '' }}"
+                      value="{{ $currentBid ? $currentBid->price_september : '' }}"  step="0.01"
 
                       required
                       
@@ -785,7 +789,7 @@
                     </div>
                     <div class="col">
                       <input type="number" placeholder="USD/ MMbtu" class="form-control" name="price_october" 
-                      value="{{ $currentBid ? $currentBid->price_october : '' }}"
+                      value="{{ $currentBid ? $currentBid->price_october : '' }}"  step="0.01"
 
                       required
                       
@@ -805,7 +809,7 @@
                     </div>
                     <div class="col">
                       <input type="number" placeholder="USD/ MMbtu" class="form-control" name="price_november"
-                      value="{{ $currentBid ? $currentBid->price_november : '' }}"
+                      value="{{ $currentBid ? $currentBid->price_november : '' }}"  step="0.01"
 
                       required
                       
@@ -825,7 +829,7 @@
                     </div>
                     <div class="col">
                       <input type="number" placeholder="USD/ MMbtu" class="form-control" name="price_december"
-                      value="{{ $currentBid ? $currentBid->price_december : '' }}"
+                      value="{{ $currentBid ? $currentBid->price_december : '' }}"  step="0.01"
 
                       required
                       />
@@ -846,9 +850,13 @@
                     </div>
                     <div class="col">
                       <input type="number" placeholder="USD/MWh" class="form-control" name="electricity_price"
-                      value="{{ $currentBid ? $currentBid->electricity_price : '' }}"
+                      value="{{ $currentBid ? $currentBid->electricity_price : '' }}"  step="0.01"
 
-                      required
+                      @if(!$currentBid)
+                         required
+                      @endif
+                      
+                      
                       />
                     </div>
                     <div class="col-xl-1"></div>
@@ -874,7 +882,7 @@
                     <div class="col">
                       <input type="number" placeholder="0%-100%" class="form-control" name="optional_take_or_pay_to_seller" min="0" max="100"
                       
-                      value="{{ $currentBid ? $currentBid->optional_take_or_pay_to_seller : '' }}"
+                      value="{{ $currentBid ? $currentBid->optional_take_or_pay_to_seller : '' }}"  step="0.01"
                       
                       
                       required/>
@@ -900,7 +908,7 @@
                     </div>
                     <div class="col">
                       <input type="number" placeholder="0%-100%" class="form-control" name="optional_delivery_or_pay_to_seller" min="0" max="100"
-                      value="{{ $currentBid ? $currentBid->optional_delivery_or_pay_to_seller : '' }}"
+                      value="{{ $currentBid ? $currentBid->optional_delivery_or_pay_to_seller : '' }}"  step="0.01"
 
                       
                       required/>

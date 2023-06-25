@@ -396,7 +396,7 @@
 
                     
             @include('components.seller.viewModal', [
-              'openOrder' => $openOrder,
+              'openOrder' => $awardedOrder,
             ])
 
                     
@@ -510,7 +510,7 @@
 
                     
             @include('components.seller.viewModal', [
-              'openOrder' => $openOrder,
+              'openOrder' => $desertOrder,
             ])
                     
                     <div class="modal-footer">

@@ -386,6 +386,11 @@
                 @csrf
                 <div class="form-group mb-2">
                   <br />
+
+
+                  @if($currentBid->order->purchase_request_for == 'NATURAL GAS')
+                    
+
                   <div class="row">
 
                     <input type="text" name="bid_id" value="{{ $currentBid->id }}" required hidden>
@@ -609,6 +614,33 @@
                     <div class="col-xl-1"></div>
                   </div>
                 </div>
+
+
+                @else
+
+
+                
+                <div class="form-group mb-3">
+                  <div class="row">
+                    <div class="col">
+                      <label class="form-label">Electricity Bid Price</label>
+                    </div>
+                    <div class="col">
+                      <input type="number" placeholder="USD/MWh" class="form-control" name="electricity_price"
+                      value="{{ $currentBid ? $currentBid->electricity_price : '' }}"
+
+                      
+                      />
+                    </div>
+                    <div class="col-xl-1"></div>
+                  </div>
+                </div>
+
+
+
+
+
+                @endif
 
 
 
