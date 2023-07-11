@@ -120,7 +120,7 @@
 
 
                 <div class="row">
-                  <div class="col">Enter Your offer</div>
+                  <div class="col">Ingrese su Oferta</div>
                   <div class="col-sm-7">
                     <b>Suggested payment term:</b>
                     30 días

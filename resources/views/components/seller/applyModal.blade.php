@@ -587,7 +587,7 @@
 
 
                 <div class="row">
-                  <div class="col h4">Enter Your offer</div>
+                  <div class="col h4">Ingrese su Oferta</div>
                  
                 </div>
               </div>
@@ -617,7 +617,7 @@
                     @if($openOrder->purchase_request_for == 'NATURAL GAS')
                       
 
-                    <div class="col">
+                    <div class="col">Price
                       <label class="form-label">Price January </label>
                     </div>
                     <div class="col">
@@ -846,7 +846,7 @@
                 <div class="form-group mb-3">
                   <div class="row">
                     <div class="col">
-                      <label class="form-label">Price </label>
+                      <label class="form-label">Precio </label>
                     </div>
                     <div class="col">
                       <input type="number" placeholder="USD/MWh" class="form-control" name="electricity_price"
@@ -877,7 +877,7 @@
                 <div class="form-group mb-3">
                   <div class="row">
                     <div class="col">
-                      <label class="form-label">Optinal Take or pay to the seller (0%-100%)</label>
+                      <label class="form-label">Take or Pay (0 a 100%)</label>
                     </div>
                     <div class="col">
                       <input type="number" placeholder="0%-100%" class="form-control" name="optional_take_or_pay_to_seller" min="0" max="100"
@@ -904,7 +904,7 @@
                 <div class="form-group mb-3">
                   <div class="row">
                     <div class="col">
-                      <label class="form-label">Optinal delivery or pay to the seller (0%-100%)</label>
+                      <label class="form-label">Delivery or Pay (0 a 100%)</label>
                     </div>
                     <div class="col">
                       <input type="number" placeholder="0%-100%" class="form-control" name="optional_delivery_or_pay_to_seller" min="0" max="100"

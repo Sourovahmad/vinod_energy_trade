@@ -144,7 +144,7 @@ class superAdminController extends Controller
     public function superadmin_orders()
     {
         $orders = buyerOrders::with(['bids'])->orderBy('id', 'desc')->get();
-        $page_title = 'All Purchase Requests';
+        $page_title = 'Todos los Pedidos de Compras';
         return view('admin.orders.index', compact('orders','page_title'));
     }
 

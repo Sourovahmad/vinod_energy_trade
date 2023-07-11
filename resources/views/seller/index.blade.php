@@ -35,18 +35,18 @@
               <b>ID</b>
             </div>
             <div class="text-center col" style="font-size: 10px">
-              <b>Name</b>
+              <b>Nombre</b>
             </div>
 
 
             <div class="text-center col-1" style="font-size: 10px">
-              <b>Deadline</b>
+              <b>Fecha limite</b>
             </div>
           
 
 
              <div class="text-center col" style="font-size: 10px">
-              <b>Action</b>
+              <b>Acción</b>
             </div>
 
           
@@ -75,7 +75,7 @@
 
               <div class="text-center col" >
                 <div class="btn-group">
-                  <button type="button" class="btn btn-success btn-sm m-1" data-bs-toggle="modal" data-bs-target="#modal_view{{ $openOrder->id }}">view</button>
+                  <button type="button" class="btn btn-success btn-sm m-1" data-bs-toggle="modal" data-bs-target="#modal_view{{ $openOrder->id }}">Ver</button>
 
 
                   @php
@@ -97,11 +97,11 @@
 
                         @if($currentBid != null)
 
-                        <button type="button" class="btn btn-primary btn-sm m-1" data-bs-toggle="modal" data-bs-target="#modal_edit{{ $openOrder->id }}">View or Modify Offer</button>
+                        <button type="button" class="btn btn-primary btn-sm m-1" data-bs-toggle="modal" data-bs-target="#modal_edit{{ $openOrder->id }}">Ver o Modificar Oferta</button>
 
                         @else
 
-                        <button type="button" class="btn btn-primary btn-sm m-1" data-bs-toggle="modal" data-bs-target="#modal_edit{{ $openOrder->id }}">Apply</button>
+                        <button type="button" class="btn btn-primary btn-sm m-1" data-bs-toggle="modal" data-bs-target="#modal_edit{{ $openOrder->id }}">Ofertar</button>
 
                       
                         @endif
@@ -121,7 +121,7 @@
                               <div class="modal-header">
 
 
-                                <h5 class="modal-title" id="exampleModalLabel">Apply For: {{ $openOrder->supply_point_name }}  </h5>
+                                <h5 class="modal-title" id="exampleModalLabel">Ofertar Para: {{ $openOrder->supply_point_name }}  </h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                               </div>
 
@@ -218,15 +218,15 @@
             <b>ID</b>
           </div>
           <div class="text-center col" style="font-size: 10px">
-            <b>Name</b>
+            <b>Nombre</b>
           </div>
           <div class="text-center col-1" style="font-size: 10px">
-            <b>Deadline</b>
+            <b>Fecha limite</b>
           </div>
          
         
           <div class="text-center col" style="font-size: 10px">
-            <b>Action</b>
+            <b>Acción</b>
           </div>
 
 
@@ -258,7 +258,7 @@
               <div class="text-center col" >
                 <div class="btn-group">
                
-                  <button type="button" class="btn btn-success btn-sm m-1" data-bs-toggle="modal" data-bs-target="#modal_view{{ $analysisOrder->id }}">view</button>
+                  <button type="button" class="btn btn-success btn-sm m-1" data-bs-toggle="modal" data-bs-target="#modal_view{{ $analysisOrder->id }}">Ver</button>
                  
                 </div>
 
@@ -340,15 +340,15 @@
             <b>ID</b>
           </div>
           <div class="text-center col" style="font-size: 10px">
-            <b>Name</b>
+            <b>Nombre</b>
           </div>
           <div class="text-center col-1" style="font-size: 10px">
-            <b>Deadline</b>
+            <b>Fecha limite</b>
           </div>
          
         
           <div class="text-center col" style="font-size: 10px">
-            <b>Action</b>
+            <b>Acción</b>
           </div>
 
 
@@ -379,7 +379,7 @@
             <div class="text-center col" >
               <div class="btn-group">
              
-                <button type="button" class="btn btn-success btn-sm m-1" data-bs-toggle="modal" data-bs-target="#modal_view{{ $awardedOrder->id }}">view</button>
+                <button type="button" class="btn btn-success btn-sm m-1" data-bs-toggle="modal" data-bs-target="#modal_view{{ $awardedOrder->id }}">Ver</button>
              
               </div>
 
@@ -454,15 +454,15 @@
             <b>ID</b>
           </div>
           <div class="text-center col" style="font-size: 10px">
-            <b>Name</b>
+            <b>Nombre</b>
           </div>
           <div class="text-center col-1" style="font-size: 10px">
-            <b>Deadline</b>
+            <b>Fecha limite</b>
           </div>
          
         
           <div class="text-center col" style="font-size: 10px">
-            <b>Action</b>
+            <b>Acción</b>
           </div>
 
 
@@ -491,7 +491,7 @@
             <div class="text-center col" >
               <div class="btn-group">
              
-                <button type="button" class="btn btn-success btn-sm m-1" data-bs-toggle="modal" data-bs-target="#modal_view{{ $desertOrder->id }}">view</button>
+                <button type="button" class="btn btn-success btn-sm m-1" data-bs-toggle="modal" data-bs-target="#modal_view{{ $desertOrder->id }}">Ver</button>
                
               </div>
 

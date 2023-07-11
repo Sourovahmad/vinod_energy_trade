@@ -15,7 +15,7 @@
 
    
 <div class="header border-bottom mt-2">
-    <p>  Add Electric Energy bid </p>
+    <p> Agregar Pedido Energía Eléctrica  </p>
 
 </div>
 
@@ -33,7 +33,7 @@
         <div class="form-group mt-2">
             <div class="row">
               <div class="col-4">
-                <p>Supply Point Name</p>
+                <p>Nombre del Punto de Suministro </p>
               </div>
               <div class="col-3">
                 <input type="text" class="select py-2" name="supply_point_name" required />
@@ -47,7 +47,7 @@
           <div class="form-group mt-2">
             <div class="row">
               <div class="col-4">
-                <p>Geographic Location (Province location)</p>
+                <p>Ubicación </p>
               </div>
               <div class="col-3">
                 <input type="text" class="select py-2" name="location_of_supply_point" required />
@@ -60,7 +60,7 @@
           <div class="form-group mt-2">
             <div class="row">
               <div class="col-4">
-                <p>Deadline for receipt of Offers:</p>
+                <p>Fecha Máxima Recepción de Ofertas</p>
               </div>
               <div class="col-3">
                 <input type="datetime-local" class="select" name="deadline_offer_recive" required />
@@ -74,7 +74,7 @@
           <div class="form-group">
             <div class="row">
               <div class="col-4">
-                <p>Date of publication of the Purchase Order:</p>
+                <p>Fecha de Adjudicación</p>
               </div>
               <div class="col-3">
                 <input type="datetime-local" class="select" name="publication_date" required />
@@ -88,7 +88,7 @@
           <div class="form-group mt-4">
             <div class="row">
               <div class="col-4">
-                <p>Distribuidora de Energía Eléctrica PUNTO DE CONSUMO 1</p>
+                <p> Distribuidora de Energía Eléctrica </p>
               </div>
               <div class="col-3">
                 <select class="select form-control" name="natural_gas_point_of_distribution_consumtion_1" required>
@@ -197,14 +197,14 @@
           <div class="form-group mt-3">
             <div class="row">
               <div class="col-4">
-                <p>User Categoy POINT OF CONSUMPTION</p>
+                <p>Categoría de Usuario </p>
               </div>
               <div class="col-3">
                 <select class="select" name="user_category_point_of_consumption" required>
-                  <option value="Distributor 300 KW">	Distributor 300 KW </option>
+                  <option value="Distributor 300 KW">	Usuario Distribuidora Menor 300 kW</option>
                   <option value="GUDI">GUDI</option>
                   <option value="GUME">GUME</option>
-                  <option value="GUM">GUM</option>
+                  <option value="GUM">GUMA</option>
                 </select>
               </div>
             </div>
@@ -213,14 +213,14 @@
 
 
 
-          <span class="border-bottom  mb-3 mt-4 p-2"> Expected Consumption</span>
+          <span class="border-bottom  mb-3 mt-4 p-2"> Demanda Esperada en MWh </span>
 
 
 
           <div class="form-group mt-2">
             <div class="row">
               <div class="col-4">
-                <p>January </p>
+                <p>Enero</p>
               </div>
               <div class="col-3">
                 <input type="text" class="select py-2" name="expected_january" required />
@@ -235,7 +235,7 @@
           <div class="form-group mt-2">
             <div class="row">
               <div class="col-4">
-                <p>February </p>
+                <p>Febrero </p>
               </div>
               <div class="col-3">
                 <input type="text" class="select py-2" name="expected_february"  required/>
@@ -247,7 +247,7 @@
           <div class="form-group mt-2">
             <div class="row">
               <div class="col-4">
-                <p>March</p>
+                <p>Marzo </p>
               </div>
               <div class="col-3">
                 <input type="text" class="select py-2" name="expected_march" required />
@@ -258,7 +258,7 @@
           <div class="form-group mt-2">
             <div class="row">
               <div class="col-4">
-                <p>April</p>
+                <p>Abril </p>
               </div>
               <div class="col-3">
                 <input type="text" class="select py-2" name="expected_april" required />
@@ -269,7 +269,7 @@
           <div class="form-group mt-2">
             <div class="row">
               <div class="col-4">
-                <p>May</p>
+                <p>Mayo</p>
               </div>
               <div class="col-3">
                 <input type="text" class="select py-2" name="expected_may" required />
@@ -280,7 +280,7 @@
           <div class="form-group mt-2">
             <div class="row">
               <div class="col-4">
-                <p>June</p>
+                <p>Junio </p>
               </div>
               <div class="col-3">
                 <input type="text" class="select py-2" name="expected_june"  required />
@@ -291,7 +291,7 @@
           <div class="form-group mt-2">
             <div class="row">
               <div class="col-4">
-                <p>July</p>
+                <p>Julio</p>
               </div>
               <div class="col-3">
                 <input type="text" class="select py-2" name="expected_july" required />
@@ -302,7 +302,7 @@
           <div class="form-group mt-2">
             <div class="row">
               <div class="col-4">
-                <p>August</p>
+                <p>Agosto</p>
               </div>
               <div class="col-3">
                 <input type="text" class="select py-2" name="expected_august" required />
@@ -313,7 +313,7 @@
           <div class="form-group mt-2">
             <div class="row">
               <div class="col-4">
-                <p>September</p>
+                <p>Septiembre</p>
               </div>
               <div class="col-3">
                 <input type="text" class="select py-2" name="expected_september" required />
@@ -324,7 +324,7 @@
           <div class="form-group mt-2">
             <div class="row">
               <div class="col-4">
-                <p>October</p>
+                <p>Octubre </p>
               </div>
               <div class="col-3">
                 <input type="text" class="select py-2" name="expected_october" required />
@@ -335,7 +335,7 @@
           <div class="form-group mt-2">
             <div class="row">
               <div class="col-4">
-                <p>November</p>
+                <p>Noviembre</p>
               </div>
               <div class="col-3">
                 <input type="text" class="select py-2" name="expected_november" required />
@@ -346,7 +346,7 @@
           <div class="form-group mt-2">
             <div class="row">
               <div class="col-4">
-                <p>December</p>
+                <p>Diciembre</p>
               </div>
               <div class="col-3">
                 <input type="text" class="select py-2" name="expected_december" required />
@@ -357,13 +357,13 @@
 
 
 
-      <span class="border-bottom">Contract Conditions:</span>
+      <span class="border-bottom">Condiciones Contractuales :</span>
           
 
       <div class="form-group mt-4">
         <div class="row">
           <div class="col-4">
-            <p>Contract Term (months)</p>
+            <p>Plazo del Contrato (meses)</p>
           </div>
           <div class="col-3">
             <input type="number" class="select py-2" name="contact_term_months" required />
@@ -375,7 +375,7 @@
         <div class="form-group mt-2">
             <div class="row">
               <div class="col-4">
-                <p>Start of Supply:</p>
+                <p> Inicio de Suministro </p>
               </div>
               <div class="col-3">
                 <input type="date" class="select" name="start_of_supply" />
@@ -391,7 +391,7 @@
           <div class="form-group mt-2">
             <div class="row">
               <div class="col-4">
-                <p>Priority Given To Agreement (1 to 20)</p>
+                <p> Prioridad Asignada al Acuerdo (1 a 20) </p>
               </div>
               <div class="col-3">
                 <input type="number" class="select py-2" name="priority_given_to_agreement" min="1" max="20" required  />
@@ -402,11 +402,11 @@
           <div class="form-group mt-2">
             <div class="row">
               <div class="col-4">
-                <p>Partial Award:</p>
+                <p>Adjudicación Parcial</p>
               </div>
               <div class="col-3">
                 <select class="select" name="partial_award" required>
-                  <option value="YES">YES</option>
+                  <option value="YES">SI</option>
                   <option value="NO">NO</option>
                 </select>
               </div>
@@ -417,11 +417,11 @@
           <div class="form-group mt-2">
             <div class="row">
               <div class="col-4">
-                <p>Price Renegotiation Clause:</p>
+                <p>Cláusula de Renegociación de Precio</p>
               </div>
               <div class="col-3">
                 <select class="select" name="price_renegotiation" required>
-                  <option value="YES">YES</option>
+                  <option value="YES">SI</option>
                   <option value="NO">NO</option>
                 </select>
               </div>
@@ -434,11 +434,11 @@
           <div class="form-group mt-2">
             <div class="row">
               <div class="col-4">
-                <p>early termination Clause:</p>
+                <p>Cláusula de Terminación Anticipada</p>
               </div>
               <div class="col-3">
                 <select class="select" name="early_termination" required>
-                  <option value="YES">YES</option>
+                  <option value="YES">SI</option>
                   <option value="NO">NO</option>
                 </select>
               </div>
@@ -450,11 +450,11 @@
           <div class="form-group mt-2">
             <div class="row">
               <div class="col-4">
-                <p>Take or Pay optional to the Seller:</p>
+                <p>Take or Pay Opcional para el Vendedor</p>
               </div>
               <div class="col-3">
                 <select class="select" name="take_or_pay_optional_to_seller" required>
-                  <option value="YES">YES</option>
+                  <option value="YES">SI</option>
                   <option value="NO">NO</option>
                 </select>
               </div>
@@ -463,14 +463,14 @@
 
 
           <span class="border-bottom"
-          >In case the previous answer is NO:
+          >En caso de responder NO:
         </span>
 
 
         <div class="form-group mt-4">
             <div class="row">
               <div class="col-4">
-                <p>Take or Pay (0 to 100%):</p>
+                <p>Take or Pay (0 a 100%) </p>
               </div>
               <div class="col-3">
                 <input type="number" min="0" max="100" class="select" name="take_or_pay_percentage" />
@@ -482,11 +482,11 @@
           <div class="form-group mt-2">
             <div class="row">
               <div class="col-4">
-                <p>Optional Delivery or Pay to the Seller:</p>
+                <p>Delivery or Pay Opcional para el Vendedor</p>
               </div>
               <div class="col-3">
                 <select class="select" name="optional_delivery_to_seller">
-                  <option value="YES">YES</option>
+                  <option value="YES">SI</option>
                   <option value="NO">NO</option>
                 </select>
               </div>
@@ -495,7 +495,7 @@
 
 
           <span class="border-bottom"
-          >In case the previous answer is NO:
+          >En caso de responder NO: 
         </span>
         <div class="form-group mt-4">
           <div class="row">
@@ -512,7 +512,7 @@
         <div class="form-group mt-4">
             <div class="row">
               <div class="col-4">
-                <p>Payment term (5 to 180 days):</p>
+                <p>Plazo de Pago (5 a 180 días)</p>
               </div>
               <div class="col-3">
                 <input type="number" class="select" name="payment_term" min="5" max="180" required />
@@ -525,13 +525,13 @@
           <div class="form-group mt-2">
             <div class="row">
               <div class="col-4">
-                <p>Exchange Rate:</p>
+                <p>Tipo de Cambio </p>
               </div>
               <div class="col-3">
                 <select class="select" name="exchange_rate" required>
-                  <option value="BNA Ticket Seller">BNA Ticket Seller</option>
+                  <option value="BNA Ticket Seller">BNA Divisa Vendedor</option>
                   <option value="BNA Currency Seller">
-                    BNA Currency Seller
+                    BNA Billete Vendedor
                   </option>
                   <option value="ARS">ARS</option>
                 </select>
@@ -542,7 +542,7 @@
           <div class="form-group mt-4">
             <div class="row">
               <div class="col-4">
-                <p>Default Rate Debts in USD:</p>
+                <p>Intereses para deudas en USD</p>
               </div>
               <div class="col-3">
                 <input type="number" class="select" name="default_rates_debts" required />
@@ -554,7 +554,7 @@
           <div class="form-group mt-4">
             <div class="row">
               <div class="col-4">
-                <p>Mortgage Rate Debts in Pesos:</p>
+                <p> Intereses para dudas en ARS</p>
               </div>
               <div class="col-3">
                 <input type="number" class="select" name="mortage_rate_debts" required />
@@ -566,16 +566,16 @@
           <div class="form-group mt-2">
             <div class="row">
               <div class="col-4">
-                <p>Auction Commission:</p>
+                <p>Comisión Subasta</p>
               </div>
               <div class="col-3">
                 <select class="select" name="auction_commision" required>
-                  <option value="Paid by the Buyer">Paid by the Buyer</option>
+                  <option value="Paid by the Buyer">A cargo del Comprador</option>
                   <option value="Paid by the Seller">
-                    Paid by the Seller
+                    A cargo del Vendedor
                   </option>
                   <option value="Paid by Both Parties">
-                    Paid by Both Parties
+                    A cargo de Ambas Partes
                   </option>
                 </select>
               </div>
@@ -586,7 +586,7 @@
           <div class="form-group mt-4">
             <div class="row">
               <div class="col-4">
-                <p>Bid Maintenance Guarantee (Amount in ARS or USD):</p>
+                <p>Garantía Mantenimiento de Oferta (USD)</p>
               </div>
               <div class="col-3">
                 <input type="number" class="select" name="bid_maintain_gurantee" required />
@@ -600,7 +600,7 @@
            
 
             <x-button class="ml-4" type="submit" style="background:rgb(18, 21, 179); colour:white">
-                {{ __('Add') }}
+                {{ __('Publicar Pedido de Compra') }}
             </x-button>
         </div>
 

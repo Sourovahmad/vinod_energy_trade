@@ -252,7 +252,7 @@
             <div class="form-group mt-2">
                 <div class="row">
                     <div class="col-4">
-                        <p>January </p>
+                        <p>Enero</p>
                     </div>
                     <div class="col-3">
                         <input type="text" class="select py-2" value="{{ $order->expected_january }}" name="expected_january" required />
@@ -267,7 +267,7 @@
             <div class="form-group mt-2">
                 <div class="row">
                     <div class="col-4">
-                        <p>February </p>
+                        <p>Febrero </p>
                     </div>
                     <div class="col-3">
                         <input type="text" class="select py-2" value="{{ $order->expected_february }}" name="expected_february" required />
@@ -279,7 +279,7 @@
             <div class="form-group mt-2">
                 <div class="row">
                     <div class="col-4">
-                        <p>March</p>
+                        <p>Marzo </p>
                     </div>
                     <div class="col-3">
                         <input type="text" class="select py-2" value="{{ $order->expected_march }}" name="expected_march" required />
@@ -290,7 +290,7 @@
             <div class="form-group mt-2">
                 <div class="row">
                     <div class="col-4">
-                        <p>April</p>
+                        <p>Abril </p>
                     </div>
                     <div class="col-3">
                         <input type="text" class="select py-2" value="{{ $order->expected_april }}" name="expected_april" required />
@@ -301,7 +301,7 @@
             <div class="form-group mt-2">
                 <div class="row">
                     <div class="col-4">
-                        <p>May</p>
+                        <p>Mayo</p>
                     </div>
                     <div class="col-3">
                         <input type="text" class="select py-2" value="{{ $order->expected_may }}" name="expected_may" required />
@@ -312,7 +312,7 @@
             <div class="form-group mt-2">
                 <div class="row">
                     <div class="col-4">
-                        <p>June</p>
+                        <p>Junio </p>
                     </div>
                     <div class="col-3">
                         <input type="text" class="select py-2"  value="{{ $order->expected_june }}" name="expected_june" required />
@@ -323,7 +323,7 @@
             <div class="form-group mt-2">
                 <div class="row">
                     <div class="col-4">
-                        <p>July</p>
+                        <p>Julio</p>
                     </div>
                     <div class="col-3">
                         <input type="text" class="select py-2" value="{{ $order->expected_july }}" name="expected_july" required />
@@ -334,7 +334,7 @@
             <div class="form-group mt-2">
                 <div class="row">
                     <div class="col-4">
-                        <p>August</p>
+                        <p>Agosto</p>
                     </div>
                     <div class="col-3">
                         <input type="text" class="select py-2" value="{{ $order->expected_august }}" name="expected_august" required />
@@ -345,7 +345,7 @@
             <div class="form-group mt-2">
                 <div class="row">
                     <div class="col-4">
-                        <p>September</p>
+                        <p>Septiembre</p>
                     </div>
                     <div class="col-3">
                         <input type="text" class="select py-2" value="{{ $order->expected_september }}" name="expected_september" required />
@@ -356,7 +356,7 @@
             <div class="form-group mt-2">
                 <div class="row">
                     <div class="col-4">
-                        <p>October</p>
+                        <p>Octubre </p>
                     </div>
                     <div class="col-3">
                         <input type="text" class="select py-2" value="{{ $order->expected_october }}" name="expected_october" required />
@@ -367,7 +367,7 @@
             <div class="form-group mt-2">
                 <div class="row">
                     <div class="col-4">
-                        <p>November</p>
+                        <p>Noviembre</p>
                     </div>
                     <div class="col-3">
                         <input type="text" class="select py-2" value="{{ $order->expected_november }}" name="expected_november" required />
@@ -378,7 +378,7 @@
             <div class="form-group mt-2">
                 <div class="row">
                     <div class="col-4">
-                        <p>December</p>
+                        <p>Diciembre</p>
                     </div>
                     <div class="col-3">
                         <input type="text" class="select py-2" value="{{ $order->expected_december }}" name="expected_december" required />
@@ -490,7 +490,7 @@
 
                             @else
 
-                            <option value="YES">YES</option>
+                            <option value="YES">SI</option>
                             <option value="NO" selected>NO</option>
 
                           @endif
@@ -519,7 +519,7 @@
 
                           @else
 
-                          <option value="YES">YES</option>
+                          <option value="YES">SI</option>
                           <option value="NO" selected>NO</option>
 
                         @endif
@@ -546,7 +546,7 @@
 
                           @else
 
-                          <option value="YES">YES</option>
+                          <option value="YES">SI</option>
                           <option value="NO" selected>NO</option>
 
                         @endif
@@ -591,7 +591,7 @@
 
                           @else
 
-                          <option value="YES">YES</option>
+                          <option value="YES">SI</option>
                           <option value="NO" selected>NO</option>
 
                         @endif
@@ -736,7 +736,7 @@
             <div class="form-group mt-4">
                 <div class="row">
                     <div class="col-4">
-                        <p>Bid Maintenance Guarantee (Amount in ARS or USD):</p>
+                        <p> Garantía Mantenimiento de Oferta (USD)</p>
                     </div>
                     <div class="col-3">
                         <input type="number" value="{{ intval($order->bid_maintain_gurantee) }}"  class="select" name="bid_maintain_gurantee" required />

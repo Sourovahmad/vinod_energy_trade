@@ -32,7 +32,7 @@
                             <div class="card-body">
                             <div class="row no-gutters align-items-center">
                                 <div class="col mr-2">
-                                <div class="h5 mb-0 font-weight-bold text-gray-800"> <a href="{{ route('superadmin_orders') }}"> All Purchase Requests   </a></div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800"> <a href="{{ route('superadmin_orders') }}"> Todos los Pedidos de Compras   </a></div>
                                 </div>
 
                             </div>
@@ -53,7 +53,7 @@
                             <div class="card-body">
                             <div class="row no-gutters align-items-center">
                                 <div class="col mr-2">
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">   <a href="{{ route('all_sellers') }}"> Registered Sellers   </a></div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">   <a href="{{ route('all_sellers') }}"> Vendedores Registrados   </a></div>
                                 </div>
 
                             </div>
@@ -72,7 +72,7 @@
                             <div class="card-body">
                             <div class="row no-gutters align-items-center">
                                 <div class="col mr-2">
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">  <a href="{{ route('all_buyers') }}">  Registered Buyers   </a></div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">  <a href="{{ route('all_buyers') }}">  Compradores Registrados   </a></div>
                                 </div>
 
                             </div>

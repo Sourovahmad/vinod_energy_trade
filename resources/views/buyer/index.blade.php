@@ -53,7 +53,7 @@
                     ></path>
                   </g>
                 </svg>
-                Add Electricity
+                Agregar Pedido Energía Eléctrica
               </button>
             </a>
 
@@ -94,7 +94,7 @@
                 ></path>
               </g>
             </svg>
-            Add Natural Gas
+            Agregar Pedido Gas Natural
           </button>
         </a>
 
@@ -118,7 +118,7 @@
       <br />
       <div class="row">
         <div class="col-6">
-          <h5 class="text text-secondary">Your Orders</h5>
+          <h5 class="text text-secondary">Pedidos de Compra</h5>
         </div>
         
       </div>
@@ -128,7 +128,7 @@
       <div class="justify-content-center row">
         <h5 class="text-success text-center mb-3">
           <br />
-          Open to Bid
+          Abierta
         </h5>
         <div class="row" style="width: 100%">
           <div class="text-center col-2" style="font-size: 10px">
@@ -137,20 +137,20 @@
 
 
           <div class="text-center col" style="font-size: 10px">
-            <b>Name</b>
+            <b>Nombre </b>
           </div>
 
 
       
 
           <div class="text-center col-1" style="font-size: 10px">
-            <b>Deadline</b>
+            <b>Fecha limite</b>
           </div>
 
 
 
            <div class="text-center col" style="font-size: 10px">
-            <b>Action</b>
+            <b>Acción </b>
           </div>
 
         
@@ -178,9 +178,9 @@
 
             <div class="text-center col" >
               <div class="btn-group">
-                <button type="button" class="btn btn-success btn-sm m-1" data-bs-toggle="modal" data-bs-target="#modal_view{{ $openOrder->id }}">view</button>
+                <button type="button" class="btn btn-success btn-sm m-1" data-bs-toggle="modal" data-bs-target="#modal_view{{ $openOrder->id }}">Ver</button>
              
-                <button type="button" class="btn btn-danger btn-sm m-1" onclick="deleteTheOrder({{ $openOrder->id }})">delete</button>
+                <button type="button" class="btn btn-danger btn-sm m-1" onclick="deleteTheOrder({{ $openOrder->id }})">Eliminar </button>
               </div>
             </div>
 
@@ -229,7 +229,7 @@
       >
         <div class="align-items-center row text-center" style="font-size: 11px">
             <div class="col">
-              No Data Available
+              En Análisis 
             </div>
         </div>
       </div>
@@ -245,7 +245,7 @@
       <div class="justify-content-center row">
         <h5 class="text-success text-center mb-3">
           <br />
-          In Analysis
+          En Análisis
         </h5>
 
         <div class="row" style="width: 100%">
@@ -253,15 +253,15 @@
             <b>ID</b>
           </div>
           <div class="text-center col" style="font-size: 10px">
-            <b>Name</b>
+            <b>Nombre </b>
           </div>
           <div class="text-center col-1" style="font-size: 10px">
-            <b>Deadline</b>
+            <b>Fecha limite</b>
           </div>
          
         
           <div class="text-center col" style="font-size: 10px">
-            <b>Action</b>
+            <b>Acción </b>
           </div>
 
 
@@ -290,10 +290,10 @@
               <div class="text-center col" >
                 <div class="btn-group">
                
-                  <button type="button" class="btn btn-success btn-sm m-1" data-bs-toggle="modal" data-bs-target="#modal_view{{ $analysisOrder->id }}">view</button>
+                  <button type="button" class="btn btn-success btn-sm m-1" data-bs-toggle="modal" data-bs-target="#modal_view{{ $analysisOrder->id }}">Ver</button>
             
                   
-                  <button type="button" class="btn btn-danger btn-sm m-1" onclick="deleteTheOrder({{ $analysisOrder->id }})">delete</button>
+                  <button type="button" class="btn btn-danger btn-sm m-1" onclick="deleteTheOrder({{ $analysisOrder->id }})">Eliminar </button>
                 </div>
 
 
@@ -339,7 +339,7 @@
       >
         <div class="align-items-center row text-center" style="font-size: 11px">
             <div class="col">
-              No Data Available
+              Sin Datos
             </div>
         </div>
       </div>
@@ -355,28 +355,28 @@
       <div class="justify-content-center row">
         <h5 class="text-success text-center mb-3">
           <br />
-          Awarded
+          Adjudicada
         </h5>
         <div class="row" style="width: 100%">
           <div class="text-center col-2" style="font-size: 10px">
             <b>ID</b>
           </div>
           <div class="text-center col" style="font-size: 10px">
-            <b>Name</b>
+            <b>Nombre </b>
           </div>
           <div class="text-center col-1" style="font-size: 10px">
-            <b>Deadline</b>
+            <b>Fecha limite</b>
           </div>
          
         
           <div class="text-center col" style="font-size: 10px">
-            <b>Action</b>
+            <b>Acción </b>
           </div>
 
 
         </div>
 
-        @forelse ($ordersAwarded as $awardedOrder)
+        @forelse ($ordersAwarded as $AdjudicadaOrder)
             
         
             
@@ -386,14 +386,14 @@
           style="padding: 5px; width: 100%; cursor: pointer"
         >
           <div class="align-items-center row" style="font-size: 11px">
-            <div class="text-center col-2"> {{ $awardedOrder->code }}</div>
-            <div class="text-center col">{{ $awardedOrder->supply_point_name }}</div>
+            <div class="text-center col-2"> {{ $AdjudicadaOrder->code }}</div>
+            <div class="text-center col">{{ $AdjudicadaOrder->supply_point_name }}</div>
 
             @php
-            $requestTimeAwarded = $awardedOrder->deadline_offer_recive;
-              $formattedTimeAwarded = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $requestTimeAwarded)->format('F j, Y, g:i a');
+            $requestTimeAdjudicada = $AdjudicadaOrder->deadline_offer_recive;
+              $formattedTimeAdjudicada = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $requestTimeAdjudicada)->format('F j, Y, g:i a');
             @endphp
-            <div class="text-center col-1">{{  $formattedTimeAwarded }} </div>
+            <div class="text-center col-1">{{  $formattedTimeAdjudicada }} </div>
 
 
 
@@ -401,19 +401,19 @@
             <div class="text-center col" >
               <div class="btn-group">
              
-                <button type="button" class="btn btn-success btn-sm m-1" data-bs-toggle="modal" data-bs-target="#modal_view{{ $awardedOrder->id }}">view</button>
-                <button type="button" class="btn btn-primary btn-sm m-1" data-bs-toggle="modal" data-bs-target="#bid_view{{ $awardedOrder->id }}" >view bids</button>
-                <button type="button" class="btn btn-danger btn-sm m-1" onclick="deleteTheOrder({{ $awardedOrder->id }})">delete</button>
+                <button type="button" class="btn btn-success btn-sm m-1" data-bs-toggle="modal" data-bs-target="#modal_view{{ $AdjudicadaOrder->id }}">Ver</button>
+                <button type="button" class="btn btn-primary btn-sm m-1" data-bs-toggle="modal" data-bs-target="#bid_view{{ $AdjudicadaOrder->id }}" >Ver Ofertas</button>
+                <button type="button" class="btn btn-danger btn-sm m-1" onclick="deleteTheOrder({{ $AdjudicadaOrder->id }})">Eliminar </button>
               </div>
 
 
                    {{--  bid view modal --}}
 
-            <div class="modal fade" id="bid_view{{ $awardedOrder->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="bid_view{{ $AdjudicadaOrder->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog modal-lg">
 
                   @include('components.modal.bidview',[
-                      'bids' => $awardedOrder->bids,
+                      'bids' => $AdjudicadaOrder->bids,
                   ]);
                 
               </div>
@@ -425,21 +425,21 @@
 
 
 
-              {{-- awarded edit modal start here --}}
+              {{-- Adjudicada edit modal start here --}}
 
 
-              <div class="modal fade" id="modal_edit{{ $awardedOrder->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal fade" id="modal_edit{{ $AdjudicadaOrder->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">change status {{ $awardedOrder->supply_point_name }}</h5>
+                      <h5 class="modal-title" id="exampleModalLabel">change status {{ $AdjudicadaOrder->supply_point_name }}</h5>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
 
                     <form action="{{ route('update_order_status') }}" method="POST" >
                       @csrf
                     
-                    <input type="text" name="order_id" id="" value="{{ $awardedOrder->id  }}" required hidden>
+                    <input type="text" name="order_id" id="" value="{{ $AdjudicadaOrder->id  }}" required hidden>
                  
                     <div class="modal-body">
                       
@@ -450,7 +450,7 @@
                             <select class="select form-control" name="status" required id="status_change_select">
 
                               <option value="open"  >Open</option>
-                              <option value="awarded" selected>Awarded</option>
+                              <option value="awarded" selected>Adjudicada</option>
                               <option value="under_analysis" >Under Analysis</option>
                               <option value="desert">Desert</option>
                             </select>
@@ -469,25 +469,25 @@
                 </div>
               </div>
 
-              {{-- awarded edit modal end here --}}
+              {{-- Adjudicada edit modal end here --}}
 
 
 
 
 
 
-              {{-- Awarded modal start here --}}
+              {{-- Adjudicada modal start here --}}
 
-              <div class="modal fade" id="modal_view{{ $awardedOrder->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal fade" id="modal_view{{ $AdjudicadaOrder->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">{{ $awardedOrder->supply_point_name }} </h5>
+                      <h5 class="modal-title" id="exampleModalLabel">{{ $AdjudicadaOrder->supply_point_name }} </h5>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                                       {{-- modal body start --}}
                   @include('components.buyer.orderView', [
-                    'openOrder' => $awardedOrder
+                    'openOrder' => $AdjudicadaOrder
                   ])
                   {{-- end of the body --}}
                     <div class="modal-footer">
@@ -498,7 +498,7 @@
               </div>
 
 
-              {{-- awarded modal ends here --}}
+              {{-- Adjudicada modal ends here --}}
 
          
 </div>
@@ -517,7 +517,7 @@
       >
         <div class="align-items-center row text-center" style="font-size: 11px">
             <div class="col">
-              No Data Available
+              Sin Datos
             </div>
         </div>
       </div>
@@ -536,22 +536,22 @@
       <div class="justify-content-center row">
         <h5 class="text-danger text-center mb-3">
           <br />
-          Deserts
+          Desierta 
         </h5>
         <div class="row" style="width: 100%">
           <div class="text-center col-2" style="font-size: 10px">
             <b>ID</b>
           </div>
           <div class="text-center col" style="font-size: 10px">
-            <b>Name</b>
+            <b>Nombre </b>
           </div>
           <div class="text-center col-1" style="font-size: 10px">
-            <b>Deadline</b>
+            <b>Fecha limite</b>
           </div>
          
         
           <div class="text-center col" style="font-size: 10px">
-            <b>Action</b>
+            <b>Acción </b>
           </div>
 
 
@@ -580,10 +580,10 @@
             <div class="text-center col" >
               <div class="btn-group">
              
-                <button type="button" class="btn btn-success btn-sm m-1" data-bs-toggle="modal" data-bs-target="#modal_view{{ $desertOrder->id }}">view</button>
+                <button type="button" class="btn btn-success btn-sm m-1" data-bs-toggle="modal" data-bs-target="#modal_view{{ $desertOrder->id }}">Ver</button>
                 {{-- <button type="button" class="btn btn-primary btn-sm m-1" data-bs-toggle="modal" data-bs-target="#modal_edit{{ $desertOrder->id }}">change status</button> --}}
-                {{-- <button type="button" class="btn btn-primary btn-sm m-1" data-bs-toggle="modal" data-bs-target="#bid_view{{ $desertOrder->id }}" >view bids</button> --}}
-                <button type="button" class="btn btn-danger btn-sm m-1" onclick="deleteTheOrder({{ $desertOrder->id }})">delete</button>
+                {{-- <button type="button" class="btn btn-primary btn-sm m-1" data-bs-toggle="modal" data-bs-target="#bid_view{{ $desertOrder->id }}" >Ver Ofertas</button> --}}
+                <button type="button" class="btn btn-danger btn-sm m-1" onclick="deleteTheOrder({{ $desertOrder->id }})">Eliminar </button>
               </div>
 
 
@@ -629,7 +629,7 @@
                             <select class="select form-control" name="status" required id="status_change_select">
 
                               <option value="open"  >Open</option>
-                              <option value="awarded" >Awarded</option>
+                              <option value="awarded" >Adjudicada</option>
                               <option value="under_analysis" >Under Analysis</option>
                               <option value="desert" selected>Desert</option>
                             </select>
@@ -697,7 +697,7 @@
       >
         <div class="align-items-center row text-center" style="font-size: 11px">
             <div class="col">
-              No Data Available
+              Sin Datos
             </div>
         </div>
       </div>

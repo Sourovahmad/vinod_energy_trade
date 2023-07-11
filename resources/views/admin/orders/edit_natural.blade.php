@@ -278,7 +278,7 @@
           <div class="form-group mt-3">
             <div class="row">
               <div class="col-4">
-                <p>January </p>
+                <p>Enero</p>
               </div>
               <div class="col-3">
                 <input type="number"  value="{{ intval($order->expected_january) }}" class="select py-2" name="expected_january" required />
@@ -293,7 +293,7 @@
           <div class="form-group mt-2">
             <div class="row">
               <div class="col-4">
-                <p>February </p>
+                <p>Febrero </p>
               </div>
               <div class="col-3">
                 <input type="number"  value="{{ intval($order->expected_february) }}" class="select py-2" name="expected_february" required />
@@ -305,7 +305,7 @@
           <div class="form-group mt-2">
             <div class="row">
               <div class="col-4">
-                <p>March</p>
+                <p>Marzo </p>
               </div>
               <div class="col-3">
                 <input type="number"  value="{{ intval($order->expected_march) }}" class="select py-2" name="expected_march"  required/>
@@ -316,7 +316,7 @@
           <div class="form-group mt-2">
             <div class="row">
               <div class="col-4">
-                <p>April</p>
+                <p>Abril </p>
               </div>
               <div class="col-3">
                 <input type="number"  value="{{ intval($order->expected_april) }}" class="select py-2" name="expected_april" required />
@@ -327,7 +327,7 @@
           <div class="form-group mt-2">
             <div class="row">
               <div class="col-4">
-                <p>May</p>
+                <p>Mayo</p>
               </div>
               <div class="col-3">
                 <input type="number"  value="{{ intval($order->expected_may) }}" class="select py-2" name="expected_may" required />
@@ -338,7 +338,7 @@
           <div class="form-group mt-2">
             <div class="row">
               <div class="col-4">
-                <p>June</p>
+                <p>Junio </p>
               </div>
               <div class="col-3">
                 <input type="number"  value="{{ intval($order->expected_june) }}" class="select py-2" name="expected_june" required />
@@ -349,7 +349,7 @@
           <div class="form-group mt-2">
             <div class="row">
               <div class="col-4">
-                <p>July</p>
+                <p>Julio</p>
               </div>
               <div class="col-3">
                 <input type="number"  value="{{ intval($order->expected_july) }}" class="select py-2" name="expected_july" required />
@@ -360,7 +360,7 @@
           <div class="form-group mt-2">
             <div class="row">
               <div class="col-4">
-                <p>August</p>
+                <p>Agosto</p>
               </div>
               <div class="col-3">
                 <input type="number"  value="{{ intval($order->expected_august) }}" class="select py-2" name="expected_august" required />
@@ -371,7 +371,7 @@
           <div class="form-group mt-2">
             <div class="row">
               <div class="col-4">
-                <p>September</p>
+                <p>Septiembre</p>
               </div>
               <div class="col-3">
                 <input type="number"  value="{{ intval($order->expected_september) }}" class="select py-2" name="expected_september" required />
@@ -382,7 +382,7 @@
           <div class="form-group mt-2">
             <div class="row">
               <div class="col-4">
-                <p>October</p>
+                <p>Octubre </p>
               </div>
               <div class="col-3">
                 <input type="number"  value="{{ intval($order->expected_october) }}" class="select py-2" name="expected_october" required />
@@ -393,7 +393,7 @@
           <div class="form-group mt-2">
             <div class="row">
               <div class="col-4">
-                <p>November</p>
+                <p>Noviembre</p>
               </div>
               <div class="col-3">
                 <input type="number"  value="{{ intval($order->expected_november) }}" class="select py-2" name="expected_november" required />
@@ -404,7 +404,7 @@
           <div class="form-group mt-2">
             <div class="row">
               <div class="col-4">
-                <p>December</p>
+                <p>Diciembre</p>
               </div>
               <div class="col-3">
                 <input type="number"  value="{{ intval($order->expected_december) }}" class="select py-2" name="expected_december" required />
@@ -640,7 +640,7 @@
 
                   @else
 
-                  <option value="YES">YES</option>
+                  <option value="YES">SI</option>
                   <option value="NO" selected>NO</option>
 
                 @endif
@@ -666,7 +666,7 @@
 
                   @else
 
-                  <option value="YES">YES</option>
+                  <option value="YES">SI</option>
                   <option value="NO" selected>NO</option>
 
                 @endif
@@ -720,7 +720,7 @@
 
                   @else
 
-                  <option value="YES">YES</option>
+                  <option value="YES">SI</option>
                   <option value="NO" selected>NO</option>
 
                 @endif
@@ -742,7 +742,7 @@
 
                   @else
 
-                  <option value="YES">YES</option>
+                  <option value="YES">SI</option>
                   <option value="NO" selected>NO</option>
 
                 @endif
@@ -787,7 +787,7 @@
 
                   @else
 
-                  <option value="YES">YES</option>
+                  <option value="YES">SI</option>
                   <option value="NO" selected>NO</option>
 
                 @endif
@@ -933,7 +933,7 @@
           <div class="form-group mt-4">
             <div class="row">
               <div class="col-4">
-                <p>Bid Maintenance Guarantee (Amount in ARS or USD):</p>
+                <p> Garantía Mantenimiento de Oferta (USD)</p>
               </div>
               <div class="col-3">
                 <input type="number" value="{{ intval($order->bid_maintain_gurantee) }}"  class="select" name="bid_maintain_gurantee" required />
