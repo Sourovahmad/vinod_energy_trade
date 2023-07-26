@@ -70,11 +70,11 @@
 
 
   <div class="flex flex-col items-center justify-center h-screen">
-    <h1 class="text-4xl font-bold mb-8 text-white">Welcome</h1>
+    <h1 class="text-4xl font-bold mb-8 text-white">Bienvenida</h1>
     <h4 class="text-white">You are a ?</h4>
     <div class="flex">
-        <a href="{{ route('buyer_index') }}"><button  class="px-8 py-4 mx-2 bg-blue-500 text-white font-bold rounded-full">Buyer</button> </a>
-        <a href="{{ route('seller_index') }}"><button class="px-8 py-4 mx-2 bg-green-500 text-white font-bold rounded-full">Seller</button>  </a>
+        <a href="{{ route('buyer_index') }}"><button  class="px-8 py-4 mx-2 bg-blue-500 text-white font-bold rounded-full">Compradora</button> </a>
+        <a href="{{ route('seller_index') }}"><button class="px-8 py-4 mx-2 bg-green-500 text-white font-bold rounded-full">Vendedora</button>  </a>
       
     </div>
   </div>

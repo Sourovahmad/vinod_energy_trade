@@ -7,10 +7,6 @@
 {{-- end of the error messages --}}
 
 
-
-
-
-
 <div class="justify-content-md-center row">
     <div class="col-xl-12 col-md-12 pl-4">
       <br />
@@ -85,6 +81,7 @@
                       foreach ($sellerHasBids as $key => $sellerBid) {
                           if ($sellerBid->order_id == $openOrder->id) {
                            $currentBid = $sellerBid;
+                           break;
                           }
                       }
                   @endphp
@@ -111,6 +108,33 @@
 
                 </div>
               </div>
+
+
+
+              
+             {{-- open order modal --}}
+
+
+             <div class="modal fade" id="modal_view{{ $openOrder->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">{{ $openOrder->supply_point_name }} </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  
+                  @include('components.seller.viewModal', [
+                    'openOrder' => $openOrder,
+                  ])
+                  
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
 
 
               {{-- Apply modal start here --}}
@@ -144,29 +168,6 @@
               {{-- edit modal end here --}}
 
 
-
-
-             {{-- open order modal --}}
-
-
-              <div class="modal fade" id="modal_view{{ $openOrder->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">{{ $openOrder->supply_point_name }} </h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    
-                    @include('components.seller.viewModal', [
-                      'openOrder' => $openOrder,
-                    ])
-                    
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
 
 
 

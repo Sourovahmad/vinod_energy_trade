@@ -22,7 +22,7 @@ class ensureUserIsBuyer
 
             return $next($request);
         }else{
-            return redirect()->route('index')->withErrors('To access this section, please create a selller account');
+            return redirect()->route('index')->withErrors('Para acceder a esta sección, cree una cuenta de vendedor');
         }
 
     }

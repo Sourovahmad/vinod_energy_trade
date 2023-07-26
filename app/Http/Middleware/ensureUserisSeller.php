@@ -20,7 +20,7 @@ class ensureUserisSeller
 
             return $next($request);
         }else{
-            return redirect()->route('index')->withErrors('To access this section, Please create a seller Account');
+            return redirect()->route('index')->withErrors('Para acceder a esta sección, cree una cuenta de vendedor');
         }
 
     }
